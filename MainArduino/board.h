@@ -1,10 +1,10 @@
 #pragma once
 
 // UltraSonic
-#define US1_TRIG 28  
-#define US1_ECHO 29  
-#define US2_TRIG 30  
-#define US2_ECHO 31  
+#define USFL_TRIG 28  
+#define USFL_ECHO 29  
+#define USFR_TRIG 30  
+#define USFR_ECHO 31  
 
 // Encoder
 #define ENC1 32  

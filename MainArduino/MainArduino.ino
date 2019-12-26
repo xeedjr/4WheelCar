@@ -9,6 +9,8 @@
 #include <ros.h>
 #include <ros/time.h>
 #include <sensor_msgs/Range.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Empty.h>
 #include "board.h"
 #include "ros_topics.h"
 #include "ros_msg/carmen_msgs/FirmwareCommandWrite.h"
@@ -16,9 +18,17 @@
 #include "motor.h"
 
 auto timer = timer_create_default();
-ros::NodeHandle  nh;
-UltraSonicDistanceSensor distanceSensor1(US1_TRIG, US1_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
-UltraSonicDistanceSensor distanceSensor2(US2_TRIG, US2_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
+UltraSonicDistanceSensor distanceSensorFL(USFL_TRIG, USFL_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
+UltraSonicDistanceSensor distanceSensorFR(USFR_TRIG, USFR_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
+
+class NewHardware : public ArduinoHardware
+{
+  public:
+  NewHardware():ArduinoHardware(&Serial2, 115200){};
+};
+ros::NodeHandle_<NewHardware>  nh;
+//ros::NodeHandle  nh;
+
 
 /**************** ROS ********************/
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
@@ -37,20 +47,25 @@ ros::Publisher pub_range_fl( TOPIC_DISTANCE_PUB, &range_msg_fl);
 sensor_msgs::Range range_msg_fr;
 ros::Publisher pub_range_fr( TOPIC_DISTANCE_PUB, &range_msg_fr);
 
+std_msgs::String str_msg;
+ros::Publisher chatter(TOPIC_CHATTER_PUB, &str_msg);
 /*************** ROS ***********************/
 
 bool function_to_call(void *argument /* optional argument given to in/at/every */) {
     //************** US Left */
-    range_msg_fl.range = distanceSensor1.measureDistanceCm();
+    range_msg_fl.range = distanceSensorFL.measureDistanceCm();
     range_msg_fl.header.stamp = nh.now();
     pub_range_fl.publish(&range_msg_fl);
     /*************/
     //************** US Right */
-    range_msg_fr.range = distanceSensor2.measureDistanceCm();
+    range_msg_fr.range = distanceSensorFR.measureDistanceCm();
     range_msg_fr.header.stamp = nh.now();
     pub_range_fr.publish(&range_msg_fr);
     /*************/
-    
+
+    str_msg.data = "hello world!";
+    chatter.publish( &str_msg );
+  
     return true; // to repeat the action - false to stop
 }
 
@@ -60,6 +75,9 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Hello world");
   nh.initNode();
+  nh.advertise(chatter);
+  nh.advertise(pub_range_fl);
+  nh.advertise(pub_range_fr);
   nh.subscribe(sub);
 
   //************ US Left */
@@ -78,7 +96,7 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-  
+    
   delay(2000);// Give reader a chance to see the output.
 }
  
