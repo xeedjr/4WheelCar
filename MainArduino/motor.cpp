@@ -3,6 +3,8 @@
 #include <SparkFun_TB6612.h>
 #include "board.h"
 
+const float max_rad_per_s = 2*3.14*1.5;
+
 // these constants are used to allow you to make your motor configuration 
 // line up with function names like forward.  Value can be 1 or -1
 const int offsetA = 1;
@@ -15,25 +17,18 @@ const int offsetB = 1;
 Motor motor1 = Motor(AIN1, AIN2, PWMA, offsetA, STBY);
 Motor motor2 = Motor(BIN1, BIN2, PWMB, offsetB, STBY);
 
+//radians per second
+void Set_MotorLeft_RadialSpeed(float RadPerS){
+     float speed = RadPerS * 255 / max_rad_per_s;
+     motor2.drive(speed,0);
+}
+void Set_MotorRight_RadialSpeed(float RadPerS){
+     float speed = RadPerS * 255 / max_rad_per_s;
+     motor1.drive(speed,0);
+}
 
 void loop_motor()
 {
-   //Use of the drive function which takes as arguements the speed
-   //and optional duration.  A negative speed will cause it to go
-   //backwards.  Speed can be from -255 to 255.  Also use of the 
-   //brake function which takes no arguements.
-   motor1.drive(50,1000);
-   delay(1000);
-   motor1.drive(-50,1000);
-   delay(1000);
-   motor1.brake();
-   delay(1000);
 
-   motor2.drive(50,1000);
-   delay(1000);
-   motor2.drive(-50,1000);
-   delay(1000);
-   motor2.brake();
-   delay(1000);
  
 }
