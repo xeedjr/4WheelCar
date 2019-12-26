@@ -32,8 +32,8 @@ ros::NodeHandle_<NewHardware>  nh;
 
 /**************** ROS ********************/
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
-  Set_MotorLeft_RadialSpeed(cmd_msg.motor_1_velocity_command);
-  Set_MotorLeft_RadialSpeed(cmd_msg.motor_2_velocity_command);
+  Set_MotorLeft_RadialSpeed(cmd_msg.left_motor_velocity_command);
+  Set_MotorLeft_RadialSpeed(cmd_msg.right_motor_velocity_command);
 }
 
 // Subs
