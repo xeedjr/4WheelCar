@@ -6,6 +6,8 @@
  */
 #include <HCSR04.h>
 #include <ros.h>
+#include <ros/time.h>
+#include <sensor_msgs/Range.h>
 #include "board.h"
 #include "ros_topics.h"
 #include "ros_msg/carmen_msgs/FirmwareCommandWrite.h"
@@ -29,9 +31,9 @@ carmen_msgs::FirmwareStateRead motor_msg;
 ros::Publisher pub_range( TOPIC_MOTOR_PUB, &motor_msg);
 // Pub
 sensor_msgs::Range range_msg_fl;
-ros::Publisher pub_range( TOPIC_DISTANCE_PUB, &range_msg_fl);
+ros::Publisher pub_range_fl( TOPIC_DISTANCE_PUB, &range_msg_fl);
 sensor_msgs::Range range_msg_fr;
-ros::Publisher pub_range( TOPIC_DISTANCE_PUB, &range_msg_fr);
+ros::Publisher pub_range_fr( TOPIC_DISTANCE_PUB, &range_msg_fr);
 
 /*************** ROS ***********************/
 
@@ -67,12 +69,12 @@ void loop() {
   //************** US Left */
   range_msg_fl.range = distanceSensor1.measureDistanceCm();
   range_msg_fl.header.stamp = nh.now();
-  pub_range_fl.publish(&range_msg);
+  pub_range_fl.publish(&range_msg_fl);
   /*************/
   //************** US Right */
   range_msg_fr.range = distanceSensor2.measureDistanceCm();
   range_msg_fr.header.stamp = nh.now();
-  pub_range_fr.publish(&range_msg);
+  pub_range_fr.publish(&range_msg_fr);
   /*************/
   
   nh.spinOnce();
