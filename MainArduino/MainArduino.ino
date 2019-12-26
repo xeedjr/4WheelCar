@@ -5,6 +5,7 @@
   This example code is in the public domain.
  */
 #include <HCSR04.h>
+#include "motor.h"
  
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
@@ -30,6 +31,7 @@ void loop() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(100);               // wait for a second
 //  Serial.println("Hello");
+  loop_motor();
   double distance = distanceSensor.measureDistanceCm();
   Serial.println(distance);
 }
