@@ -8,7 +8,7 @@
 
 // Encoder
 #define ENC1 32  
-#define ENC1 33  
+#define ENC2 33  
 
 // Motor
 #define AIN1 22
