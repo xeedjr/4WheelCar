@@ -1,0 +1,3 @@
+[submodule "RosSerialTester"]
+	path = RosSerialTester
+	url = https://github.com/oldvers/RosSerialTester.git
