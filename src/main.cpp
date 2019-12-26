@@ -3,6 +3,11 @@
 #include "hal.h"
 #include "cmsis_os.h"
 
+void Timer1_Callback  (void const *arg) {
+	
+};
+osTimerDef (Timer1, Timer1_Callback);
+
 int main () {
 	/*
    * System initializations.
@@ -14,6 +19,11 @@ int main () {
 	halInit();
 	osKernelInitialize();
 	
+	auto id2 = osTimerCreate (osTimer(Timer1), osTimerPeriodic, nullptr);
+	if (id2 != nullptr)  {
+		// Periodic timer created
+	}
+	  
 	while(1) {
 		
 	}
