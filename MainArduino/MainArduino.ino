@@ -4,6 +4,7 @@
  
   This example code is in the public domain.
  */
+#include <timer.h>
 #include <HCSR04.h>
 #include <ros.h>
 #include <ros/time.h>
@@ -14,6 +15,7 @@
 #include "ros_msg/carmen_msgs/FirmwareStateRead.h"
 #include "motor.h"
 
+auto timer = timer_create_default();
 ros::NodeHandle  nh;
 UltraSonicDistanceSensor distanceSensor1(US1_TRIG, US1_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
 UltraSonicDistanceSensor distanceSensor2(US2_TRIG, US2_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
@@ -37,6 +39,20 @@ ros::Publisher pub_range_fr( TOPIC_DISTANCE_PUB, &range_msg_fr);
 
 /*************** ROS ***********************/
 
+bool function_to_call(void *argument /* optional argument given to in/at/every */) {
+    //************** US Left */
+    range_msg_fl.range = distanceSensor1.measureDistanceCm();
+    range_msg_fl.header.stamp = nh.now();
+    pub_range_fl.publish(&range_msg_fl);
+    /*************/
+    //************** US Right */
+    range_msg_fr.range = distanceSensor2.measureDistanceCm();
+    range_msg_fr.header.stamp = nh.now();
+    pub_range_fr.publish(&range_msg_fr);
+    /*************/
+    
+    return true; // to repeat the action - false to stop
+}
 
 // the setup routine runs once when you press reset:
 void setup() {                
@@ -60,22 +76,14 @@ void setup() {
   range_msg_fr.min_range = -1.0;
   range_msg_fr.max_range = 400.0;
   /************* */
+
+  timer.every(1000, function_to_call);
+  
   delay(2000);// Give reader a chance to see the output.
 }
  
 // the loop routine runs over and over again forever:
 void loop() {
-
-  //************** US Left */
-  range_msg_fl.range = distanceSensor1.measureDistanceCm();
-  range_msg_fl.header.stamp = nh.now();
-  pub_range_fl.publish(&range_msg_fl);
-  /*************/
-  //************** US Right */
-  range_msg_fr.range = distanceSensor2.measureDistanceCm();
-  range_msg_fr.header.stamp = nh.now();
-  pub_range_fr.publish(&range_msg_fr);
-  /*************/
-  
   nh.spinOnce();
+  timer.tick();
 }
