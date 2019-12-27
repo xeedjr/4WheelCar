@@ -24,7 +24,7 @@ UltraSonicDistanceSensor distanceSensorFR(USFR_TRIG, USFR_ECHO);  // Initialize 
 class NewHardware : public ArduinoHardware
 {
   public:
-  NewHardware():ArduinoHardware(&Serial2, 115200){};
+  NewHardware():ArduinoHardware(&Serial1, 115200){};
 };
 ros::NodeHandle_<NewHardware>  nh;
 //ros::NodeHandle  nh;
@@ -32,8 +32,12 @@ ros::NodeHandle_<NewHardware>  nh;
 
 /**************** ROS ********************/
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
+  Serial.println("Receive motor command");
+  Serial.println(cmd_msg.motor_1_velocity_command);
+  Serial.println(cmd_msg.motor_2_velocity_command);
+
   Set_MotorLeft_RadialSpeed(cmd_msg.motor_1_velocity_command);
-  Set_MotorLeft_RadialSpeed(cmd_msg.motor_2_velocity_command);
+  Set_MotorRight_RadialSpeed(cmd_msg.motor_2_velocity_command);
 }
 
 // Subs
@@ -47,24 +51,26 @@ ros::Publisher pub_range_fl( TOPIC_DISTANCE_PUB, &range_msg_fl);
 sensor_msgs::Range range_msg_fr;
 ros::Publisher pub_range_fr( TOPIC_DISTANCE_PUB, &range_msg_fr);
 
-std_msgs::String str_msg;
-ros::Publisher chatter(TOPIC_CHATTER_PUB, &str_msg);
+//std_msgs::String str_msg;
+//ros::Publisher chatter(TOPIC_CHATTER_PUB, &str_msg);
 /*************** ROS ***********************/
 
 bool function_to_call(void *argument /* optional argument given to in/at/every */) {
     //************** US Left */
-    range_msg_fl.range = distanceSensorFL.measureDistanceCm();
-    range_msg_fl.header.stamp = nh.now();
-    pub_range_fl.publish(&range_msg_fl);
+//    range_msg_fl.range = distanceSensorFL.measureDistanceCm();
+//    range_msg_fl.header.stamp = nh.now();
+//    pub_range_fl.publish(&range_msg_fl);
     /*************/
     //************** US Right */
-    range_msg_fr.range = distanceSensorFR.measureDistanceCm();
-    range_msg_fr.header.stamp = nh.now();
-    pub_range_fr.publish(&range_msg_fr);
+//    range_msg_fr.range = distanceSensorFR.measureDistanceCm();
+//    range_msg_fr.header.stamp = nh.now();
+//    pub_range_fr.publish(&range_msg_fr);
     /*************/
 
-    str_msg.data = "hello world!";
-    chatter.publish( &str_msg );
+    nh.loginfo("Program info");
+    
+    //str_msg.data = "hello world!";
+    //chatter.publish( &str_msg );
   
     return true; // to repeat the action - false to stop
 }
@@ -75,7 +81,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Hello world");
   nh.initNode();
-  nh.advertise(chatter);
+  //nh.advertise(chatter);
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
   nh.subscribe(sub);
@@ -96,7 +102,8 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-    
+
+  
   delay(2000);// Give reader a chance to see the output.
 }
  
