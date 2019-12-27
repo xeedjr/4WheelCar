@@ -16,6 +16,9 @@
 #include "ros_msg/carmen_msgs/FirmwareCommandWrite.h"
 #include "ros_msg/carmen_msgs/FirmwareStateRead.h"
 #include "motor.h"
+#include "VelocityEncoder.h"
+
+class VelocityEncoder left_ve(ENC1);
 
 auto timer = timer_create_default();
 UltraSonicDistanceSensor distanceSensorFL(USFL_TRIG, USFL_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
