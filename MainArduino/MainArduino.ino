@@ -70,6 +70,8 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
     chatter.publish( &str_msg );
 
     Serial.println("Timer");
+
+    left_ve.every_second(ENC1);
   
     return true; // to repeat the action - false to stop
 }
