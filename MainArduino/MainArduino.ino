@@ -24,7 +24,7 @@ UltraSonicDistanceSensor distanceSensorFR(USFR_TRIG, USFR_ECHO);  // Initialize 
 class NewHardware : public ArduinoHardware
 {
   public:
-  NewHardware():ArduinoHardware(&Serial2, 115200){};
+  NewHardware():ArduinoHardware(&Serial1, 115200){};
 };
 ros::NodeHandle_<NewHardware>  nh;
 //ros::NodeHandle  nh;
@@ -65,6 +65,8 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 
     str_msg.data = "hello world!";
     chatter.publish( &str_msg );
+
+    Serial.println("Timer");
   
     return true; // to repeat the action - false to stop
 }
