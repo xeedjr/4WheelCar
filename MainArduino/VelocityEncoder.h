@@ -1,5 +1,7 @@
 #pragma once
 
+#include "board.h"
+
 class VelocityEncoder {
     static int count1;
     static int count2;
@@ -16,11 +18,11 @@ class VelocityEncoder {
   public:
     VelocityEncoder(int pin) {
       pinMode(pin, INPUT_PULLUP);
-      if (pin == 2){
+      if (pin == ENCR){
         count1 = 0;
         attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder1, CHANGE);
       }
-      if (pin == 3) {
+      if (pin == ENCL) {
         count2 = 0;
         attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder2, CHANGE);
       }
@@ -28,21 +30,21 @@ class VelocityEncoder {
     ~VelocityEncoder() {};
 
     int every_second (int pin) {
-      if (pin == 2){
+      if (pin == ENCR){
         speed1 = count1 * 3.14 / 12;
         count1 = 0;
       }
-      if (pin == 3) {
+      if (pin == ENCL) {
         speed2 = count2 * 3.14 / 12;
         count2 = 0;
       }
     };
     
     float getSpeed(int pin) {
-      if (pin == 2){
+      if (pin == ENCR){
         return speed1;
       }
-      if (pin == 3) {
+      if (pin == ENCL) {
         return speed2;
       }
     };

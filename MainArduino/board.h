@@ -7,8 +7,8 @@
 #define USFR_ECHO 31  
 
 // Encoder
-#define ENC1 3  
-#define ENC2 2  
+#define ENCL 3  
+#define ENCR 2  
 
 // Motor
 #define AIN1 22

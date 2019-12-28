@@ -4,6 +4,7 @@
  
   This example code is in the public domain.
  */
+#include <stdlib.h>
 #include <timer.h>
 #include <HCSR04.h>
 #include <ros.h>
@@ -16,7 +17,8 @@
 #include "motor.h"
 #include "VelocityEncoder.h"
 
-class VelocityEncoder left_ve(ENC1);
+class VelocityEncoder left_ve(ENCL);
+class VelocityEncoder right_ve(ENCR);
 
 auto timer = timer_create_default();
 UltraSonicDistanceSensor distanceSensorFL(USFL_TRIG, USFL_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
@@ -40,10 +42,10 @@ void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
 }
 
 // Subs
-ros::Subscriber<carmen_msgs::FirmwareCommandWrite> sub(TOPIC_MOTOR_SUB, servo_cb);
+ros::Subscriber<carmen_msgs::FirmwareCommandWrite> sub_motor(TOPIC_MOTOR_SUB, servo_cb);
 // Pub
 carmen_msgs::FirmwareStateRead motor_msg;
-ros::Publisher pub_range( TOPIC_MOTOR_PUB, &motor_msg);
+ros::Publisher pub_motor( TOPIC_MOTOR_PUB, &motor_msg);
 // Pub
 sensor_msgs::Range range_msg_fl;
 ros::Publisher pub_range_fl( TOPIC_LEFT_DISTANCE_PUB, &range_msg_fl);
@@ -66,8 +68,13 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 
     nh.loginfo("Program info");
 
-    left_ve.every_second(ENC1);
-  
+    left_ve.every_second(ENCL);
+    right_ve.every_second(ENCR);
+    Serial.println(String(left_ve.getSpeed(ENCL)) + ", " + String(right_ve.getSpeed(ENCR)));
+    motor_msg.left_motor_velocity = left_ve.getSpeed(ENCL);
+    motor_msg.right_motor_velocity = right_ve.getSpeed(ENCR);
+    pub_motor.publish(&motor_msg);
+      
     return true; // to repeat the action - false to stop
 }
 
@@ -77,10 +84,10 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Hello world");
   nh.initNode();
-  //nh.advertise(chatter);
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
-  nh.subscribe(sub);
+  nh.subscribe(sub_motor);
+  nh.advertise(pub_motor);
 
   //************ US Left */
   range_msg_fl.radiation_type = sensor_msgs::Range::ULTRASOUND;
