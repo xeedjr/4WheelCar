@@ -31,6 +31,7 @@ ros::NodeHandle_<NewHardware>  nh;
 
 
 /**************** ROS ********************/
+/// rostopic pub /motor_sub carmen_msgs/FirmwareCommandWrite "{motor_1_velocity_command : 3}"
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
   Serial.println("Receive motor command");
   Serial.println(cmd_msg.motor_1_velocity_command);
