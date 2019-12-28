@@ -34,9 +34,21 @@ ros::NodeHandle_<NewHardware>  nh;
 
 
 /**************** ROS ********************/
+/// rostopic pub /motor_sub carmen_msgs/FirmwareCommandWrite "{motor_1_velocity_command : 3}"
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
   Set_MotorLeft_RadialSpeed(cmd_msg.left_motor_velocity_command);
   Set_MotorLeft_RadialSpeed(cmd_msg.right_motor_velocity_command);
+<<<<<<< .mine
+
+
+
+
+=======
+  Serial.println(cmd_msg.motor_2_velocity_command);
+
+  Set_MotorLeft_RadialSpeed(cmd_msg.motor_1_velocity_command);
+  Set_MotorRight_RadialSpeed(cmd_msg.motor_2_velocity_command);
+>>>>>>> .theirs
 }
 
 // Subs
@@ -50,24 +62,26 @@ ros::Publisher pub_range_fl( TOPIC_DISTANCE_PUB, &range_msg_fl);
 sensor_msgs::Range range_msg_fr;
 ros::Publisher pub_range_fr( TOPIC_DISTANCE_PUB, &range_msg_fr);
 
-std_msgs::String str_msg;
-ros::Publisher chatter(TOPIC_CHATTER_PUB, &str_msg);
+//std_msgs::String str_msg;
+//ros::Publisher chatter(TOPIC_CHATTER_PUB, &str_msg);
 /*************** ROS ***********************/
 
 bool function_to_call(void *argument /* optional argument given to in/at/every */) {
     //************** US Left */
-    range_msg_fl.range = distanceSensorFL.measureDistanceCm();
-    range_msg_fl.header.stamp = nh.now();
-    pub_range_fl.publish(&range_msg_fl);
+//    range_msg_fl.range = distanceSensorFL.measureDistanceCm();
+//    range_msg_fl.header.stamp = nh.now();
+//    pub_range_fl.publish(&range_msg_fl);
     /*************/
     //************** US Right */
-    range_msg_fr.range = distanceSensorFR.measureDistanceCm();
-    range_msg_fr.header.stamp = nh.now();
-    pub_range_fr.publish(&range_msg_fr);
+//    range_msg_fr.range = distanceSensorFR.measureDistanceCm();
+//    range_msg_fr.header.stamp = nh.now();
+//    pub_range_fr.publish(&range_msg_fr);
     /*************/
 
-    str_msg.data = "hello world!";
-    chatter.publish( &str_msg );
+    nh.loginfo("Program info");
+    
+    //str_msg.data = "hello world!";
+    //chatter.publish( &str_msg );
 
     Serial.println("Timer");
   
@@ -78,9 +92,10 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 void setup() {                
   // initialize the digital pin as an output.
   Serial.begin(115200);
+  Serial2.begin(115200);
   Serial.println("Hello world");
   nh.initNode();
-  nh.advertise(chatter);
+  //nh.advertise(chatter);
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
   nh.subscribe(sub);
@@ -101,7 +116,8 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-    
+
+  
   delay(2000);// Give reader a chance to see the output.
 }
  
