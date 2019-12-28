@@ -4,7 +4,7 @@
 #include "cmsis_os.h"
 
 void Timer1_Callback  (void const *arg) {
-	
+	palTogglePad(IOPORT2, PORTB_LED1);
 };
 osTimerDef (Timer1, Timer1_Callback);
 
@@ -19,12 +19,15 @@ int main () {
 	halInit();
 	osKernelInitialize();
 	
+	palClearPad(IOPORT2, PORTB_LED1);
+	
 	auto id2 = osTimerCreate (osTimer(Timer1), osTimerPeriodic, nullptr);
 	if (id2 != nullptr)  {
 		// Periodic timer created
 	}
+	osTimerStart(id2, 1000);
 	  
 	while(1) {
-		
+
 	}
 }
