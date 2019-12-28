@@ -80,6 +80,7 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 void setup() {                
   // initialize the digital pin as an output.
   Serial.begin(115200);
+  Serial2.begin(115200);
   Serial.println("Hello world");
   nh.initNode();
   //nh.advertise(chatter);
