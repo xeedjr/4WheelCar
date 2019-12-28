@@ -61,6 +61,14 @@ const PALConfig pal_default_config =
 #endif /* HAL_USE_PAL */
 
 /**
+ * @brief   Driver default configuration.
+ */
+const SerialConfig sd1_config = {
+  UBRR2x_F(115200),
+  USART_CHAR_SIZE_8
+};
+
+/**
  * Board-specific initialization code.
  */
 void boardInit(void) {

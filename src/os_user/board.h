@@ -17,6 +17,8 @@
 #ifndef _BOARD_H_
 #define _BOARD_H_
 
+#include "hal.h"
+
 /*
  * Setup for the Arduino Mega board.
  */
@@ -114,6 +116,7 @@
  */
 #define VAL_DDRL    0x00
 #define VAL_PORTL   0xFF
+
 
 #if !defined(_FROM_ASM_)
 #ifdef __cplusplus
