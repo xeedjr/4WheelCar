@@ -3,6 +3,7 @@
 #include "board.h"
 
 class VelocityEncoder {
+    int _pin;
     static int count1;
     static int count2;
 
@@ -17,34 +18,35 @@ class VelocityEncoder {
     };
   public:
     VelocityEncoder(int pin) {
-      pinMode(pin, INPUT_PULLUP);
-      if (pin == ENCR){
+      _pin = pin;
+      pinMode(_pin, INPUT_PULLUP);
+      if (_pin == ENCR){
         count1 = 0;
         attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder1, CHANGE);
       }
-      if (pin == ENCL) {
+      if (_pin == ENCL) {
         count2 = 0;
         attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder2, CHANGE);
       }
     };
     ~VelocityEncoder() {};
 
-    int every_second (int pin) {
-      if (pin == ENCR){
-        speed1 = count1 * 3.14 / 12;
+    int every_second () {
+      if (_pin == ENCR){
+        speed1 = count1 * 2*3.14 / 12;
         count1 = 0;
       }
-      if (pin == ENCL) {
-        speed2 = count2 * 3.14 / 12;
+      if (_pin == ENCL) {
+        speed2 = count2 * 2*3.14 / 12;
         count2 = 0;
       }
     };
     
-    float getSpeed(int pin) {
-      if (pin == ENCR){
+    float getSpeed() {
+      if (_pin == ENCR){
         return speed1;
       }
-      if (pin == ENCL) {
+      if (_pin == ENCL) {
         return speed2;
       }
     };
