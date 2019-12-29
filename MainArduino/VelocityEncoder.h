@@ -31,11 +31,11 @@ class VelocityEncoder {
 
     int every_second (int pin) {
       if (pin == ENCR){
-        speed1 = count1 * 3.14 / 12;
+        speed1 = count1 * 2*3.14 / 12;
         count1 = 0;
       }
       if (pin == ENCL) {
-        speed2 = count2 * 3.14 / 12;
+        speed2 = count2 * 2*3.14 / 12;
         count2 = 0;
       }
     };

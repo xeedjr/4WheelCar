@@ -16,6 +16,7 @@
 #include "ros_msg/carmen_msgs/FirmwareStateRead.h"
 #include "motor.h"
 #include "VelocityEncoder.h"
+#include "imu.h"
 
 class VelocityEncoder left_ve(ENCL);
 class VelocityEncoder right_ve(ENCR);
@@ -74,6 +75,8 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
     motor_msg.left_motor_velocity = left_ve.getSpeed(ENCL);
     motor_msg.right_motor_velocity = right_ve.getSpeed(ENCR);
     pub_motor.publish(&motor_msg);
+
+    //imu_loop();
       
     return true; // to repeat the action - false to stop
 }
@@ -83,6 +86,7 @@ void setup() {
   // initialize the digital pin as an output.
   Serial.begin(115200);
   Serial.println("Hello world");
+  
   nh.initNode();
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
@@ -105,8 +109,11 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
+
+  imu_setup();
   
   delay(2000);// Give reader a chance to see the output.
+  Serial.println("Setup End");
 }
  
 // the loop routine runs over and over again forever:
