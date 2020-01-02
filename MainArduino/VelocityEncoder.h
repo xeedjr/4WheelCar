@@ -2,53 +2,62 @@
 
 #include "board.h"
 
+#define SENSOR_INTERVALS_NUM   (20.0)
+#define SENSOR_INTERVAL_RAD   ((TWO_PI/SENSOR_INTERVALS_NUM) * 2)
+
 class VelocityEncoder {
-    static int count1;
-    static int count2;
+    int _pin;
+    static float rad_perSecL;
+    static float rad_perSecR;
+    static unsigned long timeLprev;
+    static unsigned long timeRprev;
 
-    float speed1;
-    float speed2;
-
-    static void encoder1() {
-      count1++;
+    static void encoderL() {
+      auto current = millis();
+      auto interval_spend_time = current - timeLprev;
+      rad_perSecL = ((SENSOR_INTERVAL_RAD * 1.0) / (interval_spend_time / 1000.0));
+      timeLprev = current;
     };
-    static void encoder2() {
-      count2++;
+    static void encoderR() {
+      //Serial.println("interr");
+      auto current = millis();
+      auto interval_spend_time = current - timeRprev;
+      rad_perSecR = ((SENSOR_INTERVAL_RAD * 1.0) / (interval_spend_time / 1000.0));
+      timeRprev = current;
     };
   public:
     VelocityEncoder(int pin) {
-      pinMode(pin, INPUT_PULLUP);
-      if (pin == ENCR){
-        count1 = 0;
-        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder1, CHANGE);
+      _pin = pin;
+      pinMode(_pin, INPUT_PULLUP);
+      if (_pin == ENCR){
+        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderR, RISING );
       }
-      if (pin == ENCL) {
-        count2 = 0;
-        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoder2, CHANGE);
+      if (_pin == ENCL) {
+        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderL, RISING );
       }
     };
     ~VelocityEncoder() {};
 
-    int every_second (int pin) {
-      if (pin == ENCR){
-        speed1 = count1 * 2*3.14 / 12;
-        count1 = 0;
+    float getSpeed() {
+      float ret = 0;
+      if (_pin == ENCL) {
+        if (rad_perSecL > 0.0) {
+            ret = rad_perSecL;
+            rad_perSecL = 0;
+        };
       }
-      if (pin == ENCL) {
-        speed2 = count2 * 2*3.14 / 12;
-        count2 = 0;
+      if (_pin == ENCR) {
+        if (rad_perSecR > 0.0) {
+            ret = rad_perSecR;
+            rad_perSecR = 0;
+        };
       }
-    };
-    
-    float getSpeed(int pin) {
-      if (pin == ENCR){
-        return speed1;
-      }
-      if (pin == ENCL) {
-        return speed2;
-      }
+      
+      return ret;
     };
 };
 
-int VelocityEncoder::count1 = 0;
-int VelocityEncoder::count2 = 0;
+float VelocityEncoder::rad_perSecL = 0;
+float VelocityEncoder::rad_perSecR = 0;
+unsigned long VelocityEncoder::timeLprev = 0;
+unsigned long VelocityEncoder::timeRprev = 0;

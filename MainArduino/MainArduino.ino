@@ -69,15 +69,12 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 
     nh.loginfo("Program info");
 
-    left_ve.every_second(ENCL);
-    right_ve.every_second(ENCR);
-    Serial.println(String(left_ve.getSpeed(ENCL)) + ", " + String(right_ve.getSpeed(ENCR)));
-    motor_msg.left_motor_velocity = left_ve.getSpeed(ENCL);
-    motor_msg.right_motor_velocity = right_ve.getSpeed(ENCR);
+    Serial.println(String(left_ve.getSpeed()) + ", " + String(right_ve.getSpeed()));
+    motor_msg.left_motor_velocity = left_ve.getSpeed();
+    motor_msg.right_motor_velocity = right_ve.getSpeed();
     pub_motor.publish(&motor_msg);
 
     //imu_loop();
-      
     return true; // to repeat the action - false to stop
 }
 
@@ -86,7 +83,6 @@ void setup() {
   // initialize the digital pin as an output.
   Serial.begin(115200);
   Serial.println("Hello world");
-  
   nh.initNode();
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
@@ -109,11 +105,8 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-
   imu_setup();
-  
   delay(2000);// Give reader a chance to see the output.
-  Serial.println("Setup End");
 }
  
 // the loop routine runs over and over again forever:
