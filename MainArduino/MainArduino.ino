@@ -76,18 +76,6 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
     return true; // to repeat the action - false to stop
 }
 
-bool test(void *argument /* optional argument given to in/at/every */) {
-    /// Test
-    static float speedsd = 0;
-    Set_MotorLeft_RadialSpeed(speedsd);
-    if (speedsd == 0) 
-      speedsd = 2;
-    else 
-      speedsd = 0;
-    ////     
-    return true; // to repeat the action - false to stop   
-}
-
 // the setup routine runs once when you press reset:
 void setup() {                
   // initialize the digital pin as an output.
@@ -115,10 +103,6 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-
-  //timer.every(5000, test);
-  Set_MotorLeft_RadialSpeed(2);
-  Set_MotorRight_RadialSpeed(2);
   delay(2000);// Give reader a chance to see the output.
 }
  

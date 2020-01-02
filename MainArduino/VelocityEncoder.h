@@ -2,6 +2,9 @@
 
 #include "board.h"
 
+#define SENSOR_INTERVALS_NUM   (20.0)
+#define SENSOR_INTERVAL_RAD   ((TWO_PI/SENSOR_INTERVALS_NUM) * 2)
+
 class VelocityEncoder {
     int _pin;
     static float rad_perSecL;
@@ -11,26 +14,26 @@ class VelocityEncoder {
 
     static void encoderL() {
       auto current = millis();
-      auto spend_time = current - timeLprev;
-      rad_perSecL = (((2.0*3.14)/12.0) * 1.0) / (spend_time/1000.0);
-      timeLprev = millis();
+      auto interval_spend_time = current - timeLprev;
+      rad_perSecL = ((SENSOR_INTERVAL_RAD * 1.0) / (interval_spend_time / 1000.0));
+      timeLprev = current;
     };
     static void encoderR() {
-      Serial.println("interr");
+      //Serial.println("interr");
       auto current = millis();
-      auto spend_time = current - timeRprev;
-      rad_perSecR = (((2.0*3.14)/12.0) * 1.0) / (spend_time/1000.0);
-      timeRprev = millis();
+      auto interval_spend_time = current - timeRprev;
+      rad_perSecR = ((SENSOR_INTERVAL_RAD * 1.0) / (interval_spend_time / 1000.0));
+      timeRprev = current;
     };
   public:
     VelocityEncoder(int pin) {
       _pin = pin;
       pinMode(_pin, INPUT_PULLUP);
       if (_pin == ENCR){
-        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderR, CHANGE);
+        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderR, RISING );
       }
       if (_pin == ENCL) {
-        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderL, CHANGE);
+        attachInterrupt(digitalPinToInterrupt(pin), VelocityEncoder::encoderL, RISING );
       }
     };
     ~VelocityEncoder() {};
