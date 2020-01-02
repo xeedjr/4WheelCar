@@ -3,7 +3,7 @@
 #include <SparkFun_TB6612.h>
 #include "board.h"
 
-const float max_rad_per_s = 2*3.14*1.5;
+const float max_rad_per_s = TWO_PI*1.5;
 
 // these constants are used to allow you to make your motor configuration 
 // line up with function names like forward.  Value can be 1 or -1
