@@ -68,14 +68,24 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 
     nh.loginfo("Program info");
 
-    left_ve.every_second(ENCL);
-    right_ve.every_second(ENCR);
-    Serial.println(String(left_ve.getSpeed(ENCL)) + ", " + String(right_ve.getSpeed(ENCR)));
-    motor_msg.left_motor_velocity = left_ve.getSpeed(ENCL);
-    motor_msg.right_motor_velocity = right_ve.getSpeed(ENCR);
+    Serial.println(String(left_ve.getSpeed()) + ", " + String(right_ve.getSpeed()));
+    motor_msg.left_motor_velocity = left_ve.getSpeed();
+    motor_msg.right_motor_velocity = right_ve.getSpeed();
     pub_motor.publish(&motor_msg);
-      
+
     return true; // to repeat the action - false to stop
+}
+
+bool test(void *argument /* optional argument given to in/at/every */) {
+    /// Test
+    static float speedsd = 0;
+    Set_MotorLeft_RadialSpeed(speedsd);
+    if (speedsd == 0) 
+      speedsd = 2;
+    else 
+      speedsd = 0;
+    ////     
+    return true; // to repeat the action - false to stop   
 }
 
 // the setup routine runs once when you press reset:
@@ -105,7 +115,10 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
-  
+
+  //timer.every(5000, test);
+  Set_MotorLeft_RadialSpeed(2);
+  Set_MotorRight_RadialSpeed(2);
   delay(2000);// Give reader a chance to see the output.
 }
  
