@@ -74,7 +74,7 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
     motor_msg.right_motor_velocity = right_ve.getSpeed();
     pub_motor.publish(&motor_msg);
 
-    //imu_loop();
+    imu_loop();
     return true; // to repeat the action - false to stop
 }
 
@@ -88,7 +88,8 @@ void setup() {
   nh.advertise(pub_range_fr);
   nh.subscribe(sub_motor);
   nh.advertise(pub_motor);
-
+  nh.advertise(pub_imu);
+  
   //************ US Left */
   range_msg_fl.radiation_type = sensor_msgs::Range::ULTRASOUND;
   range_msg_fl.header.frame_id =  TOPIC_LEFT_DISTANCE_PUB;
