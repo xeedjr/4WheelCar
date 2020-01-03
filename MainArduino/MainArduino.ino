@@ -16,6 +16,7 @@
 #include "ros_msg/carmen_msgs/FirmwareStateRead.h"
 #include "motor.h"
 #include "VelocityEncoder.h"
+#include "ESP8266ATHardware.h"
 
 class VelocityEncoder left_ve(ENCL);
 class VelocityEncoder right_ve(ENCR);
@@ -24,11 +25,17 @@ auto timer = timer_create_default();
 UltraSonicDistanceSensor distanceSensorFL(USFL_TRIG, USFL_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
 UltraSonicDistanceSensor distanceSensorFR(USFR_TRIG, USFR_ECHO);  // Initialize sensor that uses digital pins 13 and 12.
 
-class NewHardware : public ArduinoHardware
+class NewHardware : public ESP8266ATHardware
+{
+  public:
+  NewHardware():ESP8266ATHardware(){};
+};
+/*class NewHardware : public ArduinoHardware
 {
   public:
   NewHardware():ArduinoHardware(&Serial1, 115200){};
 };
+*/
 ros::NodeHandle_<NewHardware>  nh;
 
 /**************** ROS ********************/
