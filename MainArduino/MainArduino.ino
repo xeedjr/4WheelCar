@@ -74,7 +74,7 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
     motor_msg.right_motor_velocity = right_ve.getSpeed();
     pub_motor.publish(&motor_msg);
 
-    imu_loop();
+      imu_loop();
     return true; // to repeat the action - false to stop
 }
 
