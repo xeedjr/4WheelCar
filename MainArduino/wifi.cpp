@@ -2,12 +2,12 @@
 
 #include "ESP8266.h"
 
-#define SSID        "ITEAD"
-#define PASSWORD    "12345678"
-#define HOST_NAME   "172.16.5.12"
-#define HOST_PORT   (8090)
+#define SSID        "WLAN-2G"
+#define PASSWORD    "14935251"
+#define HOST_NAME   "192.168.56.119"
+#define HOST_PORT   (11411)
 
-ESP8266 wifi(Serial2);
+ESP8266 wifi(Serial2, 115200);
 
 
 void WIFI::setup(){
@@ -35,12 +35,40 @@ void WIFI::setup(){
     } else {
         Serial.print("single err\r\n");
     }
+
+    if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
+        Serial.print("create tcp ok\r\n");
+    } else {
+        Serial.print("create tcp err\r\n");
+    }
     
     Serial.print("setup end\r\n");
  }
+
+
+ int WIFI::read () {
+    if (_len > 0) {
+      int c = _buffer[_index++];
+      _len--;
+      return c;
+    } else {
+      _len = wifi.recv(_buffer, sizeof(_buffer), 100);
+      _index = 0;
+      return -1;
+    }
+ }
+ void WIFI::send (uint8_t* data, int length) {
+    if (wifi.send(data, length) == false) {
+        if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
+            Serial.print("create tcp ok\r\n");
+        } else {
+            Serial.print("create tcp err\r\n");
+        }  
+    };
+ }
  
  void WIFI::loop () {
-    uint8_t buffer[128] = {0};
+ /*   uint8_t buffer[128] = {0};
     
     if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
         Serial.print("create tcp ok\r\n");
@@ -65,5 +93,6 @@ void WIFI::setup(){
     } else {
         Serial.print("release tcp err\r\n");
     }
-    delay(5000);      
+    delay(5000);    
+    */  
  }

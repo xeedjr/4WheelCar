@@ -33,6 +33,9 @@
  */
 #pragma once
 
+#include "wifi.h"
+extern class WIFI wifi_module;
+
 class ESP8266ATHardware {
   public:
     ESP8266ATHardware(){
@@ -43,12 +46,12 @@ class ESP8266ATHardware {
     }
 
     int read(){
-    //  return iostream->read();
-      return 0;
+      int c = wifi_module.read(); 
+      //if (c >=  0 ) Serial.print(c, HEX);
+      return c;
     };
     void write(uint8_t* data, int length){
-      //for(int i=0; i<length; i++)
-      //  iostream->write(data[i]);
+      wifi_module.send(data, length);
     }
 
     unsigned long time(){return millis();}

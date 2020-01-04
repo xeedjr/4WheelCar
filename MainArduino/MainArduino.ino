@@ -17,6 +17,9 @@
 #include "motor.h"
 #include "VelocityEncoder.h"
 #include "ESP8266ATHardware.h"
+#include "WIFI.h"
+
+class WIFI wifi_module;
 
 class VelocityEncoder left_ve(ENCL);
 class VelocityEncoder right_ve(ENCR);
@@ -34,12 +37,12 @@ class NewHardware : public ESP8266ATHardware
 {
   public:
   NewHardware():ArduinoHardware(&Serial1, 115200){};
-};
-*/
+};*/
+
 ros::NodeHandle_<NewHardware>  nh;
 
 /**************** ROS ********************/
-/// rostopic pub /motor_sub carmen_msgs/FirmwareCommandWrite "{right_motor_velocity_command : 0}"
+/// rostopic pub /motor_sub carmen_msgs/FirmwareCommandWrite "{right_motor_velocity_command : 2, left_motor_velocity_command : -2}"
 void servo_cb( const carmen_msgs::FirmwareCommandWrite& cmd_msg){
   Set_MotorLeft_RadialSpeed(cmd_msg.left_motor_velocity_command);
   Set_MotorRight_RadialSpeed(cmd_msg.right_motor_velocity_command);
@@ -88,7 +91,10 @@ void setup() {
   // initialize the digital pin as an output.
   Serial.begin(115200);
   Serial.println("Hello world");
+  wifi_module.setup();
+    
   nh.initNode();
+
   nh.advertise(pub_range_fl);
   nh.advertise(pub_range_fr);
   nh.subscribe(sub_motor);
@@ -110,11 +116,15 @@ void setup() {
   /************* */
 
   timer.every(1000, function_to_call);
+
+  
   delay(2000);// Give reader a chance to see the output.
 }
  
 // the loop routine runs over and over again forever:
 void loop() {
-  nh.spinOnce();
+  if (auto ret = nh.spinOnce() != 0) 
+    Serial.println("error " + String(ret));
   timer.tick();
+  wifi_module.loop();
 }
