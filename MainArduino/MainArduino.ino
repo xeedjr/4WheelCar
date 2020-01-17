@@ -14,6 +14,7 @@
 #include "ros_msg/sensor_msgs/Range.h"
 #include "ros_msg/carmen_msgs/FirmwareCommandWrite.h"
 #include "ros_msg/carmen_msgs/FirmwareStateRead.h"
+#include "ros_msg/sensor_msgs/Imu.h"
 #include "motor.h"
 #include "VelocityEncoder.h"
 #include "imu.h"
@@ -52,8 +53,20 @@ sensor_msgs::Range range_msg_fl;
 ros::Publisher pub_range_fl( TOPIC_LEFT_DISTANCE_PUB, &range_msg_fl);
 sensor_msgs::Range range_msg_fr;
 ros::Publisher pub_range_fr( TOPIC_RIGHT_DISTANCE_PUB, &range_msg_fr);
+sensor_msgs::Imu imu_msg;
+ros::Publisher pub_imu( TOPIC_IMU_PUB, &imu_msg);
 
 /*************** ROS ***********************/
+void publish_imu(float q0, float q1, float q2, float q3) {
+  imu_msg.header.stamp = nh.now();
+  imu_msg.header.frame_id =  TOPIC_IMU_PUB;
+  imu_msg.orientation.x = q0;
+  imu_msg.orientation.y = q1;
+  imu_msg.orientation.z = q2;
+  imu_msg.orientation.w = q3;
+  pub_imu.publish(&imu_msg);
+}
+
 
 bool function_to_call(void *argument /* optional argument given to in/at/every */) {
     //************** US Left */
@@ -69,12 +82,11 @@ bool function_to_call(void *argument /* optional argument given to in/at/every *
 
     nh.loginfo("Program info");
 
-    Serial.println(String(left_ve.getSpeed()) + ", " + String(right_ve.getSpeed()));
+ //   Serial.println(String(left_ve.getSpeed()) + ", " + String(right_ve.getSpeed()));
     motor_msg.left_motor_velocity = left_ve.getSpeed();
     motor_msg.right_motor_velocity = right_ve.getSpeed();
     pub_motor.publish(&motor_msg);
 
-      imu_loop();
     return true; // to repeat the action - false to stop
 }
 
@@ -114,4 +126,6 @@ void setup() {
 void loop() {
   nh.spinOnce();
   timer.tick();
+  imu_loop();
+
 }
