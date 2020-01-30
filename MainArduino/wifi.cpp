@@ -2,9 +2,9 @@
 
 #include "ESP8266.h"
 
-#define SSID        "WLAN-2G"
-#define PASSWORD    "14935251"
-#define HOST_NAME   "192.168.56.119"
+#define SSID        "carmen"
+#define PASSWORD    "robocar0"
+#define HOST_NAME   "192.168.4.1"
 #define HOST_PORT   (11411)
 
 ESP8266 wifi(Serial2, 115200);
@@ -12,7 +12,14 @@ ESP8266 wifi(Serial2, 115200);
 
 void WIFI::setup(){
     Serial.print("setup begin\r\n");
-    
+
+
+    if (wifi.restart()) {
+        Serial.print("restert OK\r\n");
+    } else {
+        Serial.print("restart err\r\n");
+    }
+
     Serial.print("FW Version:");
     Serial.println(wifi.getVersion().c_str());
       
@@ -35,6 +42,9 @@ void WIFI::setup(){
     } else {
         Serial.print("single err\r\n");
     }
+    Serial.print("getLocalIP\r\n");
+    Serial.print(wifi.getLocalIP());
+    Serial.print("getLocalIP\r\n");
 
     if (wifi.createTCP(HOST_NAME, HOST_PORT)) {
         Serial.print("create tcp ok\r\n");
