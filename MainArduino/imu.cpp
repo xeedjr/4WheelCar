@@ -7,6 +7,7 @@ Madgwick filter;
 MPU9250 IMU(Wire,0x68);
 int status;
 unsigned long microsPerReading, microsPrevious;
+unsigned long PubmicrosPerReading, PubmicrosPrevious;
 extern void publish_imu(float q0, float q1, float q2, float q3);
 
 void imu_setup() {
@@ -55,8 +56,6 @@ void imu_loop() {
                   IMU.getAccelX_mss(), IMU.getAccelY_mss(), IMU.getAccelZ_mss(),  
                   IMU.getMagX_uT(), IMU.getMagY_uT(), IMU.getMagZ_uT());
 
-    publish_imu(filter.q0, filter.q1, filter.q2, filter.q3);
-    
     // print the heading, pitch and roll
     roll = filter.getRoll();
     pitch = filter.getPitch();
@@ -72,4 +71,10 @@ void imu_loop() {
     microsPrevious = microsPrevious + microsPerReading;
   }  
   
+  auto PubmicrosNow = micros();
+  if (PubmicrosNow - PubmicrosPrevious >= 1000000) {
+   // publish_imu(filter.q0, filter.q1, filter.q2, filter.q3);
+  }
+  PubmicrosPrevious = PubmicrosPrevious + 1000000;
+
 }
