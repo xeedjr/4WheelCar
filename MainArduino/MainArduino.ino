@@ -18,7 +18,7 @@
 #include "motor.h"
 #include "VelocityEncoder.h"
 #include "ESP8266ATHardware.h"
-#include "WIFI.h"
+#include "wifi.h"
 #include "imu.h"
 
 class WIFI wifi_module;
