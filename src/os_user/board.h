@@ -40,6 +40,17 @@
  */
 #define LINE_LED1   PAL_LINE(IOPORT2, 7U)
 
+#define LINE_TB66_PWMA   PAL_LINE(IOPORT5, 3U)
+#define LINE_TB66_PWMB   PAL_LINE(IOPORT5, 4U)  
+#define LINE_TB66_AIN1   PAL_LINE(IOPORT1, 0U)
+#define LINE_TB66_AIN2   PAL_LINE(IOPORT1, 1U)
+#define LINE_TB66_BIN1   PAL_LINE(IOPORT1, 2U)
+#define LINE_TB66_BIN2   PAL_LINE(IOPORT1, 3U)
+#define LINE_TB66_STBY   PAL_LINE(IOPORT1, 4U)
+#define PWM_CHAN_TB66_A  ((pwmchannel_t)0)
+#define PWM_CHAN_TB66_B  ((pwmchannel_t)1)
+
+
 /*
  * Port A setup.
  * All inputs with pull-ups.
