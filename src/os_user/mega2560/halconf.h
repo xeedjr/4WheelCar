@@ -96,6 +96,10 @@
 #define HAL_USE_ICU                         FALSE
 #endif
 
+#if !defined(HAL_USE_EXT) || defined(__DOXYGEN__)
+#define HAL_USE_EXT                         FALSE
+#endif
+
 /**
  * @brief   Enables the MAC subsystem.
  */

@@ -81,5 +81,8 @@ void TB6612FNG::drive(Channels ch, Mode mode, float pwm)
       palSetLine(chn[ch].in1);
       palSetLine(chn[ch].in2);
     break;
+    default:
+      chSysHalt(__FUNCTION__);
+    break;
   }
 }  

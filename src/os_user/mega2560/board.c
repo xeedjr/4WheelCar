@@ -68,6 +68,21 @@ const SerialConfig sd1_config = {
   USART_CHAR_SIZE_8
 };
 
+//64kHz
+#define PERIOD  250U
+
+PWMConfig pwm3cfg = {
+  F_CPU,                            /* PWM frequency.         */
+  PERIOD,                           /* PWM period.            */
+  NULL,                             /* TODO: comment.         */
+  {
+    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 1 actived. */
+    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 2 actived. */
+    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 3 actived. */
+  },
+};
+
+
 /**
  * Board-specific initialization code.
  */

@@ -29,16 +29,14 @@
 #define BOARD_ARDUINO_MEGA
 #define BOARD_NAME "Arduino Mega"
 
-/*
- * IO pins assignments.
- */
-#define PORTB_LED1  7
-
 
 /*
  * IO lines assignments.
  */
 #define LINE_LED1   PAL_LINE(IOPORT2, 7U)
+
+#define ENCODE_LEFT_LINE    PAL_LINE(IOPORT2, 5U)
+#define ENCODE_RIGHT_LINE   PAL_LINE(IOPORT2, 6U)
 
 #define LINE_TB66_PWMA   PAL_LINE(IOPORT5, 3U)
 #define LINE_TB66_PWMB   PAL_LINE(IOPORT5, 4U)  
@@ -49,6 +47,14 @@
 #define LINE_TB66_STBY   PAL_LINE(IOPORT1, 4U)
 #define PWM_CHAN_TB66_A  ((pwmchannel_t)0)
 #define PWM_CHAN_TB66_B  ((pwmchannel_t)1)
+
+#define DEBUG_UART_RX_LINE    PAL_LINE(IOPORT5, 0U)
+#define DEBUG_UART_TX_LINE    PAL_LINE(IOPORT5, 1U)
+#define DEBUG_UART_DRIVE      SD1
+
+#define RASPBERY_UART_RX_LINE    PAL_LINE(IOPORT4, 2U)
+#define RASPBERY_UART_TX_LINE    PAL_LINE(IOPORT4, 3U)
+#define RASPBERY_UART_DRIVE       SD2
 
 
 /*
