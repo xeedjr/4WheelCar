@@ -26,23 +26,23 @@ int main () {
 	osKernelInitialize();
 	
 	sdStart(&DEBUG_UART_DRIVE, NULL);
-  sdStart(&RASPBERY_UART_DRIVE, NULL);
-  pwmStart(&PWMD3, &pwm3cfg);
+	sdStart(&RASPBERY_UART_DRIVE, NULL);
+	pwmStart(PWM_TB66_A, &pwm3cfg);
 
 	palClearLine(LINE_LED1);
   
 	auto id2 = osTimerCreate (osTimer(Timer1), osTimerPeriodic, nullptr);
-	if (id2 != nullptr)  {
+	if (id2 == nullptr)  {
 		// Periodic timer created
-    chSysHalt(__FUNCTION__);
+		chSysHalt(__FUNCTION__);
 	}
 	osTimerStart(id2, 1000);
 	
   driver.init(LINE_TB66_PWMA, LINE_TB66_AIN2, LINE_TB66_AIN1,
               LINE_TB66_PWMB, LINE_TB66_BIN2, LINE_TB66_BIN1,
               LINE_TB66_STBY,
-              &PWMD3, PWM_CHAN_TB66_A,
-              &PWMD3, PWM_CHAN_TB66_B);
+			  PWM_TB66_A, PWM_CHAN_TB66_A,
+			  PWM_TB66_B, PWM_CHAN_TB66_B);
   
   while(1) {
 		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);

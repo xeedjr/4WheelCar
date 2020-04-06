@@ -136,110 +136,110 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGccCpp>
-        <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\gcc\dev\atmega2560"</avrgcc.common.Device>
-        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
-        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
-        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcc.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>DEBUG</Value>
-            <Value>F_CPU=16000000</Value>
-          </ListValues>
-        </avrgcc.compiler.symbols.DefSymbols>
-        <avrgcc.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
-            <Value>../../src</Value>
-            <Value>../../src/os/os/hal/include</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/ATMEGAxx</Value>
-            <Value>../../src/os_config</Value>
-            <Value>../../src/os_config/avr</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/ADCv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/EXTv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/GPIOv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/I2Cv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/SPIv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/TIMv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USBv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USARTv1</Value>
-            <Value>../../src/os/os/hal/osal/lib</Value>
-            <Value>../../src/os_user</Value>
-            <Value>../../src/os/os/oslib/include</Value>
-            <Value>../../src/os/os/common/abstractions/cmsis_os</Value>
-            <Value>../../src/os/os/license</Value>
-            <Value>../../src/os/os/common/ports/AVR/compilers/GCC</Value>
-            <Value>../../src/os/os/common/ports/AVR/compilers</Value>
-            <Value>../../src/os/os/hal/osal/rt-nil</Value>
-            <Value>../../src/os/os/common/ports/AVR</Value>
-            <Value>../../src/os/os/rt/include</Value>
-            <Value>../../src/os/os/hal/osal/rt</Value>
-          </ListValues>
-        </avrgcc.compiler.directories.IncludePaths>
-        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcccpp.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>DEBUG</Value>
-            <Value>F_CPU=16000000</Value>
-          </ListValues>
-        </avrgcccpp.compiler.symbols.DefSymbols>
-        <avrgcccpp.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
-            <Value>../../src</Value>
-            <Value>../../src/os/os/hal/include</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/ATMEGAxx</Value>
-            <Value>../../src/os_config</Value>
-            <Value>../../src/os_config/avr</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/ADCv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/EXTv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/GPIOv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/I2Cv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/SPIv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/TIMv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USBv1</Value>
-            <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USARTv1</Value>
-            <Value>../../src/os/os/hal/osal/lib</Value>
-            <Value>../../src/os_user</Value>
-            <Value>../../src/os/os/oslib/include</Value>
-            <Value>../../src/os/os/common/abstractions/cmsis_os</Value>
-            <Value>../../src/os/os/license</Value>
-            <Value>../../src/os/os/common/ports/AVR/compilers/GCC</Value>
-            <Value>../../src/os/os/common/ports/AVR/compilers</Value>
-            <Value>../../src/os/os/hal/osal/rt-nil</Value>
-            <Value>../../src/os/os/common/ports/AVR</Value>
-            <Value>../../src/os/os/rt/include</Value>
-            <Value>../../src/os/os/hal/osal/rt</Value>
-          </ListValues>
-        </avrgcccpp.compiler.directories.IncludePaths>
-        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
-        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
-        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
-        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
-        <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=c++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
-        <avrgcccpp.linker.libraries.Libraries>
-          <ListValues>
-            <Value>libm</Value>
-          </ListValues>
-        </avrgcccpp.linker.libraries.Libraries>
-        <avrgcccpp.assembler.general.IncludePaths>
-          <ListValues>
-            <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
-          </ListValues>
-        </avrgcccpp.assembler.general.IncludePaths>
-        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-      </AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\gcc\dev\atmega2560"</avrgcc.common.Device>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
+      <Value>../../src</Value>
+      <Value>../../src/os/os/hal/include</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/ATMEGAxx</Value>
+      <Value>../../src/os_config</Value>
+      <Value>../../src/os_config/avr</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/ADCv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/EXTv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/GPIOv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/I2Cv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/SPIv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/TIMv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USBv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USARTv1</Value>
+      <Value>../../src/os/os/hal/osal/lib</Value>
+      <Value>../../src/os_user/mega2560</Value>
+      <Value>../../src/os/os/oslib/include</Value>
+      <Value>../../src/os/os/common/abstractions/cmsis_os</Value>
+      <Value>../../src/os/os/license</Value>
+      <Value>../../src/os/os/common/ports/AVR/compilers/GCC</Value>
+      <Value>../../src/os/os/common/ports/AVR/compilers</Value>
+      <Value>../../src/os/os/hal/osal/rt-nil</Value>
+      <Value>../../src/os/os/common/ports/AVR</Value>
+      <Value>../../src/os/os/rt/include</Value>
+      <Value>../../src/os/os/hal/osal/rt</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=16000000</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
+      <Value>../../src</Value>
+      <Value>../../src/os/os/hal/include</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/ATMEGAxx</Value>
+      <Value>../../src/os_config</Value>
+      <Value>../../src/os_config/avr</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/ADCv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/EXTv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/GPIOv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/I2Cv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/SPIv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/TIMv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USBv1</Value>
+      <Value>../../src/os/os/hal/ports/AVR/MEGA/LLD/USARTv1</Value>
+      <Value>../../src/os/os/hal/osal/lib</Value>
+      <Value>../../src/os_user/mega2560</Value>
+      <Value>../../src/os/os/oslib/include</Value>
+      <Value>../../src/os/os/common/abstractions/cmsis_os</Value>
+      <Value>../../src/os/os/license</Value>
+      <Value>../../src/os/os/common/ports/AVR/compilers/GCC</Value>
+      <Value>../../src/os/os/common/ports/AVR/compilers</Value>
+      <Value>../../src/os/os/hal/osal/rt-nil</Value>
+      <Value>../../src/os/os/common/ports/AVR</Value>
+      <Value>../../src/os/os/rt/include</Value>
+      <Value>../../src/os/os/hal/osal/rt</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=c++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\Atmel\ATmega_DFP\1.2.272\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -581,23 +581,23 @@
       <SubType>compile</SubType>
       <Link>os\rt\chvt.c</Link>
     </Compile>
-    <Compile Include="..\src\os_user\board.c">
+    <Compile Include="..\src\os_user\mega2560\board.c">
       <SubType>compile</SubType>
       <Link>os_user\board.c</Link>
     </Compile>
-    <Compile Include="..\src\os_user\board.h">
+    <Compile Include="..\src\os_user\mega2560\board.h">
       <SubType>compile</SubType>
       <Link>os_user\board.h</Link>
     </Compile>
-    <Compile Include="..\src\os_user\chconf.h">
+    <Compile Include="..\src\os_user\mega2560\chconf.h">
       <SubType>compile</SubType>
       <Link>os_user\chconf.h</Link>
     </Compile>
-    <Compile Include="..\src\os_user\halconf.h">
+    <Compile Include="..\src\os_user\mega2560\halconf.h">
       <SubType>compile</SubType>
       <Link>os_user\halconf.h</Link>
     </Compile>
-    <Compile Include="..\src\os_user\mcuconf.h">
+    <Compile Include="..\src\os_user\mega2560\mcuconf.h">
       <SubType>compile</SubType>
       <Link>os_user\mcuconf.h</Link>
     </Compile>

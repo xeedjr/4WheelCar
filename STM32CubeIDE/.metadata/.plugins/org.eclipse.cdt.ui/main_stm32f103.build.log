@@ -1,7 +1,44 @@
-02:12:21 **** Clean-only build of configuration Debug for project main_stm32f103 ****
-make clean 
-rm -rf *
+23:51:53 **** Incremental Build of configuration Debug for project main_stm32f103 ****
+make all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/TB6612FNG.cpp" -mcpu=cortex-m3 -std=gnu++11 -g3 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -c -I"../../../src/os_user/stm32f103" -I"../../../src/os" -I"../../../src/os/os/common/abstractions/cmsis_os" -I"../../../src/os/os/common/ext/ARM/CMSIS/Core/Include" -I"../../../src/os/os/common/ext/ST/STM32F1xx" -I"../../../src/os/os/common/portability/GCC" -I"../../../src/os/os/common/ports/ARMCMx" -I"../../../src/os/os/common/ports/ARMCMx/compilers/GCC" -I"../../../src/os/os/common/startup/ARMCMx/devices/STM32F1xx" -I"../../../src/os/os/ex/Bosch" -I"../../../src/os/os/ex/include" -I"../../../src/os/os/ex/ST" -I"../../../src/os/os/hal/include" -I"../../../src/os/os/hal/lib/complex/mfs" -I"../../../src/os/os/hal/lib/complex/serial_nor" -I"../../../src/os/os/hal/lib/complex/serial_nor/devices/macronix_mx25" -I"../../../src/os/os/hal/lib/complex/serial_nor/devices/micron_n25q" -I"../../../src/os/os/hal/lib/fallback/I2C" -I"../../../src/os/os/hal/lib/peripherals/displays" -I"../../../src/os/os/hal/lib/peripherals/flash" -I"../../../src/os/os/hal/lib/peripherals/sensors" -I"../../../src/os/os/hal/lib/streams" -I"../../../src/os/os/hal/osal/rt" -I"../../../src/os/os/hal/ports/common/ARMCMx" -I"../../../src/os/os/hal/ports/STM32/LLD/ADCv4" -I"../../../src/os/os/hal/ports/STM32/LLD/CANv1" -I"../../../src/os/os/hal/ports/STM32/LLD/CRYPv1" -I"../../../src/os/os/hal/ports/STM32/LLD/DACv1" -I"../../../src/os/os/hal/ports/STM32/LLD/DMAv1" -I"../../../src/os/os/hal/ports/STM32/LLD/EXTIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/GPIOv1" -I"../../../src/os/os/hal/ports/STM32/LLD/I2Cv3" -I"../../../src/os/os/hal/ports/STM32/LLD/MACv1" -I"../../../src/os/os/hal/ports/STM32/LLD/OCTOSPIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/QUADSPIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/RNGv1" -I"../../../src/os/os/hal/ports/STM32/LLD/RTCv2" -I"../../../src/os/os/hal/ports/STM32/LLD/SDIOv1" -I"../../../src/os/os/hal/ports/STM32/LLD/SDMMCv1" -I"../../../src/os/os/hal/ports/STM32/LLD/SPIv3" -I"../../../src/os/os/hal/ports/STM32/LLD/TIMv1" -I"../../../src/os/os/hal/ports/STM32/LLD/USARTv1" -I"../../../src/os/os/hal/ports/STM32/LLD/USBv1" -I"../../../src/os/os/hal/ports/STM32/LLD/xWDGv1" -I"../../../src/os/os/hal/ports/STM32/STM32F1xx" -I"../../../src/os/os/license" -I"../../../src/os/os/oslib/include" -I"../../../src/os/os/rt/include" -I"../../../src/os/os/various" -I"../../../src/os/os/various/cpp_wrappers" -I"../../../src/os/os/various/lwip_bindings" -I"../../../src/os/os/various/lwip_bindings/arch" -I"../../../src/os/os/various/reledge_bindings/SAMA5D2x" -I"../../../src/os/os/various/shell" -I"../../../src/os/os/various/wolfssl_bindings" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/TB6612FNG.d" -MT"src/TB6612FNG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "src/TB6612FNG.o"
+In file included from ../../../src/os/os/hal/ports/STM32/LLD/TIMv1/hal_st_lld.h:31:0,
+                 from ../../../src/os/os/hal/include/hal_st.h:46,
+                 from ../../../src/os/os/common/ports/ARMCMx/chcore_timer.h:32,
+                 from ../../../src/os/os/common/ports/ARMCMx/chcore.h:205,
+                 from ../../../src/os/os/rt/include/ch.h:110,
+                 from ../../../src/os/os/hal/osal/rt/osal.h:32,
+                 from ../../../src/os/os/hal/include/hal.h:28,
+                 from D:/repos_temp/4WheelCar/src/TB6612FNG.h:3,
+                 from D:/repos_temp/4WheelCar/src/TB6612FNG.cpp:1:
+../../../src/os/os/hal/ports/STM32/STM32F1xx/stm32_registry.h:38:0: warning: "STM32F10X_MD" redefined
+ #define STM32F10X_MD
+ 
+<command-line>:0:0: note: this is the location of the previous definition
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/main.cpp" -mcpu=cortex-m3 -std=gnu++11 -g3 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -c -I"../../../src/os_user/stm32f103" -I"../../../src/os" -I"../../../src/os/os/common/abstractions/cmsis_os" -I"../../../src/os/os/common/ext/ARM/CMSIS/Core/Include" -I"../../../src/os/os/common/ext/ST/STM32F1xx" -I"../../../src/os/os/common/portability/GCC" -I"../../../src/os/os/common/ports/ARMCMx" -I"../../../src/os/os/common/ports/ARMCMx/compilers/GCC" -I"../../../src/os/os/common/startup/ARMCMx/devices/STM32F1xx" -I"../../../src/os/os/ex/Bosch" -I"../../../src/os/os/ex/include" -I"../../../src/os/os/ex/ST" -I"../../../src/os/os/hal/include" -I"../../../src/os/os/hal/lib/complex/mfs" -I"../../../src/os/os/hal/lib/complex/serial_nor" -I"../../../src/os/os/hal/lib/complex/serial_nor/devices/macronix_mx25" -I"../../../src/os/os/hal/lib/complex/serial_nor/devices/micron_n25q" -I"../../../src/os/os/hal/lib/fallback/I2C" -I"../../../src/os/os/hal/lib/peripherals/displays" -I"../../../src/os/os/hal/lib/peripherals/flash" -I"../../../src/os/os/hal/lib/peripherals/sensors" -I"../../../src/os/os/hal/lib/streams" -I"../../../src/os/os/hal/osal/rt" -I"../../../src/os/os/hal/ports/common/ARMCMx" -I"../../../src/os/os/hal/ports/STM32/LLD/ADCv4" -I"../../../src/os/os/hal/ports/STM32/LLD/CANv1" -I"../../../src/os/os/hal/ports/STM32/LLD/CRYPv1" -I"../../../src/os/os/hal/ports/STM32/LLD/DACv1" -I"../../../src/os/os/hal/ports/STM32/LLD/DMAv1" -I"../../../src/os/os/hal/ports/STM32/LLD/EXTIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/GPIOv1" -I"../../../src/os/os/hal/ports/STM32/LLD/I2Cv3" -I"../../../src/os/os/hal/ports/STM32/LLD/MACv1" -I"../../../src/os/os/hal/ports/STM32/LLD/OCTOSPIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/QUADSPIv1" -I"../../../src/os/os/hal/ports/STM32/LLD/RNGv1" -I"../../../src/os/os/hal/ports/STM32/LLD/RTCv2" -I"../../../src/os/os/hal/ports/STM32/LLD/SDIOv1" -I"../../../src/os/os/hal/ports/STM32/LLD/SDMMCv1" -I"../../../src/os/os/hal/ports/STM32/LLD/SPIv3" -I"../../../src/os/os/hal/ports/STM32/LLD/TIMv1" -I"../../../src/os/os/hal/ports/STM32/LLD/USARTv1" -I"../../../src/os/os/hal/ports/STM32/LLD/USBv1" -I"../../../src/os/os/hal/ports/STM32/LLD/xWDGv1" -I"../../../src/os/os/hal/ports/STM32/STM32F1xx" -I"../../../src/os/os/license" -I"../../../src/os/os/oslib/include" -I"../../../src/os/os/rt/include" -I"../../../src/os/os/various" -I"../../../src/os/os/various/cpp_wrappers" -I"../../../src/os/os/various/lwip_bindings" -I"../../../src/os/os/various/lwip_bindings/arch" -I"../../../src/os/os/various/reledge_bindings/SAMA5D2x" -I"../../../src/os/os/various/shell" -I"../../../src/os/os/various/wolfssl_bindings" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/main.d" -MT"src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "src/main.o"
+In file included from ../../../src/os/os/hal/ports/STM32/LLD/TIMv1/hal_st_lld.h:31:0,
+                 from ../../../src/os/os/hal/include/hal_st.h:46,
+                 from ../../../src/os/os/common/ports/ARMCMx/chcore_timer.h:32,
+                 from ../../../src/os/os/common/ports/ARMCMx/chcore.h:205,
+                 from ../../../src/os/os/rt/include/ch.h:110,
+                 from D:/repos_temp/4WheelCar/src/main.cpp:2:
+../../../src/os/os/hal/ports/STM32/STM32F1xx/stm32_registry.h:38:0: warning: "STM32F10X_MD" redefined
+ #define STM32F10X_MD
+ 
+<command-line>:0:0: note: this is the location of the previous definition
+arm-none-eabi-g++ -o "main_stm32f103.elf" @"objects.list"   -mcpu=cortex-m3 -T"../../../src/os/os/common/startup/ARMCMx/compilers/GCC/ld/STM32F103x8.ld" --specs=nosys.specs -Wl,-Map="main_stm32f103.map" -Wl,--gc-sections -static -L"../../../src/os/os/common/startup/ARMCMx/compilers/GCC/ld" -Wl,-cref,-u,Reset_Handler,--defsym=__main_stack_size__=0x400,--defsym=__process_stack_size__=0x400 --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32f103.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32f103.elf  > "main_stm32f103.list"
+Finished building: main_stm32f103.list
+ 
+arm-none-eabi-objcopy  -O binary  main_stm32f103.elf  "main_stm32f103.bin"
+Finished building: main_stm32f103.bin
+ 
+arm-none-eabi-size   main_stm32f103.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23138	     64	  20424	  43626	   aa6a	main_stm32f103.elf
+Finished building: default.size.stdout
  
 
-02:12:22 Build Finished. 0 errors, 0 warnings. (took 1s.390ms)
+23:51:58 Build Finished. 0 errors, 2 warnings. (took 4s.807ms)
 

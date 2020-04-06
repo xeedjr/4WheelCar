@@ -69,4 +69,11 @@ void __early_init(void) {
  * Board-specific initialization code.
  */
 void boardInit(void) {
+	  palSetLineMode(LINE_TB66_PWMA, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+	  palSetLineMode(LINE_TB66_AIN2, PAL_MODE_OUTPUT_PUSHPULL);
+	  palSetLineMode(LINE_TB66_AIN1, PAL_MODE_OUTPUT_PUSHPULL);
+	  palSetLineMode(LINE_TB66_PWMB, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+	  palSetLineMode(LINE_TB66_BIN2, PAL_MODE_OUTPUT_PUSHPULL);
+	  palSetLineMode(LINE_TB66_BIN1, PAL_MODE_OUTPUT_PUSHPULL);
+	  palSetLineMode(LINE_TB66_STBY, PAL_MODE_OUTPUT_PUSHPULL);
 }

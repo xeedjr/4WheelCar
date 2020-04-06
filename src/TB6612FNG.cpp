@@ -25,14 +25,6 @@ void TB6612FNG::init(ioline_t pwma, ioline_t ain2, ioline_t ain1,
 
   this->stby = stby;
 
-  palSetLineMode(pwma, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(ain2, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(ain1, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(pwmb, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(bin2, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(bin1, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(stby, PAL_MODE_OUTPUT_PUSHPULL);
-  
   palClearLine(stby);
   palClearLine(pwma);
   palClearLine(ain2);

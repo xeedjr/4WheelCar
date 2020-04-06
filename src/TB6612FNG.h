@@ -16,7 +16,14 @@
 //     {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 3 actived. */
 //   },
 // };
-
+//
+//	  palSetLineMode(LINE_TB66_PWMA, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_AIN2, PAL_MODE_OUTPUT_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_AIN1, PAL_MODE_OUTPUT_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_PWMB, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_BIN2, PAL_MODE_OUTPUT_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_BIN1, PAL_MODE_OUTPUT_PUSHPULL);
+//	  palSetLineMode(LINE_TB66_STBY, PAL_MODE_OUTPUT_PUSHPULL);
 
 class TB6612FNG  {
 public:
@@ -41,9 +48,6 @@ private:
   };
   struct Channel chn[Channels::kCount];
   ioline_t stby;
-//  ioline_t pwma, ain2, ain1, pwmb, bin2, bin1, stby;
-//  PWMDriver *bpwmp;
-//  pwmchannel_t bchannel;
 
   void _set_drive_speed(Channels ch, float pwm);
 
