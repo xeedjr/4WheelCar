@@ -3,6 +3,7 @@
 #include "hal.h"
 #include "cmsis_os.h"
 #include "TB6612FNG.h"
+#include "VelocityEncoder.h"
 
 extern const SerialConfig sd1_config;
 extern PWMConfig pwm3cfg;
@@ -13,6 +14,8 @@ void Timer1_Callback  (void const *arg) {
 osTimerDef (Timer1, Timer1_Callback);
 
 TB6612FNG driver;
+VelocityEncoder velA;
+VelocityEncoder velB;
 
 int main () {
 	/*
@@ -43,14 +46,23 @@ int main () {
               LINE_TB66_STBY,
 			  PWM_TB66_A, PWM_CHAN_TB66_A,
 			  PWM_TB66_B, PWM_CHAN_TB66_B);
+
+  velA.init(VELOCITY_A_LINE);
+  velB.init(VELOCITY_B_LINE);
   
+  driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
+  driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
+
+
+
   while(1) {
-		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
-    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
+//		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
+//    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
+//    osDelay(2000);
+//		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
+//    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
     osDelay(2000);
-		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
-    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
-    osDelay(2000);
+    static auto speed = velA.getSpeed();
 
 		sdWrite(&DEBUG_UART_DRIVE, (uint8_t*)"Test\n\r", sizeof("Test\n\r") - 1);
 	}
