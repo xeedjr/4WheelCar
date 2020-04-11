@@ -39,6 +39,12 @@ PWMConfig pwm3cfg = {
   },
 };
 
+static const I2CConfig i2cfg1 = {
+    OPMODE_I2C,
+    100000,
+	STD_DUTY_CYCLE,
+};
+
 /**
  * @brief   PAL setup.
  * @details Digital I/O ports static configuration as defined in @p board.h.
@@ -79,4 +85,12 @@ void boardInit(void) {
 
 	  palSetLineMode(VELOCITY_A_LINE, PAL_MODE_INPUT_PULLUP);
 	  palSetLineMode(VELOCITY_B_LINE, PAL_MODE_INPUT_PULLUP);
+
+	  palSetLineMode(I2C_SCL_LINE, 	PAL_MODE_STM32_ALTERNATE_OPENDRAIN);
+	  palSetLineMode(I2C_SDA_B_LINE, PAL_MODE_STM32_ALTERNATE_OPENDRAIN);
+
+	  sdStart(&DEBUG_UART_DRIVE, NULL);
+	sdStart(&RASPBERY_UART_DRIVE, NULL);
+	pwmStart(PWM_TB66_A, &pwm3cfg);
+	i2cStart(&I2CD1, &i2cfg1);
 }

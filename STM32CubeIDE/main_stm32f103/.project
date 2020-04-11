@@ -28,6 +28,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>src/BMP280.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/BMP280.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/BMP280.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/BMP280.h</locationURI>
+		</link>
+		<link>
 			<name>src/TB6612FNG.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/TB6612FNG.cpp</locationURI>
@@ -36,6 +46,11 @@
 			<name>src/TB6612FNG.h</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/TB6612FNG.h</locationURI>
+		</link>
+		<link>
+			<name>src/VelocityEncoder.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/VelocityEncoder.h</locationURI>
 		</link>
 		<link>
 			<name>src/main.cpp</name>
@@ -111,11 +126,6 @@
 			<name>src/os_user/mcuconf.h</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/os_user/stm32f103/mcuconf.h</locationURI>
-		</link>
-		<link>
-			<name>src/os/common/STM32F103x8.ld</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/common/startup/ARMCMx/compilers/GCC/ld/STM32F103x8.ld</locationURI>
 		</link>
 		<link>
 			<name>src/os/common/chcore.c</name>
@@ -373,7 +383,7 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>src/os/hal_lld/I2Cv3</name>
+			<name>src/os/hal_lld/I2Cv1</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -733,19 +743,19 @@
 			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/GPIOv1/hal_pal_lld.h</locationURI>
 		</link>
 		<link>
-			<name>src/os/hal_lld/I2Cv3/driver.mk</name>
+			<name>src/os/hal_lld/I2Cv1/driver.mk</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv3/driver.mk</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv1/driver.mk</locationURI>
 		</link>
 		<link>
-			<name>src/os/hal_lld/I2Cv3/hal_i2c_lld.c</name>
+			<name>src/os/hal_lld/I2Cv1/hal_i2c_lld.c</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv3/hal_i2c_lld.c</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv1/hal_i2c_lld.c</locationURI>
 		</link>
 		<link>
-			<name>src/os/hal_lld/I2Cv3/hal_i2c_lld.h</name>
+			<name>src/os/hal_lld/I2Cv1/hal_i2c_lld.h</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv3/hal_i2c_lld.h</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/hal/ports/STM32/LLD/I2Cv1/hal_i2c_lld.h</locationURI>
 		</link>
 		<link>
 			<name>src/os/hal_lld/MACv1/driver.mk</name>

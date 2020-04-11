@@ -4,6 +4,7 @@
 #include "cmsis_os.h"
 #include "TB6612FNG.h"
 #include "VelocityEncoder.h"
+#include "BMP280.h"
 
 extern const SerialConfig sd1_config;
 extern PWMConfig pwm3cfg;
@@ -16,6 +17,7 @@ osTimerDef (Timer1, Timer1_Callback);
 TB6612FNG driver;
 VelocityEncoder velA;
 VelocityEncoder velB;
+BMP280  		bmp280;
 
 int main () {
 	/*
@@ -28,10 +30,6 @@ int main () {
 	halInit();
 	osKernelInitialize();
 	
-	sdStart(&DEBUG_UART_DRIVE, NULL);
-	sdStart(&RASPBERY_UART_DRIVE, NULL);
-	pwmStart(PWM_TB66_A, &pwm3cfg);
-
 	palClearLine(LINE_LED1);
   
 	auto id2 = osTimerCreate (osTimer(Timer1), osTimerPeriodic, nullptr);
@@ -50,17 +48,19 @@ int main () {
   velA.init(VELOCITY_A_LINE);
   velB.init(VELOCITY_B_LINE);
   
+  bmp280.init(BMP280_I2C_DRIVER);
+
   driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
   driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
 
-
+  auto pres = bmp280.checkPresence();
 
   while(1) {
-//		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
-//    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
-//    osDelay(2000);
-//		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
-//    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
+		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
+    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
+    osDelay(2000);
+		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
+    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
     osDelay(2000);
     static auto speed = velA.getSpeed();
 

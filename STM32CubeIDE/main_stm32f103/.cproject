@@ -16,25 +16,24 @@
 				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1113815275" name="Debug" parent="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug">
 					<folderInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1113815275." name="/" resourcePath="">
 						<toolChain id="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.exe.debug.1571443967" name="MCU ARM GCC" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.exe.debug">
-							<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.type.390186284" name="Internal Toolchain Type" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.type" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.base.gnu-tools-for-stm32" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.version.554546359" name="Internal Toolchain Version" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.version" value="7-2018-q2-update" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_mcu.1776851312" name="Mcu" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_mcu" value="STM32F103C8Tx" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.1053154571" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" value="STM32F103C8Tx" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset.832784241" name="Instruction set" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset.value.thumb2" valueType="enumerated"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid.1843583665" name="CpuId" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid" value="0" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid.913298489" name="CpuCoreId" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid" value="0" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp.982834829" name="Runtime library" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp.value.nano_c_nano_cpp" valueType="enumerated"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.1914211354" name="Floating-point unit" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.value.none" valueType="enumerated"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.listfile.1936453713" name="Generate list file" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.listfile" value="true" valueType="boolean"/>
+							<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.type.390186284" name="Internal Toolchain Type" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.type" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.base.gnu-tools-for-stm32" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.version.554546359" name="Internal Toolchain Version" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.version" useByScannerDiscovery="false" value="7-2018-q2-update" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_mcu.1776851312" name="Mcu" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_mcu" useByScannerDiscovery="false" value="STM32F103C8Tx" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.1053154571" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="STM32F103C8Tx" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset.832784241" name="Instruction set" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.instructionset.value.thumb2" valueType="enumerated"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid.1843583665" name="CpuId" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid" useByScannerDiscovery="false" value="0" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid.913298489" name="CpuCoreId" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid" useByScannerDiscovery="false" value="0" valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp.982834829" name="Runtime library" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.runtimelibrary_cpp.value.nano_c_nano_cpp" valueType="enumerated"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.1914211354" name="Floating-point unit" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.fpu.value.none" valueType="enumerated"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.listfile.1936453713" name="Generate list file" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.listfile" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.253055933" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/main_stm32f103}/Debug" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.2077022035" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.1739040307" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.607432967" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.value.g3" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols.1575154249" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="STM32F10X_MD"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols.1575154249" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths.803508037" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths" valueType="includePath">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths.803508037" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;../../../src/os_user/stm32f103&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/common/abstractions/cmsis_os&quot;"/>
@@ -52,7 +51,6 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/macronix_mx25&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/micron_n25q&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/fallback/I2C&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/displays&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/flash&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/sensors&quot;"/>
@@ -66,7 +64,7 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/DMAv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/EXTIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/GPIOv1&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv3&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/MACv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/OCTOSPIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/QUADSPIv1&quot;"/>
@@ -97,7 +95,6 @@
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.debuglevel.919743656" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.debuglevel.value.g3" valueType="enumerated"/>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.optimization.level.394346873" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.optimization.level" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.definedsymbols.1303668649" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="STM32F10X_MD"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.1505982414" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
@@ -118,7 +115,6 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/macronix_mx25&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/micron_n25q&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/fallback/I2C&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/displays&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/flash&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/sensors&quot;"/>
@@ -132,7 +128,7 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/DMAv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/EXTIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/GPIOv1&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv3&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/MACv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/OCTOSPIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/QUADSPIv1&quot;"/>
@@ -165,7 +161,6 @@
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.debuglevel.100768869" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.debuglevel.value.g3" valueType="enumerated"/>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.optimization.level.1170377501" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.optimization.level" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.definedsymbols.856846785" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="STM32F10X_MD"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths.1155977360" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
@@ -186,7 +181,6 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/macronix_mx25&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/complex/serial_nor/devices/micron_n25q&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/fallback/I2C&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/displays&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/flash&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/lib/peripherals/sensors&quot;"/>
@@ -200,7 +194,7 @@
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/DMAv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/EXTIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/GPIOv1&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv3&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/MACv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/OCTOSPIv1&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/QUADSPIv1&quot;"/>
@@ -237,12 +231,12 @@
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.gcsections.1821034767" name="Discard unused sections (-Wl,--gc-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.linker.option.gcsections" value="true" valueType="boolean"/>
 							</tool>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.2096335654" name="MCU G++ Linker" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker">
-								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.gcsections.1104585127" name="Discard unused sections (-Wl,--gc-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.gcsections" value="true" valueType="boolean"/>
-								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script.573181254" name="Linker Script (-T)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script" useByScannerDiscovery="false" value="../../../src/os/os/common/startup/ARMCMx/compilers/GCC/ld/STM32F103x8.ld" valueType="string"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories.1664818202" name="Library search path (-L)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories" valueType="libPaths">
+								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.gcsections.1104585127" name="Discard unused sections (-Wl,--gc-sections)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.gcsections" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script.573181254" name="Linker Script (-T)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script" useByScannerDiscovery="false" value="../../../src/os/os/common/startup/ARMCMx/compilers/GCC/ld/STM32F103xB.ld" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories.1664818202" name="Library search path (-L)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;../../../src/os/os/common/startup/ARMCMx/compilers/GCC/ld&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.otherflags.629492403" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.otherflags" valueType="stringList">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.otherflags.629492403" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.otherflags" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value="-Wl,-cref,-u,Reset_Handler,--defsym=__main_stack_size__=0x400,--defsym=__process_stack_size__=0x400"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input.1324046965" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input">
