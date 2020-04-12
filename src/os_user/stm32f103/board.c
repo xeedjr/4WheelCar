@@ -26,11 +26,21 @@
 */
 
 //64kHz
-#define PERIOD  250U
+//PWMConfig pwm3cfg = {
+//  16000000,                            // PWM frequency.
+//  250U,                           // PWM period.
+//  NULL,                             // TODO: comment.
+//  {
+//    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 1 actived. */
+//    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 2 actived. */
+//    {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 3 actived. */
+//  },
+//};
 
+//64kHz
 PWMConfig pwm3cfg = {
-  16000000,                            /* PWM frequency.         */
-  PERIOD,                           /* PWM period.            */
+  12000000,                            /* PWM frequency.         */
+  187U,                           /* PWM period.            */
   NULL,                             /* TODO: comment.         */
   {
     {PWM_OUTPUT_ACTIVE_HIGH, NULL}, /* PWM channel 1 actived. */

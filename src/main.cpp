@@ -54,6 +54,11 @@ int main () {
   driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
 
   auto pres = bmp280.checkPresence();
+  bmp280.writeCntrlMeasRegister(0b001, 0b001, 0b00);
+  bmp280.writeCntrlMeasRegister(0b001, 0b001, 0b01);
+  bmp280.readCompensationRegister();
+  auto T = bmp280.readTemperatureTimeout();
+  auto P = bmp280.readPresserTimeout();
 
   while(1) {
 		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
