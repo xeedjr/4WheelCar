@@ -53,6 +53,16 @@
 			<locationURI>PARENT-2-PROJECT_LOC/src/VelocityEncoder.h</locationURI>
 		</link>
 		<link>
+			<name>src/imu.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/imu.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/imu.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/imu.h</locationURI>
+		</link>
+		<link>
 			<name>src/main.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/main.cpp</locationURI>
@@ -64,6 +74,11 @@
 		</link>
 		<link>
 			<name>src/os_user</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -126,6 +141,16 @@
 			<name>src/os_user/mcuconf.h</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/os_user/stm32f103/mcuconf.h</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/madgwick</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/mpu9250</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
 			<name>src/os/common/chcore.c</name>
@@ -601,6 +626,26 @@
 			<name>src/os/rt/chvt.c</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/os/os/rt/src/chvt.c</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/madgwick/MadgwickAHRS.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/third_party_libs/madgwick/src/MadgwickAHRS.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/madgwick/MadgwickAHRS.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/third_party_libs/madgwick/src/MadgwickAHRS.h</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/mpu9250/MPU9250.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/third_party_libs/mpu9250/src/MPU9250.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/mpu9250/MPU9250.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/third_party_libs/mpu9250/src/MPU9250.h</locationURI>
 		</link>
 		<link>
 			<name>src/os/hal_lld/ADCv4/driver.mk</name>

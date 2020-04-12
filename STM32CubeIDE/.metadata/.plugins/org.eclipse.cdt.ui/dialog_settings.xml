@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="&quot;../../../src/os/os/hal/ports/STM32/LLD/I2Cv1&quot;"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="&quot;../../../src/third_party_libs/madgwick/src&quot;"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -23,6 +23,7 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="swap"/>
 			<item value="SystemInit"/>
 			<item value="SystemCoreClock"/>
 			<item value="STM32_HSECLK"/>

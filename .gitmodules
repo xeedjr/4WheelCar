@@ -5,3 +5,9 @@
 [submodule "src/os"]
 	path = src/os
 	url = https://github.com/ChibiOS/ChibiOS.git
+[submodule "src/third_party_libs/mpu9250"]
+	path = src/third_party_libs/mpu9250
+	url = https://github.com/xeedjr/MPU9250.git
+[submodule "src/third_party_libs/madgwick"]
+	path = src/third_party_libs/madgwick
+	url = https://github.com/arduino-libraries/MadgwickAHRS.git

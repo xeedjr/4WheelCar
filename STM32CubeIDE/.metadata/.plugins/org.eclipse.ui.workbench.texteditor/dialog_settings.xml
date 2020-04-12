@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="I2CDriver"/>
+		<item key="selection" value="_useSPI"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="_useSPI"/>
+			<item value="TwoWire"/>
+			<item value="requestBytes"/>
+			<item value="#include &quot;Arduino.h&quot;"/>
+			<item value="BMP280"/>
+			<item value="adc_P"/>
+			<item value="del"/>
+			<item value="BMP280_S64_t"/>
+			<item value="BMP280_U32_t"/>
+			<item value="BMP280_S32_t"/>
+			<item value="int32_t"/>
 			<item value="I2CDriver"/>
 			<item value="I2C"/>
 			<item value="I@C"/>
 			<item value="Ш&quot;С"/>
-			<item value="SystemInit"/>
-			<item value="SystemCoreClock"/>
-			<item value="__core_init"/>
-			<item value="_crt0_entry"/>
-			<item value="Reset_Handler"/>
-			<item value="tim"/>
-			<item value="gptp-&gt;tim"/>
-			<item value="get"/>
-			<item value="palEnablePadEventI"/>
-			<item value="EXT"/>
-			<item value="SD"/>
 		</list>
 		<list key="replacehistory">
+			<item value="I2CDriver"/>
+			<item value="MPU9255"/>
+			<item value="int64_t"/>
+			<item value="uint32_t"/>
+			<item value="int32_t"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

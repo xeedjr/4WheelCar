@@ -5,6 +5,8 @@
 #include "TB6612FNG.h"
 #include "VelocityEncoder.h"
 #include "BMP280.h"
+#include "MPU9250.h"
+#include "imu.h"
 
 extern const SerialConfig sd1_config;
 extern PWMConfig pwm3cfg;
@@ -49,6 +51,7 @@ int main () {
   velB.init(VELOCITY_B_LINE);
   
   bmp280.init(BMP280_I2C_DRIVER);
+  imu_setup();
 
   driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
   driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
@@ -61,14 +64,16 @@ int main () {
   auto P = bmp280.readPresserTimeout();
 
   while(1) {
-		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
-    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
-    osDelay(2000);
-		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
-    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
-    osDelay(2000);
-    static auto speed = velA.getSpeed();
+	  imu_loop();
 
-		sdWrite(&DEBUG_UART_DRIVE, (uint8_t*)"Test\n\r", sizeof("Test\n\r") - 1);
+//		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
+//    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
+//    osDelay(2000);
+//		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
+//    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
+//    osDelay(2000);
+//    static auto speed = velA.getSpeed();
+//
+//		sdWrite(&DEBUG_UART_DRIVE, (uint8_t*)"Test\n\r", sizeof("Test\n\r") - 1);
 	}
 }
