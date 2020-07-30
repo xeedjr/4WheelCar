@@ -8,6 +8,8 @@
 #include "MPU9250.h"
 #include "imu.h"
 
+#include "OrionMain.h"
+
 extern const SerialConfig sd1_config;
 extern PWMConfig pwm3cfg;
 
@@ -20,6 +22,7 @@ TB6612FNG driver;
 VelocityEncoder velA;
 VelocityEncoder velB;
 BMP280  		bmp280;
+OrionMain  orion_main;
 
 int main () {
 	/*
@@ -62,6 +65,8 @@ int main () {
   bmp280.readCompensationRegister();
   auto T = bmp280.readTemperatureTimeout();
   auto P = bmp280.readPresserTimeout();
+
+  orion_main.init();
 
   while(1) {
 	  imu_loop();

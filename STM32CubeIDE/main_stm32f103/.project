@@ -38,6 +38,26 @@
 			<locationURI>PARENT-2-PROJECT_LOC/src/BMP280.h</locationURI>
 		</link>
 		<link>
+			<name>src/OrionChibiosHal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/OrionChibiosHal.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/OrionChibiosHal.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/OrionChibiosHal.h</locationURI>
+		</link>
+		<link>
+			<name>src/OrionMain.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/OrionMain.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/OrionMain.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/OrionMain.h</locationURI>
+		</link>
+		<link>
 			<name>src/TB6612FNG.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/TB6612FNG.cpp</locationURI>
@@ -151,6 +171,11 @@
 			<name>src/third_party_libs/mpu9250</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/third_party_libs/orion</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/third_party_libs/orion/orion_protocol/src</locationURI>
 		</link>
 		<link>
 			<name>src/os/common/chcore.c</name>

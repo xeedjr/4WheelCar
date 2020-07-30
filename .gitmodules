@@ -11,3 +11,6 @@
 [submodule "src/third_party_libs/madgwick"]
 	path = src/third_party_libs/madgwick
 	url = https://github.com/arduino-libraries/MadgwickAHRS.git
+[submodule "src/third_party_libs/orion"]
+	path = src/third_party_libs/orion
+	url = https://github.com/ros-ukraine/orion.git
