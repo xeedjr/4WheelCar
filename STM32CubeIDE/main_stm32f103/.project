@@ -163,6 +163,16 @@
 			<locationURI>PARENT-2-PROJECT_LOC/src/os_user/stm32f103/mcuconf.h</locationURI>
 		</link>
 		<link>
+			<name>src/os_user/usbcfg.c</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/os_user/stm32f103/usbcfg.c</locationURI>
+		</link>
+		<link>
+			<name>src/os_user/usbcfg.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/os_user/stm32f103/usbcfg.h</locationURI>
+		</link>
+		<link>
 			<name>src/third_party_libs/madgwick</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
