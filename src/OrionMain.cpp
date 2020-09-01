@@ -9,6 +9,7 @@ osThreadDef (Thread, osPriorityNormal, 1, 512);            // define Thread_1
 void OrionMain::init()
 {
 	frame_transport = new orion::FrameTransport(&orion_chibios_hal, &cobs_framer);
+	orion_minor = new orion::Minor(frame_transport);
 
 	  id = osThreadCreate (osThread (Thread), this);         // create the thread
 	  if (id == NULL) {                                        // handle thread creation
@@ -19,6 +20,6 @@ void OrionMain::init()
 void OrionMain::Thread()
 {
 	while(true) {
-		orion_minor.receiveCommand();
+		orion_minor->receiveCommand();
 	}
 }
