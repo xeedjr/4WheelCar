@@ -12,7 +12,7 @@ class OrionMain  {
 	  orion::COBSFramer cobs_framer;
 	  OrionChibiosHal orion_chibios_hal;
 	  orion::FrameTransport*  frame_transport;
-	  orion::Minor orion_minor;
+	  orion::Minor* orion_minor;
 public:
 	OrionMain() {};
 	void init();

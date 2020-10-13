@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="&quot;../../../src/third_party_libs/orion/orion_protocol/include&quot;"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/Middlewares/devices_stm32_hal}"/>
+	<item key="LastUsedHeaderTemplate" value="Default C++ header template"/>
+	<item key="LastUsedSourceTemplate" value="Default C++ source template"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -23,6 +25,7 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="8000000"/>
 			<item value="swap"/>
 			<item value="SystemInit"/>
 			<item value="SystemCoreClock"/>
@@ -30,7 +33,7 @@
 		</list>
 	</section>
 	<section name="NewClassWizardPage">
-		<item key="namespaceSelected" value="true"/>
+		<item key="namespaceSelected" value="false"/>
 		<item key="testFileSelected" value="false"/>
 		<item key="stubImpl0" value="DEFINITION"/>
 		<item key="stubSelected0" value="true"/>
@@ -45,6 +48,5 @@
 		<item key="stubSelected4" value="false"/>
 		<item key="stubImpl5" value="DEFINITION"/>
 		<item key="stubSelected5" value="false"/>
-		<item key="namespace" value="orion"/>
 	</section>
 </section>

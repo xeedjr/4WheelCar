@@ -14,3 +14,12 @@
 [submodule "src/third_party_libs/orion"]
 	path = src/third_party_libs/orion
 	url = https://github.com/ros-ukraine/orion.git
+[submodule "STM32CubeIDE/main_stm32f103ST/Middlewares/devices_stm32_hal"]
+	path = STM32CubeIDE/main_stm32f103ST/Middlewares/devices_stm32_hal
+	url = https://github.com/xeedjr/devices_stm32_hal.git
+[submodule "STM32CubeIDE/main_stm32f103ST/Middlewares/madgwick"]
+	path = STM32CubeIDE/main_stm32f103ST/Middlewares/madgwick
+	url = https://github.com/arduino-libraries/MadgwickAHRS.git
+[submodule "STM32CubeIDE/main_stm32f103ST/Middlewares/mpu9250"]
+	path = STM32CubeIDE/main_stm32f103ST/Middlewares/mpu9250
+	url = https://github.com/xeedjr/MPU9250.git

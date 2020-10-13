@@ -7,11 +7,18 @@
 #include "BMP280.h"
 #include "MPU9250.h"
 #include "imu.h"
+#include "usbcfg.h"
 
 #include "OrionMain.h"
 
 extern const SerialConfig sd1_config;
 extern PWMConfig pwm3cfg;
+
+const I2CConfig i2cfg1 = {
+    OPMODE_I2C,
+    400000,
+	FAST_DUTY_CYCLE_2,
+};
 
 void Timer1_Callback  (void const *arg) {
 	palToggleLine(LINE_LED1);
@@ -36,6 +43,27 @@ int main () {
 	halInit();
 	osKernelInitialize();
 	
+	sdStart(&DEBUG_UART_DRIVE, NULL);
+	sdStart(&RASPBERY_UART_DRIVE, NULL);
+	pwmStart(PWM_TB66_A, &pwm3cfg);
+	i2cStart(&I2CD1, &i2cfg1);
+
+	/*
+	* Initializes a serial-over-USB CDC driver.
+	*/
+	sduObjectInit(&SDU1);
+	sduStart(&SDU1, &serusbcfg);
+
+	/*
+	* Activates the USB driver and then the USB bus pull-up on D+.
+	* Note, a delay is inserted in order to not have to disconnect the cable
+	* after a reset.
+	*/
+	usbDisconnectBus(serusbcfg.usbp);
+	chThdSleepMilliseconds(1500);
+	usbStart(serusbcfg.usbp, &usbcfg);
+	usbConnectBus(serusbcfg.usbp);
+
 	palClearLine(LINE_LED1);
   
 	auto id2 = osTimerCreate (osTimer(Timer1), osTimerPeriodic, nullptr);
@@ -44,7 +72,7 @@ int main () {
 		chSysHalt(__FUNCTION__);
 	}
 	osTimerStart(id2, 1000);
-	
+/*
   driver.init(LINE_TB66_PWMA, LINE_TB66_AIN2, LINE_TB66_AIN1,
               LINE_TB66_PWMB, LINE_TB66_BIN2, LINE_TB66_BIN1,
               LINE_TB66_STBY,
@@ -66,18 +94,18 @@ int main () {
   bmp280.readCompensationRegister();
   auto T = bmp280.readTemperatureTimeout();
   auto P = bmp280.readPresserTimeout();
-
+*/
   orion_main.init();
 
   while(1) {
-	  imu_loop();
+//	  imu_loop();
 
 //		driver.drive(TB6612FNG::kA, TB6612FNG::kCW, 20);
 //    driver.drive(TB6612FNG::kB, TB6612FNG::kCCW, 20);
 //    osDelay(2000);
 //		driver.drive(TB6612FNG::kA, TB6612FNG::kCCW, 20);
 //    driver.drive(TB6612FNG::kB, TB6612FNG::kCW, 20);
-//    osDelay(2000);
+    osDelay(2000);
 //    static auto speed = velA.getSpeed();
 //
 //		sdWrite(&DEBUG_UART_DRIVE, (uint8_t*)"Test\n\r", sizeof("Test\n\r") - 1);

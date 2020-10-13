@@ -15,7 +15,7 @@
 */
 
 #include "hal.h"
-#include "usbcfg.h"
+
 
 /**
  * @brief   Driver default configuration.
@@ -50,11 +50,7 @@ PWMConfig pwm3cfg = {
   },
 };
 
-static const I2CConfig i2cfg1 = {
-    OPMODE_I2C,
-    400000,
-	FAST_DUTY_CYCLE_2,
-};
+
 
 /**
  * @brief   PAL setup.
@@ -95,29 +91,10 @@ void boardInit(void) {
 	  palSetLineMode(LINE_TB66_STBY, PAL_MODE_OUTPUT_PUSHPULL);
 
 	  palSetLineMode(VELOCITY_A_LINE, PAL_MODE_INPUT_PULLUP);
-	  palSetLineMode(VELOCITY_B_LINE, PAL_MODE_INPUT_PULLUP);
+//	  palSetLineMode(VELOCITY_B_LINE, PAL_MODE_INPUT_PULLUP);
 
 	  palSetLineMode(I2C_SCL_LINE, 	PAL_MODE_STM32_ALTERNATE_OPENDRAIN);
 	  palSetLineMode(I2C_SDA_B_LINE, PAL_MODE_STM32_ALTERNATE_OPENDRAIN);
 
-	  sdStart(&DEBUG_UART_DRIVE, NULL);
-	sdStart(&RASPBERY_UART_DRIVE, NULL);
-	pwmStart(PWM_TB66_A, &pwm3cfg);
-	i2cStart(&I2CD1, &i2cfg1);
-
-	  /*
-	   * Initializes a serial-over-USB CDC driver.
-	   */
-	  sduObjectInit(&SDU1);
-	  sduStart(&SDU1, &serusbcfg);
-
-	  /*
-	   * Activates the USB driver and then the USB bus pull-up on D+.
-	   * Note, a delay is inserted in order to not have to disconnect the cable
-	   * after a reset.
-	   */
-	  usbDisconnectBus(serusbcfg.usbp);
-	  chThdSleepMilliseconds(1500);
-	  usbStart(serusbcfg.usbp, &usbcfg);
-	  usbConnectBus(serusbcfg.usbp);
+	  palSetLineMode(USB_SWITCH_LINE, PAL_MODE_OUTPUT_PUSHPULL);
 }
