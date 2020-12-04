@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/Middlewares/devices_stm32_hal}"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/Middlewares/qpcpp/ports/freertos}"/>
 	<item key="LastUsedHeaderTemplate" value="Default C++ header template"/>
 	<item key="LastUsedSourceTemplate" value="Default C++ source template"/>
 	<section name="completion_proposal_size">
@@ -25,6 +25,7 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="xTaskCreate"/>
 			<item value="8000000"/>
 			<item value="swap"/>
 			<item value="SystemInit"/>
@@ -48,5 +49,8 @@
 		<item key="stubSelected4" value="false"/>
 		<item key="stubImpl5" value="DEFINITION"/>
 		<item key="stubSelected5" value="false"/>
+	</section>
+	<section name="CResourceRenameRefactoringInputPage">
+		<item key="updateReferences" value="true"/>
 	</section>
 </section>

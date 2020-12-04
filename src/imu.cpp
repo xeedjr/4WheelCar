@@ -1,70 +1,127 @@
+/*
+ * IMU.cpp
+ *
+ *  Created on: Oct 14, 2020
+ *      Author: Bogdan
+ */
 
-#include "MPU9250.h"
-#include <MadgwickAHRS.h>
+#include <stdio.h>
 
-Madgwick filter;
-MPU9250  IMU(*BMP280_I2C_DRIVER, 0x68);
-int status;
-unsigned long msPerReading, msPrevious;
-extern void publish_imu(float q0, float q1, float q2, float q3);
+#include "IMU.h"
 
-void imu_setup() {
-  // start communication with IMU 
-  status = IMU.begin();
+volatile float roll1, pitch1, heading1;
+
+/// 10ms tick
+#define TICKS_TIMEOUT 5
+
+IMU::IMU(MPU9250 *mpu9250) :
+		QActive(Q_STATE_CAST(&IMU::initial)),
+		mpu9250(mpu9250),
+		m_timeEvt(this, kTimer, 0U)
+{
+	this->start(4U, // priority
+				 queueSto, Q_DIM(queueSto),
+#ifndef WIN32
+				 stack, sizeof(stack)); // no stack
+#else
+	 	 	 	 nullptr, 0); // no stack
+#endif
+}
+
+IMU::~IMU() {
+}
+
+Q_STATE_DEF(IMU, initial) {
+    (void)e; // unused parameter
+
+    return tran(&InitializeState);
+}
+
+Q_STATE_DEF(IMU, InitializeState) {
+    QP::QState status_;
+    switch (e->sig) {
+		case Q_ENTRY_SIG: {
+			POST(Q_NEW(Event, kInitialize), this);
+			status_ = Q_RET_HANDLED;
+			break;
+		}
+		case kInitialize: {
+			initialize();
+			status_ = tran(&WaitAPI);
+			break;
+		}
+		default: {
+			status_ = super(&top);
+			break;
+		}
+	}
+	return status_;
+}
+
+Q_STATE_DEF(IMU, WaitAPI) {
+	QP::QState status_;
+	switch (e->sig) {
+	case Q_ENTRY_SIG: {
+		m_timeEvt.armX(TICKS_TIMEOUT, TICKS_TIMEOUT);
+		status_ = Q_RET_HANDLED;
+		break;
+	}
+	case kTimer: {
+		loop();
+		status_ = Q_RET_HANDLED;
+		break;
+	}
+	default: {
+		status_ = super(&top);
+		break;
+	}
+	}
+	return status_;
+}
+
+
+void IMU::initialize() {
+  // start communication with IMU
+  status = mpu9250->begin();
   if (status < 0) {
-    while(1) {}
+    throw 1;
   }
-  
-  // setting the accelerometer full scale range to +/-8G 
-  IMU.setAccelRange(MPU9250::ACCEL_RANGE_8G);
+
+  // setting the accelerometer full scale range to +/-8G
+  mpu9250->setAccelRange(MPU9250::ACCEL_RANGE_8G);
   // setting the gyroscope full scale range to +/-500 deg/s
-  IMU.setGyroRange(MPU9250::GYRO_RANGE_500DPS);
+  mpu9250->setGyroRange(MPU9250::GYRO_RANGE_500DPS);
   // setting DLPF bandwidth to 20 Hz
-  IMU.setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ);
+  mpu9250->setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ);
   // setting SRD to 19 for a 50 Hz update rate
-  IMU.setSrd(19);  
-  
+  mpu9250->setSrd(19);
+
   filter.begin(20);
-  // initialize variables to pace updates to correct rate
-  msPerReading = 1000 / 20;
-  msPrevious = TIME_I2MS(osalOsGetSystemTimeX());
 }
 
-void imu_loop() {
-  int aix, aiy, aiz;
-  int gix, giy, giz;
-  float ax, ay, az;
-  float gx, gy, gz;
-  static float roll, pitch, heading;
-  unsigned long msNow;
-  
-  // check if it's time to read data and update the filter
-  msNow = TIME_I2MS(osalOsGetSystemTimeX());
-  if (msNow - msPrevious >= msPerReading) {
-  
+void IMU::loop() {
+
     // read the sensor
-    IMU.readSensor();
-  
-    // update the filter, which computes orientation
-    filter.update(IMU.getGyroX_rads()/0.0174533f, IMU.getGyroY_rads()/0.0174533f, IMU.getGyroZ_rads()/0.0174533f,
-                  IMU.getAccelX_mss(), IMU.getAccelY_mss(), IMU.getAccelZ_mss(),  
-                  IMU.getMagX_uT(), IMU.getMagY_uT(), IMU.getMagZ_uT());
+    if(mpu9250->readSensor() == 1) {
 
-//    publish_imu(filter.q0, filter.q1, filter.q2, filter.q3);
-    
-    // print the heading, pitch and roll
-    roll = filter.getRoll();
-    pitch = filter.getPitch();
-    heading = filter.getYaw();
-//    Serial.print("Orientation: ");
-//    Serial.print(heading);
-//    Serial.print(" ");
-//    Serial.print(pitch);
-//    Serial.print(" ");
-//    Serial.println(roll);
+		// update the filter, which computes orientation
+		filter.update(mpu9250->getGyroX_rads()/0.0174533f, mpu9250->getGyroY_rads()/0.0174533f, mpu9250->getGyroZ_rads()/0.0174533f,
+					  mpu9250->getAccelX_mss(), mpu9250->getAccelY_mss(), mpu9250->getAccelZ_mss(),
+					  mpu9250->getMagX_uT(), mpu9250->getMagY_uT(), mpu9250->getMagZ_uT());
 
-    // increment previous time, so we keep proper pace
-    msPrevious = msPrevious + msPerReading;
-  }  
-  
+		// print the heading, pitch and roll
+		roll = filter.getRoll();
+		pitch = filter.getPitch();
+		heading = filter.getYaw();
+
+		roll1 = roll;
+		pitch1 = pitch;
+		heading1 = heading;
+
+
+		//sprintf(buff, "Orient: %f, %f, %f", roll, pitch, heading);
+    }
 }
+
+
+
