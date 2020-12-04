@@ -1,0 +1,12 @@
+[submodule "src/thirdparty/qpcpp"]
+	path = src/thirdparty/qpcpp
+	url = https://github.com/QuantumLeaps/qpcpp.git
+[submodule "src/thirdparty/mpu9250"]
+	path = src/thirdparty/mpu9250
+	url = https://github.com/xeedjr/MPU9250.git
+[submodule "src/thirdparty/MadgwickAHRS"]
+	path = src/thirdparty/MadgwickAHRS
+	url = https://github.com/arduino-libraries/MadgwickAHRS.git
+[submodule "src/thirdparty/devices_stm32_hal"]
+	path = src/thirdparty/devices_stm32_hal
+	url = https://github.com/xeedjr/devices_stm32_hal.git

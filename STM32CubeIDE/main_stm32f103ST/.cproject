@@ -68,20 +68,20 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths.1917258063" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/qpcpp/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/qpcpp/ports/freertos}&quot;"/>
 									<listOptionValue builtIn="false" value="../Drivers/STM32F1xx_HAL_Driver/Inc"/>
 									<listOptionValue builtIn="false" value="../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F1xx/Include"/>
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/devices_stm32_hal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/mpu9250/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/madgwick/src}&quot;"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/qpcpp/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/devices_stm32_hal}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/MadgwickAHRS/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/mpu9250/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/qpcpp/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/qpcpp/ports/freertos}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/qpcpp/include}&quot;"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.noexceptions.1847628083" name="Disable handling exceptions (-fno-exceptions)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.noexceptions" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1066708727" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
@@ -110,10 +110,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry excluding="qpcpp|mpu9250/extras|mpu9250/examples|madgwick/extras|madgwick/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/include"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/ports/freertos"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/src/qf"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -212,10 +209,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry excluding="qpcpp|mpu9250/extras|mpu9250/examples|madgwick/extras|madgwick/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/include"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/ports/freertos"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/qpcpp/src/qf"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
