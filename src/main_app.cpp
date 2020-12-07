@@ -32,9 +32,27 @@ Communication *communication;
 
 volatile static float time = 0;
 
+extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	switch(GPIO_Pin) {
+	case (GPIO_PIN_5) : {
+		imu->data_ready();
+		break;
+	}
+	}
+}
+
+
 extern "C" int __io_putchar(int ch) {
 	uint8_t c = (char)ch;
 	HAL_UART_Transmit(&huart1, &c, 1, 1000);
+}
+
+extern "C" int _write(int file, char *ptr, int len)
+{
+	HAL_UART_Transmit(&huart1, (uint8_t*)ptr, len, 1000);
+
+	return len;
 }
 
 extern "C" Q_NORETURN Q_onAssert(char const * const module, int_t const loc) {
@@ -75,8 +93,8 @@ void main_cpp(void) {
 	motor = new Motor(driver, enc1, nullptr);
 
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
-	mpu = new MPU9250FIFO(mpuHal);
-	imu = new (mmm) IMU(mpu);
+	mpu = new (mmm) MPU9250FIFO(mpuHal);
+	imu = new IMU(mpu);
 
 	//communication = new Communication(&huart3, imu);
 

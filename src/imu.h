@@ -20,6 +20,7 @@ class IMU : public QP::QActive {
 	enum Signals {
 		kTimer = QP::Q_USER_SIG,
 		kInitialize,
+		kDataReady,
 	    MAX_SIG
 	};
 
@@ -61,6 +62,10 @@ class IMU : public QP::QActive {
 public:
 	IMU(MPU9250FIFO *mpu9250);
 	virtual ~IMU();
+
+	void data_ready() {
+		POST_FROM_ISR(Q_NEW_FROM_ISR(Event, kDataReady), nullptr, this);
+	};
 
 	void get_current(float &roll, float &pitch, float &heading) {
 		roll = this->roll;

@@ -61,11 +61,11 @@ Q_STATE_DEF(IMU, WaitAPI) {
 	QP::QState status_;
 	switch (e->sig) {
 	case Q_ENTRY_SIG: {
-		m_timeEvt.armX(TICKS_TIMEOUT_S/50, TICKS_TIMEOUT_S/50);
+		//m_timeEvt.armX(TICKS_TIMEOUT_S/50, TICKS_TIMEOUT_S/50);
 		status_ = Q_RET_HANDLED;
 		break;
 	}
-	case kTimer: {
+	case kDataReady: {
 		loop();
 		status_ = Q_RET_HANDLED;
 		break;
@@ -86,9 +86,9 @@ void IMU::initialize() {
     exit(1);
   }
 
-  if (mpu9250->calibrateAccel() < 0)
+/*  if (mpu9250->calibrateAccel() < 0)
 	  exit(1);
-/*  if (mpu9250->calibrateGyro() < 0)
+  if (mpu9250->calibrateGyro() < 0)
 	  exit(1);
   if (mpu9250->calibrateMag() < 0)
 	  exit(1);
@@ -100,7 +100,7 @@ void IMU::initialize() {
   if (mpu9250->setGyroRange(MPU9250::GYRO_RANGE_500DPS) < 0)
 	  exit(1);
   // setting DLPF bandwidth to 20 Hz
-  if (mpu9250->setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ) < 0)
+  if (mpu9250->setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_41HZ) < 0)
 	  exit(1);
   // setting SRD to 19 for a 50 Hz update rate
   if (mpu9250->setSrd(19) < 0)
@@ -110,6 +110,9 @@ void IMU::initialize() {
 //  mpu9250->enableFifo(true, true, true, true);
 
   filter.begin(50);
+
+  if (mpu9250->enableDataReadyInterrupt() < 0)
+	  exit(1);
 }
 
 void IMU::loop() {
@@ -125,8 +128,8 @@ void IMU::loop() {
 		roll = filter.getRoll();
 		pitch = filter.getPitch();
 		heading = filter.getYaw();
-
-/*		  printf("%f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n\r",
+/*
+		  printf("%f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n\r",
 				  mpu9250->getAccelX_mss(),
 				  mpu9250->getAccelY_mss(),
 				  mpu9250->getAccelZ_mss(),
