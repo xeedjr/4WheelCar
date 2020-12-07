@@ -32,7 +32,7 @@ class IMU : public QP::QActive {
 
 	Event const *current_event  = nullptr;
 
-	uint8_t stack[1024];
+	uint8_t stack[2048];
     QP::QEvt const *queueSto[10];
     QP::QTimeEvt m_timeEvt;
 
@@ -43,17 +43,30 @@ class IMU : public QP::QActive {
 
 
 	Madgwick filter;
-	MPU9250 *mpu9250;
+	MPU9250FIFO *mpu9250;
 	int status;
-
+/*
+    float axFifo[85], ayFifo[85], azFifo[85];
+    size_t aSize;
+    float gxFifo[85], gyFifo[85], gzFifo[85];
+    size_t gSize;
+    float hxFifo[73], hyFifo[73], hzFifo[73];
+    size_t hSize;
+*/
 	float roll, pitch, heading;
 	char buff[50];
 
 	void initialize();
 	void loop();
 public:
-	IMU(MPU9250 *mpu9250);
+	IMU(MPU9250FIFO *mpu9250);
 	virtual ~IMU();
+
+	void get_current(float &roll, float &pitch, float &heading) {
+		roll = this->roll;
+		pitch = this->pitch;
+		heading = this->heading;
+	};
 };
 
 #endif /* SRC_IMU_H_ */

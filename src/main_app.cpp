@@ -16,7 +16,7 @@
 #include "MPU9250HALSTM32HALI2C.h"
 #include "IMU.h"
 #include "Motor.h"
-
+#include "Communication.h"
 
 using namespace std;
 using namespace QP;
@@ -24,12 +24,18 @@ using namespace QP;
 TB6612FNG *driver;
 RPMEncoderOptical *enc1;
 RPMEncoderOptical *enc2;
-MPU9250 *mpu;
+MPU9250FIFO *mpu;
 MPU9250HALSTM32HALI2C *mpuHal;
 IMU *imu;
 Motor *motor;
+Communication *communication;
 
 volatile static float time = 0;
+
+extern "C" int __io_putchar(int ch) {
+	uint8_t c = (char)ch;
+	HAL_UART_Transmit(&huart1, &c, 1, 1000);
+}
 
 extern "C" Q_NORETURN Q_onAssert(char const * const module, int_t const loc) {
     exit(-1);
@@ -37,22 +43,10 @@ extern "C" Q_NORETURN Q_onAssert(char const * const module, int_t const loc) {
 void QF::onStartup(void) {}
 void QF::onCleanup(void) {}
 
-void * operator new(size_t size)
-{
-    void *ptr = pvPortMalloc(size);
-    if (ptr)
-        return ptr;
-    else
-        throw std::bad_alloc{};
-}
-
-void operator delete(void * p)
-{
-    vPortFree(p);
-}
-
 uint8_t poolStor2[1024];
 uint8_t poolStor3[1024];
+
+uint8_t mmm[sizeof(MPU9250FIFO)] = {0};
 
 void main_cpp(void) {
     QF::init(); // initialize the framework
@@ -65,9 +59,9 @@ void main_cpp(void) {
 		100);
 
 
-	auto clock = HAL_RCC_GetPCLK1Freq()/htim2.Init.Prescaler;
-	auto pulses = 0.04/(1.0/(float)clock);
-	enc1 = new RPMEncoderOptical(&htim2, TIM_CHANNEL_1, TIM_CHANNEL_2, pulses);
+//	auto clock = HAL_RCC_GetPCLK1Freq()/htim2.Init.Prescaler;
+//	auto pulses = 0.04/(1.0/(float)clock);
+//	enc1 = new RPMEncoderOptical(&htim2, TIM_CHANNEL_1, TIM_CHANNEL_2, pulses);
 
 	driver = new TB6612FNG();
 	driver->init(GPIOA,
@@ -81,8 +75,12 @@ void main_cpp(void) {
 	motor = new Motor(driver, enc1, nullptr);
 
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
-	mpu = new MPU9250(mpuHal);
-	imu = new IMU(mpu);
+	mpu = new MPU9250FIFO(mpuHal);
+	imu = new (mmm) IMU(mpu);
+
+	//communication = new Communication(&huart3, imu);
+
+	/// Start QP
 
 	auto t = xTimerCreate("QPRoootTimer",
 	                     (10 / portTICK_PERIOD_MS), ///< 10ms tick

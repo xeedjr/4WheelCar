@@ -1,5 +1,5 @@
 /*
- * IMU.cpp
+ * mpu9250->cpp
  *
  *  Created on: Oct 14, 2020
  *      Author: Bogdan
@@ -8,18 +8,17 @@
 #include <stdio.h>
 
 #include "IMU.h"
-
-volatile float roll1, pitch1, heading1;
+#include "mpu9250.h"
 
 /// 10ms tick
-#define TICKS_TIMEOUT 5
+#define TICKS_TIMEOUT_S 100
 
-IMU::IMU(MPU9250 *mpu9250) :
+IMU::IMU(MPU9250FIFO *mpu9250) :
 		QActive(Q_STATE_CAST(&IMU::initial)),
 		mpu9250(mpu9250),
 		m_timeEvt(this, kTimer, 0U)
 {
-	this->start(4U, // priority
+	this->start(6U, // priority
 				 queueSto, Q_DIM(queueSto),
 #ifndef WIN32
 				 stack, sizeof(stack)); // no stack
@@ -62,7 +61,7 @@ Q_STATE_DEF(IMU, WaitAPI) {
 	QP::QState status_;
 	switch (e->sig) {
 	case Q_ENTRY_SIG: {
-		m_timeEvt.armX(TICKS_TIMEOUT, TICKS_TIMEOUT);
+		m_timeEvt.armX(TICKS_TIMEOUT_S/50, TICKS_TIMEOUT_S/50);
 		status_ = Q_RET_HANDLED;
 		break;
 	}
@@ -84,27 +83,40 @@ void IMU::initialize() {
   // start communication with IMU
   status = mpu9250->begin();
   if (status < 0) {
-    throw 1;
+    exit(1);
   }
 
-  // setting the accelerometer full scale range to +/-8G
-  mpu9250->setAccelRange(MPU9250::ACCEL_RANGE_8G);
+  if (mpu9250->calibrateAccel() < 0)
+	  exit(1);
+/*  if (mpu9250->calibrateGyro() < 0)
+	  exit(1);
+  if (mpu9250->calibrateMag() < 0)
+	  exit(1);
+*/
+  // etting the accelerometer full scale range to +/-8G
+  if (mpu9250->setAccelRange(MPU9250::ACCEL_RANGE_8G) < 0)
+	  exit(1);
   // setting the gyroscope full scale range to +/-500 deg/s
-  mpu9250->setGyroRange(MPU9250::GYRO_RANGE_500DPS);
+  if (mpu9250->setGyroRange(MPU9250::GYRO_RANGE_500DPS) < 0)
+	  exit(1);
   // setting DLPF bandwidth to 20 Hz
-  mpu9250->setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ);
+  if (mpu9250->setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ) < 0)
+	  exit(1);
   // setting SRD to 19 for a 50 Hz update rate
-  mpu9250->setSrd(19);
+  if (mpu9250->setSrd(19) < 0)
+	  exit(1);
 
-  filter.begin(20);
+  // enabling the FIFO to record just the accelerometers
+//  mpu9250->enableFifo(true, true, true, true);
+
+  filter.begin(50);
 }
 
 void IMU::loop() {
 
     // read the sensor
     if(mpu9250->readSensor() == 1) {
-
-		// update the filter, which computes orientation
+    	// update the filter, which computes orientation
 		filter.update(mpu9250->getGyroX_rads()/0.0174533f, mpu9250->getGyroY_rads()/0.0174533f, mpu9250->getGyroZ_rads()/0.0174533f,
 					  mpu9250->getAccelX_mss(), mpu9250->getAccelY_mss(), mpu9250->getAccelZ_mss(),
 					  mpu9250->getMagX_uT(), mpu9250->getMagY_uT(), mpu9250->getMagZ_uT());
@@ -114,14 +126,65 @@ void IMU::loop() {
 		pitch = filter.getPitch();
 		heading = filter.getYaw();
 
-		roll1 = roll;
-		pitch1 = pitch;
-		heading1 = heading;
-
-
-		//sprintf(buff, "Orient: %f, %f, %f", roll, pitch, heading);
+/*		  printf("%f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n\r",
+				  mpu9250->getAccelX_mss(),
+				  mpu9250->getAccelY_mss(),
+				  mpu9250->getAccelZ_mss(),
+				  mpu9250->getGyroX_rads(),
+				  mpu9250->getGyroY_rads(),
+				  mpu9250->getGyroZ_rads(),
+				  mpu9250->getMagX_uT(),
+				  mpu9250->getMagY_uT(),
+				  mpu9250->getMagZ_uT(),
+				  mpu9250->getTemperature_C());
+*/
+		  printf("Orient: %f\t %f\t %f \n\r", roll, pitch, heading);
     }
 }
 
+/*void IMU::loop() {
+
+    // read the sensor
+    if(mpu9250->readFifo() == 1) {
+
+    	mpu9250->getFifoAccelX_mss(&aSize, axFifo);
+    	mpu9250->getFifoAccelY_mss(&aSize, ayFifo);
+    	mpu9250->getFifoAccelZ_mss(&aSize, azFifo);
+
+    	mpu9250->getFifoGyroX_rads(&gSize, gxFifo);
+    	mpu9250->getFifoGyroY_rads(&gSize, gyFifo);
+    	mpu9250->getFifoGyroZ_rads(&gSize, gzFifo);
+
+    	mpu9250->getFifoMagX_uT(&hSize, hxFifo);
+    	mpu9250->getFifoMagY_uT(&hSize, hyFifo);
+    	mpu9250->getFifoMagZ_uT(&hSize, hzFifo);
+
+    	for (int i = 0; i < 100; i++)
+    	{
+    		if (i < aSize) {
+    			  printf("%f  %f  %f ",
+    					  axFifo[i],
+						  ayFifo[i],
+						  azFifo[i]);
+    		}
+
+    		if (i < gSize) {
+    			  printf("%f  %f  %f ",
+    					  gxFifo[i],
+						  gyFifo[i],
+						  gzFifo[i]);
+    		}
+    		if (i < hSize) {
+    			  printf("%f  %f  %f",
+    					  hxFifo[i],
+						  hyFifo[i],
+						  hzFifo[i]);
+    			  printf("\n\r");
+    		}
+
+    	}
+    }
+}
+*/
 
 
