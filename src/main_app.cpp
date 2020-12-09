@@ -90,8 +90,6 @@ void main_cpp(void) {
 		  &htim3, TIM_CHANNEL_2,
 		  &htim3, TIM_CHANNEL_1);
 
-	//driver->drive(TB6612FNG::Channels::kA, TB6612FNG::Mode::kCCW, 50);
-
 	motor = new Motor(driver, enc1, nullptr);
 
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
