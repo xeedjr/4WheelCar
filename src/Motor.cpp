@@ -4,7 +4,7 @@
  *  Created on: 30 лист. 2020 р.
  *      Author: Bogdan
  */
-
+#include <math.h>
 #include "Motor.h"
 
 Motor::Motor(TB6612FNG *drive, RPMEncoderOptical *enc1, RPMEncoderOptical *enc2) :
@@ -54,8 +54,27 @@ Q_STATE_DEF(Motor, InitializeState) {
 Q_STATE_DEF(Motor, WaitAPI) {
 	QP::QState status_;
 	switch (e->sig) {
-	case kSetSpeed: {
-		drive->drive(TB6612FNG::Channels::kA, TB6612FNG::Mode::kCCW, 20);
+	case kSetSpeedL: {
+		auto ev = (Event*)e;
+		float speed = ev->u[0].f;
+		float pwm = (100.0/300.0)*fabs(speed);
+		TB6612FNG::Mode mode = TB6612FNG::Mode::kCW;
+		if (speed > 0) {
+			mode = TB6612FNG::Mode::kCCW;
+		}
+		drive->drive(TB6612FNG::Channels::kA, mode, pwm);
+		status_ = Q_RET_HANDLED;
+		break;
+	}
+	case kSetSpeedR: {
+		auto ev = (Event*)e;
+		float speed = ev->u[0].f;
+		float pwm = (100.0/300.0)*fabs(speed);
+		TB6612FNG::Mode mode = TB6612FNG::Mode::kCW;
+		if (speed > 0) {
+			mode = TB6612FNG::Mode::kCCW;
+		}
+		drive->drive(TB6612FNG::Channels::kB, mode, pwm);
 		status_ = Q_RET_HANDLED;
 		break;
 	}

@@ -20,7 +20,8 @@ class Motor : public QP::QActive {
 	RPMEncoderOptical *enc2;
 
 	enum Signals {
-		kSetSpeed = QP::Q_USER_SIG,
+		kSetSpeedL = QP::Q_USER_SIG,
+		kSetSpeedR,
 		kInitialize,
 	    MAX_SIG
 	};
@@ -28,7 +29,8 @@ public:
 	struct Event : public QP::QEvt {
 		union {
 			uint64_t u64;
-		} u;
+			float f;
+		} u[5];
 		Event(QP::QSignal const s) : QEvt(s) {};
 	};
 private:
@@ -45,9 +47,14 @@ public:
 	Motor(TB6612FNG *drive, RPMEncoderOptical *enc1, RPMEncoderOptical *enc2);
 	virtual ~Motor();
 
-	void SetSpeed() {
-		auto ev = Q_NEW(Event, kSetSpeed);
-
+	void SetSpeedL(float s) {
+		auto ev = Q_NEW(Event, kSetSpeedL);
+		ev->u[0].f = s;
+		POST(ev, this);
+	};
+	void SetSpeedR(float s) {
+		auto ev = Q_NEW(Event, kSetSpeedR);
+		ev->u[0].f = s;
 		POST(ev, this);
 	};
 };

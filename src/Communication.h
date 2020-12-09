@@ -12,9 +12,11 @@
 #include "qpcpp.hpp"
 #include "usart.h"
 #include "IMU.h"
+#include "Motor.h"
 
 class Communication : public QP::QActive {
-
+	void *p;
+	Motor *motor;
 	IMU *imu;
 	UART_HandleTypeDef *huart;
 	void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
@@ -23,11 +25,14 @@ class Communication : public QP::QActive {
 	char imu_str[50];
 
 	uint8_t recv_byte;
+	char *str;
+	uint8_t str_len = 0;
 
 //*** QP Stuff ***//
 	struct Event : public QP::QEvt {
 		union {
 			uint64_t u64;
+			char *str;
 		} u;
 		Event(QP::QSignal const s) : QEvt(s) {};
 	};
@@ -35,6 +40,7 @@ class Communication : public QP::QActive {
 	enum Signals {
 		kTimer = QP::Q_USER_SIG,
 		kInitialize,
+		kParseResponse,
 	    MAX_SIG
 	};
 
@@ -42,6 +48,8 @@ class Communication : public QP::QActive {
 	uint8_t stack[1024];
     QP::QEvt const *queueSto[10];
     QP::QTimeEvt m_timeEvt;
+	QP::QMPool in_str_pool;
+	uint8_t in_str_pool_stor[1024];
 
 	Q_STATE_DECL(initial);
 	Q_STATE_DECL(InitializeState);
@@ -50,7 +58,7 @@ class Communication : public QP::QActive {
 
 
 public:
-	Communication(UART_HandleTypeDef *huart, IMU *imu);
+	Communication(UART_HandleTypeDef *huart, IMU *imu, Motor *motor);
 	virtual ~Communication();
 };
 

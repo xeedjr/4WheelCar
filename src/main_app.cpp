@@ -36,7 +36,8 @@ extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	switch(GPIO_Pin) {
 	case (GPIO_PIN_5) : {
-		imu->data_ready();
+		if (imu != nullptr)
+			imu->data_ready();
 		break;
 	}
 	}
@@ -85,10 +86,11 @@ void main_cpp(void) {
 	driver->init(GPIOA,
 		  LINE_TB66_AIN2_Pin, LINE_TB66_AIN1_Pin,
 		  LINE_TB66_BIN2_Pin, LINE_TB66_BIN1_Pin,
-		  LINE_TB66_PWMA_Pin, LINE_TB66_PWMB_Pin,
 		  LINE_TB66_STBY_Pin,
 		  &htim3, TIM_CHANNEL_2,
 		  &htim3, TIM_CHANNEL_1);
+
+	//driver->drive(TB6612FNG::Channels::kA, TB6612FNG::Mode::kCCW, 50);
 
 	motor = new Motor(driver, enc1, nullptr);
 
@@ -96,7 +98,7 @@ void main_cpp(void) {
 	mpu = new (mmm) MPU9250FIFO(mpuHal);
 	imu = new IMU(mpu);
 
-	//communication = new Communication(&huart3, imu);
+	communication = new Communication(&huart6, imu, motor);
 
 	/// Start QP
 
