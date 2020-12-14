@@ -97,7 +97,9 @@ void main_cpp(void) {
 	imu = new IMU(mpu);
 
 	communication = new Communication(&huart6, imu, motor);
-
+	imu->set_data_update_cb([=](float r, float p, float h){
+	                            communication->imu_update_data(r, p, h);
+	                        });
 	/// Start QP
 
 	auto t = xTimerCreate("QPRoootTimer",

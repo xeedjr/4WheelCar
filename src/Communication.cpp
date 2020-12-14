@@ -72,7 +72,7 @@ void Communication::HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		/// linefinished
 		auto ev = (Event*)Q_NEW_FROM_ISR(Event,
 				kParseResponse);
-		ev->u.str = str;
+		ev->u[0].str = str;
 		POST_FROM_ISR(ev, nullptr, this);
 
 		if ((str = (char*)in_str_pool.getFromISR(0, 0)) == nullptr) {
@@ -115,29 +115,36 @@ Q_STATE_DEF(Communication, WaitAPI) {
 	QP::QState status_;
 	switch (e->sig) {
 	case Q_ENTRY_SIG: {
-		m_timeEvt.armX(TICKS_TIMEOUT_S/20, TICKS_TIMEOUT_S/20);
+		//m_timeEvt.armX(TICKS_TIMEOUT_S/20, TICKS_TIMEOUT_S/20);
 		status_ = Q_RET_HANDLED;
 		break;
 	}
 	case kTimer: {
-		imu->get_current(roll, pitch, heading);
-		snprintf(imu_str, sizeof(imu_str), "imu %f %f %f\n", roll, pitch, heading);
-		auto res = HAL_UART_Transmit(huart, (uint8_t*)imu_str, strlen(imu_str), 1000);
-		if (res != HAL_OK)
-			exit(0);
 		status_ = Q_RET_HANDLED;
 		break;
 	}
+    case kIMUUpdateData: {
+        auto ev = (Event*)e;
+        roll = ev->u[0].f;
+        pitch = ev->u[1].f;
+        heading = ev->u[2].f;
+        snprintf(imu_str, sizeof(imu_str), "imu %f %f %f\n", roll, pitch, heading);
+        auto res = HAL_UART_Transmit(huart, (uint8_t*)imu_str, strlen(imu_str), 1000);
+        if (res != HAL_OK)
+            exit(0);
+        status_ = Q_RET_HANDLED;
+        break;
+    }
 	case kParseResponse: {
 		auto ev = (Event*)e;
 
 		int id = 0;
-		sscanf(ev->u.str, "%d ", &id);
+		sscanf(ev->u[0].str, "%d ", &id);
 
 		switch(id) {
 		case 1: {
 			int left = 0, right = 0;
-			sscanf(ev->u.str, "%d %d %d", &id, &left, &right);
+			sscanf(ev->u[0].str, "%d %d %d", &id, &left, &right);
 			motor->SetSpeedL((float)left);
 			motor->SetSpeedR((float)right);
 			break;
@@ -147,7 +154,7 @@ Q_STATE_DEF(Communication, WaitAPI) {
 		}
 		}
 
-		in_str_pool.put(ev->u.str, 0);
+		in_str_pool.put(ev->u[0].str, 0);
 		status_ = Q_RET_HANDLED;
 		break;
 	}

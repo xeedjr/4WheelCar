@@ -65,8 +65,15 @@ Q_STATE_DEF(IMU, WaitAPI) {
 		status_ = Q_RET_HANDLED;
 		break;
 	}
+	case kSetDataUpdateCB : {
+	    auto ev = (Event*)e;
+	    update_data_cb = ev->update_data_cb;
+	    break;
+	}
 	case kDataReady: {
 		loop();
+		if (update_data_cb)
+		    update_data_cb(roll, pitch, heading);
 		status_ = Q_RET_HANDLED;
 		break;
 	}

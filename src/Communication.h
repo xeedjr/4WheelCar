@@ -33,7 +33,8 @@ class Communication : public QP::QActive {
 		union {
 			uint64_t u64;
 			char *str;
-		} u;
+			float f;
+		} u[5];
 		Event(QP::QSignal const s) : QEvt(s) {};
 	};
 
@@ -41,6 +42,7 @@ class Communication : public QP::QActive {
 		kTimer = QP::Q_USER_SIG,
 		kInitialize,
 		kParseResponse,
+		kIMUUpdateData,
 	    MAX_SIG
 	};
 
@@ -60,6 +62,14 @@ class Communication : public QP::QActive {
 public:
 	Communication(UART_HandleTypeDef *huart, IMU *imu, Motor *motor);
 	virtual ~Communication();
+
+	void imu_update_data (float pitch, float roll, float heading) {
+        auto ev = Q_NEW(Event, kIMUUpdateData);
+        ev->u[0].f = pitch;
+        ev->u[1].f = roll;
+        ev->u[2].f = heading;
+        POST(ev, this);
+	}
 };
 
 #endif /* COMMUNICATION_H_ */

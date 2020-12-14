@@ -16524,3 +16524,7 @@
 2020-12-09 21:32:10,358 [WARN] IP:1936 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
 2020-12-09 21:32:10,358 [WARN] IP:1936 - Analog_Filter not found: check if there is a RefParameter without a condition.
 2020-12-09 21:32:28,414 [INFO] Gpio:250 - dependency for GPIO [I2C1, RCC, SYS, TIM3, USART1, USART6]
+2020-12-14 18:40:07,149 [INFO] Activator:178 - 
+
+
+2020-12-14 18:40:07,212 [INFO] Activator:179 - !SESSION log4j initialized

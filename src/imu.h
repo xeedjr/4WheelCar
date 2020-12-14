@@ -17,9 +17,13 @@
 
 class IMU : public QP::QActive {
 
+    typedef std::function<void(float, float, float)>    DataUpdateCB;
+    DataUpdateCB update_data_cb;
+
 	enum Signals {
 		kTimer = QP::Q_USER_SIG,
 		kInitialize,
+		kSetDataUpdateCB,
 		kDataReady,
 	    MAX_SIG
 	};
@@ -28,6 +32,7 @@ class IMU : public QP::QActive {
 		union {
 			uint64_t u64;
 		} u;
+		DataUpdateCB update_data_cb;
 		Event(QP::QSignal const s) : QEvt(s) {};
 	};
 
@@ -66,6 +71,12 @@ public:
 	void data_ready() {
 		POST_FROM_ISR(Q_NEW_FROM_ISR(Event, kDataReady), nullptr, this);
 	};
+
+	void set_data_update_cb(DataUpdateCB update_data_cb) {
+        auto ev = Q_NEW(Event, kSetDataUpdateCB);
+        ev->update_data_cb = update_data_cb;
+        POST(ev, this);
+	}
 
 	void get_current(float &roll, float &pitch, float &heading) {
 		roll = this->roll;
