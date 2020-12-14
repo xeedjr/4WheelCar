@@ -10,3 +10,6 @@
 [submodule "src/thirdparty/devices_stm32_hal"]
 	path = src/thirdparty/devices_stm32_hal
 	url = https://github.com/xeedjr/devices_stm32_hal.git
+[submodule "src/thirdparty/orion"]
+	path = src/thirdparty/orion
+	url = https://github.com/ros-ukraine/orion.git

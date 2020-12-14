@@ -77,12 +77,6 @@ public:
         ev->update_data_cb = update_data_cb;
         POST(ev, this);
 	}
-
-	void get_current(float &roll, float &pitch, float &heading) {
-		roll = this->roll;
-		pitch = this->pitch;
-		heading = this->heading;
-	};
 };
 
 #endif /* SRC_IMU_H_ */
