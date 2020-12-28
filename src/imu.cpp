@@ -13,9 +13,10 @@
 /// 10ms tick
 #define TICKS_TIMEOUT_S 100
 
-IMU::IMU(MPU9250FIFO *mpu9250) :
+IMU::IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface) :
 		QActive(Q_STATE_CAST(&IMU::initial)),
 		mpu9250(mpu9250),
+		imu_interface(imu_interface),
 		m_timeEvt(this, kTimer, 0U)
 {
 	this->start(6U, // priority
@@ -65,15 +66,9 @@ Q_STATE_DEF(IMU, WaitAPI) {
 		status_ = Q_RET_HANDLED;
 		break;
 	}
-	case kSetDataUpdateCB : {
-	    auto ev = (Event*)e;
-	    update_data_cb = ev->update_data_cb;
-	    break;
-	}
 	case kDataReady: {
 		loop();
-		if (update_data_cb)
-		    update_data_cb(roll, pitch, heading);
+		imu_interface->update_data(roll, pitch, heading);
 		status_ = Q_RET_HANDLED;
 		break;
 	}

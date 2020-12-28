@@ -92,14 +92,13 @@ void main_cpp(void) {
 
 	motor = new Motor(driver, enc1, nullptr);
 
+    communication = new Communication(&huart6, motor);
+
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
 	mpu = new (mmm) MPU9250FIFO(mpuHal);
-	imu = new IMU(mpu);
+	imu = new IMU(mpu, communication);
 
-	communication = new Communication(&huart6, imu, motor);
-	imu->set_data_update_cb([=](float r, float p, float h){
-	                            communication->imu_update_data(r, p, h);
-	                        });
+
 	/// Start QP
 
 	auto t = xTimerCreate("QPRoootTimer",

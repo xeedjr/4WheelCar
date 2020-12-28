@@ -12,18 +12,17 @@
 #include <functional>
 #include "qpcpp.hpp"
 
+#include "IMUInterface.h"
 #include "MPU9250.h"
 #include "MadgwickAHRS.h"
 
 class IMU : public QP::QActive {
 
-    typedef std::function<void(float, float, float)>    DataUpdateCB;
-    DataUpdateCB update_data_cb;
+    IMUInterface *imu_interface;
 
 	enum Signals {
 		kTimer = QP::Q_USER_SIG,
 		kInitialize,
-		kSetDataUpdateCB,
 		kDataReady,
 	    MAX_SIG
 	};
@@ -32,7 +31,6 @@ class IMU : public QP::QActive {
 		union {
 			uint64_t u64;
 		} u;
-		DataUpdateCB update_data_cb;
 		Event(QP::QSignal const s) : QEvt(s) {};
 	};
 
@@ -65,18 +63,12 @@ class IMU : public QP::QActive {
 	void initialize();
 	void loop();
 public:
-	IMU(MPU9250FIFO *mpu9250);
+	IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface);
 	virtual ~IMU();
 
 	void data_ready() {
 		POST_FROM_ISR(Q_NEW_FROM_ISR(Event, kDataReady), nullptr, this);
 	};
-
-	void set_data_update_cb(DataUpdateCB update_data_cb) {
-        auto ev = Q_NEW(Event, kSetDataUpdateCB);
-        ev->update_data_cb = update_data_cb;
-        POST(ev, this);
-	}
 };
 
 #endif /* SRC_IMU_H_ */
