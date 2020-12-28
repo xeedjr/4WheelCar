@@ -11,13 +11,12 @@
 #include <functional>
 #include "qpcpp.hpp"
 #include "usart.h"
-#include "IMU.h"
+#include "IMUInterface.h"
 #include "Motor.h"
 
-class Communication : public QP::QActive {
+class Communication : public QP::QActive, public IMUInterface {
 	void *p;
 	Motor *motor;
-	IMU *imu;
 	UART_HandleTypeDef *huart;
 	void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
@@ -60,10 +59,10 @@ class Communication : public QP::QActive {
 
 
 public:
-	Communication(UART_HandleTypeDef *huart, IMU *imu, Motor *motor);
+	Communication(UART_HandleTypeDef *huart, Motor *motor);
 	virtual ~Communication();
 
-	void imu_update_data (float pitch, float roll, float heading) {
+	void update_data (float pitch, float roll, float heading) {
         auto ev = Q_NEW(Event, kIMUUpdateData);
         ev->u[0].f = pitch;
         ev->u[1].f = roll;

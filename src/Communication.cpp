@@ -13,8 +13,7 @@
 
 static Communication *this_local = nullptr;
 
-Communication::Communication(UART_HandleTypeDef *huart, IMU *imu, Motor *motor) :
-		imu(imu),
+Communication::Communication(UART_HandleTypeDef *huart, Motor *motor) :
 		huart(huart),
 		motor(motor),
 		QActive(Q_STATE_CAST(&Communication::initial)),
