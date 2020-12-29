@@ -13,3 +13,6 @@
 [submodule "src/thirdparty/orion"]
 	path = src/thirdparty/orion
 	url = https://github.com/ros-ukraine/orion.git
+[submodule "src/thirdparty/PID_CPP"]
+	path = src/thirdparty/PID_CPP
+	url = https://github.com/PatrickBaus/PID-CPP.git
