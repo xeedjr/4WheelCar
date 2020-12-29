@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model version="5.1.0" links="0">
+ <framework name="qpcpp"/>
+ <package name="motor" stereotype="0x00" namespace="motor">
+  <class name="MotorAO" superclass="qpcpp::QActive">
+   <attribute name="VIRTUAL_FUNCTIONS" type=" " visibility="0x02" properties="0x00"/>
+   <attribute name="m_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00"/>
+   <operation name="MotorAO" type="" visibility="0x00" properties="0x00">
+    <code>  : QActive(Q_STATE_CAST(&amp;MotorAO::initial)),
+    m_timeEvt(this, TIMEOUT_SIG, 0U)</code>
+   </operation>
+   <statechart properties="0x00">
+    <initial target="../1">
+     <initial_glyph conn="5,18,5,3,4,-1,2">
+      <action box="0,-2,10,2"/>
+     </initial_glyph>
+    </initial>
+    <state name="initialize">
+     <entry>POST(Q_NEW(Event, INITIALIZE_SIG), this);</entry>
+     <tran trig="INITIALIZE" target="../../2/1">
+      <tran_glyph conn="11,21,3,3,32,-1,2">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="11,12,21,17">
+      <entry box="1,2,6,2"/>
+     </state_glyph>
+    </state>
+    <state name="PIDControl">
+     <entry>pid_init(e);</entry>
+     <tran trig="TIMEOUT">
+      <action>pid_timeout(e);</action>
+      <tran_glyph conn="40,48,3,-1,18">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <state name="WaitAPI">
+      <tran trig="SET_SPEED_L">
+       <action>set_speed_left(e);</action>
+       <tran_glyph conn="45,29,3,-1,24">
+        <action box="0,-2,10,2"/>
+       </tran_glyph>
+      </tran>
+      <tran trig="SET_SPEED_R">
+       <action>set_speed_right(e);</action>
+       <tran_glyph conn="45,36,3,-1,24">
+        <action box="0,-2,10,2"/>
+       </tran_glyph>
+      </tran>
+      <state_glyph node="45,12,31,29"/>
+     </state>
+     <state_glyph node="40,5,40,70">
+      <entry box="1,2,6,2"/>
+     </state_glyph>
+    </state>
+    <state_diagram size="127,84"/>
+   </statechart>
+  </class>
+ </package>
+ <directory name=".">
+  <file name="MotorAO.cpp">
+   <text>#include &quot;qpcpp.hpp&quot; // QP/C++ framework API
+#include &quot;MotorAO.h&quot;
+
+using namespace QP;
+
+// ask QM to define the Blinky class (including the state machine) -----------
+$define${motor::MotorAO}</text>
+  </file>
+  <file name="MotorAO.h">
+   <text>#include &quot;qpcpp.hpp&quot; // QP/C++ framework API
+#include &lt;functional&gt;
+
+namespace motor {
+
+#define VIRTUAL_FUNCTIONS \
+    virtual bool pid_init(const QP::QEvt *e) = 0; \
+    virtual bool pid_timeout(const QP::QEvt *e) = 0; \
+    virtual bool set_speed_left(const QP::QEvt *e) = 0; \
+    virtual bool set_speed_right(const QP::QEvt *e) = 0;
+
+enum Signals {
+    TIMEOUT_SIG = QP::Q_USER_SIG, // time event timeout
+
+    INITIALIZE_SIG,
+
+    /// External
+    SET_SPEED_L_SIG,    
+    SET_SPEED_R_SIG,
+
+    MAX_SIG         // the last signal
+};
+
+struct Event : public QP::QEvt {
+    union U {
+         float f;
+         void *p;
+         uint32_t *u32p;
+         uint64_t *u64p;
+         char *str;
+         uint8_t u8;
+         uint32_t u32;
+         uint64_t u64;
+         bool b;
+         std::function&lt;void(bool)&gt; b_cb;
+         U() {};
+         ~U() {};
+    } u[3];
+
+    Event(QP::QSignal const s) : QEvt(s) {};
+};
+
+};
+
+// ask QM to declare the Blinky class ----------------------------------------
+$declare${motor::MotorAO}</text>
+  </file>
+ </directory>
+</model>

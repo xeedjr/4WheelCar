@@ -4,6 +4,7 @@
  *  Created on: Oct 11, 2020
  *      Author: Bogdan
  */
+#include <Motor.h>
 #include "qpcpp.hpp"
 #include <new>
 
@@ -15,7 +16,6 @@
 #include "MPU9250.h"
 #include "MPU9250HALSTM32HALI2C.h"
 #include "IMU.h"
-#include "Motor.h"
 #include "Communication.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ RPMEncoderOptical *enc2;
 MPU9250FIFO *mpu;
 MPU9250HALSTM32HALI2C *mpuHal;
 IMU *imu;
-Motor *motor;
+motor::Motor *motorp;
 Communication *communication;
 
 volatile static float time = 0;
@@ -90,9 +90,9 @@ void main_cpp(void) {
 		  &htim3, TIM_CHANNEL_2,
 		  &htim3, TIM_CHANNEL_1);
 
-	motor = new Motor(driver, enc1, nullptr);
+	motorp = new motor::Motor(driver, enc1, nullptr);
 
-    communication = new Communication(&huart6, motor);
+    communication = new Communication(&huart6, motorp);
 
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
 	mpu = new (mmm) MPU9250FIFO(mpuHal);

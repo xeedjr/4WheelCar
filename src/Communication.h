@@ -8,15 +8,15 @@
 #ifndef COMMUNICATION_H_
 #define COMMUNICATION_H_
 
+#include <Motor.h>
 #include <functional>
 #include "qpcpp.hpp"
 #include "usart.h"
 #include "IMUInterface.h"
-#include "Motor.h"
 
 class Communication : public QP::QActive, public IMUInterface {
 	void *p;
-	Motor *motor;
+	motor::Motor *motor;
 	UART_HandleTypeDef *huart;
 	void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
@@ -59,7 +59,7 @@ class Communication : public QP::QActive, public IMUInterface {
 
 
 public:
-	Communication(UART_HandleTypeDef *huart, Motor *motor);
+	Communication(UART_HandleTypeDef *huart, motor::Motor *motor);
 	virtual ~Communication();
 
 	void update_data (float pitch, float roll, float heading) {
