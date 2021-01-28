@@ -17,6 +17,8 @@
 #include "MPU9250HALSTM32HALI2C.h"
 #include "IMU.h"
 #include "Communication.h"
+#include <ros.h>
+
 
 using namespace std;
 using namespace QP;
@@ -66,6 +68,14 @@ uint8_t poolStor2[1024];
 uint8_t poolStor3[1024];
 
 uint8_t mmm[sizeof(MPU9250FIFO)] = {0};
+
+class NewHardware : public ArduinoHardware
+{
+  public:
+  NewHardware():ArduinoHardware(&huart6){};
+};
+
+ros::NodeHandle_<NewHardware>  nh;
 
 void main_cpp(void) {
     QF::init(); // initialize the framework

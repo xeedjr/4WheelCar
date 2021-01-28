@@ -1,4 +1,27 @@
-19:22:35 **** Clean-only build of configuration Debug for project main_stm32f411 ****
-make -j4 clean 
-rm -rf *
+21:17:31 **** Incremental Build of configuration Debug for project main_stm32f411 ****
+make -j4 all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/main_app.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/main_app.d" -MT"src/main_app.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main_app.o"
+In file included from D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src/ros.h:43:0,
+                 from D:/repos_temp/4WheelCar/src/main_app.cpp:20:
+D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src/ArduinoHardware.h: In member function 'int ArduinoHardware::read()':
+D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src/ArduinoHardware.h:148:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     };
+     ^
+D:/repos_temp/4WheelCar/src/main_app.cpp: In function 'int __io_putchar(int)':
+D:/repos_temp/4WheelCar/src/main_app.cpp:52:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-g++ -o "main_stm32f411.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32f411\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32f411.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32f411.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32f411.elf  > "main_stm32f411.list"
+arm-none-eabi-objcopy  -O binary  main_stm32f411.elf  "main_stm32f411.bin"
+arm-none-eabi-size   main_stm32f411.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 122000	   2532	  16032	 140564	  22514	main_stm32f411.elf
+Finished building: default.size.stdout
+Finished building: main_stm32f411.bin
+ 
+ 
+Finished building: main_stm32f411.list
  

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="_axb"/>
+		<item key="selection" value="tim"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="tim"/>
 			<item value="_axb"/>
 			<item value="__io_putchar"/>
 			<item value="IMU"/>
@@ -22,7 +23,6 @@
 			<item value="xTaskCreate"/>
 			<item value="mpu9250."/>
 			<item value="PSC"/>
-			<item value="runti"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Communication"/>

@@ -16,3 +16,6 @@
 [submodule "src/thirdparty/PID_CPP"]
 	path = src/thirdparty/PID_CPP
 	url = https://github.com/PatrickBaus/PID-CPP.git
+[submodule "src/thirdparty/rosserial_arduino_lib"]
+	path = src/thirdparty/rosserial_arduino_lib
+	url = https://github.com/xeedjr/rosserial_arduino_lib.git
