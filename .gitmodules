@@ -19,3 +19,6 @@
 [submodule "src/thirdparty/rosserial_arduino_lib"]
 	path = src/thirdparty/rosserial_arduino_lib
 	url = https://github.com/xeedjr/rosserial_arduino_lib.git
+[submodule "src/thirdparty/ring_buffer"]
+	path = src/thirdparty/ring_buffer
+	url = https://github.com/xeedjr/Embedded_RingBuf_CPP.git

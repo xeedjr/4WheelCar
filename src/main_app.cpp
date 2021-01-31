@@ -18,7 +18,7 @@
 #include "IMU.h"
 #include "Communication.h"
 #include <ros.h>
-
+#include "Rosserial.h"
 
 using namespace std;
 using namespace QP;
@@ -31,6 +31,7 @@ MPU9250HALSTM32HALI2C *mpuHal;
 IMU *imu;
 motor::Motor *motorp;
 Communication *communication;
+ros_serial::Rosserial *rosserialp;
 
 volatile static float time = 0;
 
@@ -69,14 +70,6 @@ uint8_t poolStor3[1024];
 
 uint8_t mmm[sizeof(MPU9250FIFO)] = {0};
 
-class NewHardware : public ArduinoHardware
-{
-  public:
-  NewHardware():ArduinoHardware(&huart6){};
-};
-
-ros::NodeHandle_<NewHardware>  nh;
-
 void main_cpp(void) {
     QF::init(); // initialize the framework
 
@@ -102,12 +95,13 @@ void main_cpp(void) {
 
 	motorp = new motor::Motor(driver, enc1, nullptr);
 
-    communication = new Communication(&huart6, motorp);
-
+    //communication = new Communication(&huart6, motorp);
+	rosserialp = new ros_serial::Rosserial();
+/*
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
 	mpu = new (mmm) MPU9250FIFO(mpuHal);
 	imu = new IMU(mpu, communication);
-
+*/
 
 	/// Start QP
 

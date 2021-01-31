@@ -44,6 +44,7 @@
 									<listOptionValue builtIn="false" value="STM32F4"/>
 									<listOptionValue builtIn="false" value="STM32F411xE"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
+									<listOptionValue builtIn="false" value="TICKS_TIMEOUT_SEC=100"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.1420516601" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
@@ -74,6 +75,7 @@
 									<listOptionValue builtIn="false" value="STM32F4"/>
 									<listOptionValue builtIn="false" value="STM32F411xE"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
+									<listOptionValue builtIn="false" value="TICKS_TIMEOUT_SEC=100"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths.1856687551" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
@@ -95,6 +97,8 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/PID_CPP/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/MotorAO}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/rosserial_arduino_lib/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/thirdparty/ring_buffer}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/rosserial}&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.777468152" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -120,9 +124,9 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="thirdparty/ring_buffer/examples_no_arduino|thirdparty/ring_buffer/examples|thirdparty/rosserial_arduino_lib/scripts|thirdparty/rosserial_arduino_lib/extras|thirdparty/rosserial_arduino_lib/examples|MotorAO/Motor_deprecated.cpp|thirdparty/PID_CPP/extras|thirdparty/PID_CPP/examples|thirdparty/PID/examples|thirdparty/orion/orion_protocol/src/common/orion_circular_buffer.c|thirdparty/orion/orion_protocol/src/major|thirdparty/orion/orion_protocol/test|thirdparty/orion/docs|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party|thirdparty/mpu9250/extras|thirdparty/mpu9250/examples|thirdparty/MadgwickAHRS/extras|thirdparty/MadgwickAHRS/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
-						<entry excluding="thirdparty/rosserial_arduino_lib/scripts|thirdparty/rosserial_arduino_lib/extras|thirdparty/rosserial_arduino_lib/examples|MotorAO/Motor_deprecated.cpp|thirdparty/PID_CPP/extras|thirdparty/PID_CPP/examples|thirdparty/PID/examples|thirdparty/orion/orion_protocol/src/common/orion_circular_buffer.c|thirdparty/orion/orion_protocol/src/major|thirdparty/orion/orion_protocol/test|thirdparty/orion/docs|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party|thirdparty/mpu9250/extras|thirdparty/mpu9250/examples|thirdparty/MadgwickAHRS/extras|thirdparty/MadgwickAHRS/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -219,9 +223,9 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="thirdparty/ring_buffer/examples_no_arduino|thirdparty/ring_buffer/examples|thirdparty/rosserial_arduino_lib/scripts|thirdparty/rosserial_arduino_lib/extras|thirdparty/rosserial_arduino_lib/examples|MotorAO/Motor_deprecated.cpp|thirdparty/PID_CPP/extras|thirdparty/PID_CPP/examples|thirdparty/PID/examples|thirdparty/orion/orion_protocol/src/common/orion_circular_buffer.c|thirdparty/orion/orion_protocol/src/major|thirdparty/orion/orion_protocol/test|thirdparty/orion/docs|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party|thirdparty/mpu9250/extras|thirdparty/mpu9250/examples|thirdparty/MadgwickAHRS/extras|thirdparty/MadgwickAHRS/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
-						<entry excluding="thirdparty/rosserial_arduino_lib/scripts|thirdparty/rosserial_arduino_lib/extras|thirdparty/rosserial_arduino_lib/examples|MotorAO/Motor_deprecated.cpp|thirdparty/PID_CPP/extras|thirdparty/PID_CPP/examples|thirdparty/PID/examples|thirdparty/orion/orion_protocol/src/common/orion_circular_buffer.c|thirdparty/orion/orion_protocol/src/major|thirdparty/orion/orion_protocol/test|thirdparty/orion/docs|thirdparty/qpcpp/ports/win32-qv|thirdparty/qpcpp/ports/win32-qutest|thirdparty/qpcpp/ports/win32|thirdparty/qpcpp/ports/vxworks|thirdparty/qpcpp/ports/ucos-ii|thirdparty/qpcpp/ports/threadx|thirdparty/qpcpp/ports/qt|thirdparty/qpcpp/ports/posix-qv|thirdparty/qpcpp/ports/posix-qutest|thirdparty/qpcpp/ports/posix|thirdparty/qpcpp/ports/pic32|thirdparty/qpcpp/ports/msp430|thirdparty/qpcpp/ports/lint-plus|thirdparty/qpcpp/ports/embos|thirdparty/qpcpp/ports/arm-cr|thirdparty/qpcpp/ports/arm-cm|thirdparty/qpcpp/ports/arm7-9|thirdparty/qpcpp/src/qxk|thirdparty/qpcpp/src/qv|thirdparty/qpcpp/src/qs|thirdparty/qpcpp/src/qk|thirdparty/qpcpp/examples|thirdparty/qpcpp/doxygen|thirdparty/qpcpp/3rd_party|thirdparty/mpu9250/extras|thirdparty/mpu9250/examples|thirdparty/MadgwickAHRS/extras|thirdparty/MadgwickAHRS/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
