@@ -12,14 +12,7 @@ namespace motor {
 Motor::Motor(TB6612FNG *drive, RPMEncoderOptical *enc1, RPMEncoderOptical *enc2) :
 	drive(drive), enc1(enc1), enc2(enc2)
 {
-	// TODO Auto-generated constructor stub
-	this->start(4U, // priority
-				 queueSto, Q_DIM(queueSto),
-#ifndef WIN32
-				 stack, sizeof(stack)); // no stack
-#else
-	 	 	 	 nullptr, 0); // no stack
-#endif
+
 }
 
 Motor::~Motor() {

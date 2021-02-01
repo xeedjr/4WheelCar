@@ -48,7 +48,25 @@ timer1_timeEvt.disarm();</exit>
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
-     <state_glyph node="45,13,31,29">
+     <tran trig="SONAR_PUBLISH">
+      <action>sonar_pubV(e);</action>
+      <tran_glyph conn="45,38,3,-1,19">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="MOTOR_PUBLISH">
+      <action>motor_pubV(e);</action>
+      <tran_glyph conn="45,42,3,-1,19">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="IMU_PUBLISH">
+      <action>imu_pubV(e);</action>
+      <tran_glyph conn="45,46,3,-1,19">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="45,13,31,49">
       <entry box="1,2,6,2"/>
       <exit box="1,4,6,2"/>
      </state_glyph>
@@ -77,6 +95,9 @@ namespace ros_serial {
     virtual bool initialize(const QP::QEvt *e) = 0; \
     virtual bool process_in_data(const QP::QEvt *e) = 0; \
     virtual bool timer1(const QP::QEvt *e) = 0; \
+    virtual bool sonar_pubV(const QP::QEvt *e) = 0; \
+    virtual bool motor_pubV(const QP::QEvt *e) = 0; \
+    virtual bool imu_pubV(const QP::QEvt *e) = 0; \
 
 
 enum Signals {
@@ -87,6 +108,11 @@ enum Signals {
 
     /// External
     RECEIVED_BYTE_SIG,
+
+    SONAR_PUBLISH_SIG,
+    IMU_PUBLISH_SIG,
+    MOTOR_PUBLISH_SIG,
+
 
     MAX_SIG         // the last signal
 };

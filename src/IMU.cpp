@@ -19,13 +19,7 @@ IMU::IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface) :
 		imu_interface(imu_interface),
 		m_timeEvt(this, kTimer, 0U)
 {
-	this->start(6U, // priority
-				 queueSto, Q_DIM(queueSto),
-#ifndef WIN32
-				 stack, sizeof(stack)); // no stack
-#else
-	 	 	 	 nullptr, 0); // no stack
-#endif
+
 }
 
 IMU::~IMU() {

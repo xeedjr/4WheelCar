@@ -66,6 +66,16 @@ public:
 	IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface);
 	virtual ~IMU();
 
+	void startAO() {
+	    start(6U, // priority
+	                 queueSto, Q_DIM(queueSto),
+	#ifndef WIN32
+	                 stack, sizeof(stack)); // no stack
+	#else
+	                 nullptr, 0); // no stack
+	#endif
+	}
+
 	void data_ready() {
 		POST_FROM_ISR(Q_NEW_FROM_ISR(Event, kDataReady), nullptr, this);
 	};

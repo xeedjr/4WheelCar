@@ -25,6 +25,9 @@ namespace ros_serial {
     virtual bool initialize(const QP::QEvt *e) = 0; \
     virtual bool process_in_data(const QP::QEvt *e) = 0; \
     virtual bool timer1(const QP::QEvt *e) = 0; \
+    virtual bool sonar_pubV(const QP::QEvt *e) = 0; \
+    virtual bool motor_pubV(const QP::QEvt *e) = 0; \
+    virtual bool imu_pubV(const QP::QEvt *e) = 0; \
 
 
 enum Signals {
@@ -35,6 +38,11 @@ enum Signals {
 
     /// External
     RECEIVED_BYTE_SIG,
+
+    SONAR_PUBLISH_SIG,
+    IMU_PUBLISH_SIG,
+    MOTOR_PUBLISH_SIG,
+
 
     MAX_SIG         // the last signal
 };

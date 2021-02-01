@@ -1,6 +1,5 @@
-22:18:09 **** Incremental Build of configuration Debug for project main_stm32f411 ****
+11:00:07 **** Incremental Build of configuration Debug for project main_stm32f411 ****
 make -j4 all 
-arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/ring_buffer" -I"D:/repos_temp/4WheelCar/src/rosserial" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/rosserial/Rosserial.d" -MT"src/rosserial/Rosserial.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/rosserial/Rosserial.o"
 arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/main_app.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/ring_buffer" -I"D:/repos_temp/4WheelCar/src/rosserial" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/main_app.d" -MT"src/main_app.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main_app.o"
 In file included from D:/repos_temp/4WheelCar/src/rosserial/Rosserial.h:13:0,
                  from D:/repos_temp/4WheelCar/src/main_app.cpp:21:
@@ -12,28 +11,6 @@ In file included from D:/repos_temp/4WheelCar/src/MotorAO/Motor.h:14:0,
 D:/repos_temp/4WheelCar/src/MotorAO/MotorAO.h:24:0: note: this is the location of the previous definition
  #define VIRTUAL_FUNCTIONS \
  
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:65:87: warning: capture of variable 'ros_serial::this_local' with non-automatic storage duration
-     sub_motor = new ros::Subscriber<carmen_msgs::FirmwareCommandWrite>("/motor_sub", [this_local](const carmen_msgs::FirmwareCommandWrite& msg){
-                                                                                       ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:20:25: note: 'ros_serial::Rosserial* ros_serial::this_local' declared here
- static class Rosserial *this_local = nullptr;
-                         ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::process_in_data(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:71:10: warning: unused variable 'ret' [-Wunused-variable]
-     auto ret = nh->spinOnce();
-          ^~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:72:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::timer1(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:88:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:68:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 D:/repos_temp/4WheelCar/src/main_app.cpp: In function 'int __io_putchar(int)':
 D:/repos_temp/4WheelCar/src/main_app.cpp:53:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
@@ -45,138 +22,10 @@ arm-none-eabi-objdump -h -S  main_stm32f411.elf  > "main_stm32f411.list"
 arm-none-eabi-objcopy  -O binary  main_stm32f411.elf  "main_stm32f411.bin"
 arm-none-eabi-size   main_stm32f411.elf 
    text	   data	    bss	    dec	    hex	filename
-  95264	   2528	  10304	 108096	  1a640	main_stm32f411.elf
+ 101372	   2528	  10296	 114196	  1be14	main_stm32f411.elf
 Finished building: default.size.stdout
-Finished building: main_stm32f411.bin
  
 Finished building: main_stm32f411.list
- 
- 
-22:20:12 **** Incremental Build of configuration Debug for project main_stm32f411 ****
-make -j4 all 
-arm-none-eabi-size   main_stm32f411.elf 
-   text	   data	    bss	    dec	    hex	filename
-  95264	   2528	  10304	 108096	  1a640	main_stm32f411.elf
-Finished building: default.size.stdout
- 
-22:21:20 **** Incremental Build of configuration Debug for project main_stm32f411 ****
-make -j4 all 
-arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/ring_buffer" -I"D:/repos_temp/4WheelCar/src/rosserial" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/rosserial/Rosserial.d" -MT"src/rosserial/Rosserial.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/rosserial/Rosserial.o"
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:65:87: warning: capture of variable 'ros_serial::this_local' with non-automatic storage duration
-     sub_motor = new ros::Subscriber<carmen_msgs::FirmwareCommandWrite>("/motor_sub", [this_local](const carmen_msgs::FirmwareCommandWrite& msg){
-                                                                                       ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:20:25: note: 'ros_serial::Rosserial* ros_serial::this_local' declared here
- static class Rosserial *this_local = nullptr;
-                         ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::process_in_data(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:71:10: warning: unused variable 'ret' [-Wunused-variable]
-     auto ret = nh->spinOnce();
-          ^~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:72:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::timer1(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:88:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:68:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-arm-none-eabi-g++ -o "main_stm32f411.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32f411\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32f411.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: main_stm32f411.elf
- 
-arm-none-eabi-objdump -h -S  main_stm32f411.elf  > "main_stm32f411.list"
-arm-none-eabi-objcopy  -O binary  main_stm32f411.elf  "main_stm32f411.bin"
-arm-none-eabi-size   main_stm32f411.elf 
-   text	   data	    bss	    dec	    hex	filename
- 101244	   2528	  10304	 114076	  1bd9c	main_stm32f411.elf
-Finished building: default.size.stdout
 Finished building: main_stm32f411.bin
  
- 
-Finished building: main_stm32f411.list
- 
-22:23:35 **** Incremental Build of configuration Debug for project main_stm32f411 ****
-make -j4 all 
-arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/ring_buffer" -I"D:/repos_temp/4WheelCar/src/rosserial" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/rosserial/Rosserial.d" -MT"src/rosserial/Rosserial.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/rosserial/Rosserial.o"
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:65:87: warning: capture of variable 'ros_serial::this_local' with non-automatic storage duration
-     sub_motor = new ros::Subscriber<carmen_msgs::FirmwareCommandWrite>("/motor_sub", [this_local](const carmen_msgs::FirmwareCommandWrite& msg){
-                                                                                       ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:20:25: note: 'ros_serial::Rosserial* ros_serial::this_local' declared here
- static class Rosserial *this_local = nullptr;
-                         ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::process_in_data(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:72:10: warning: unused variable 'ret' [-Wunused-variable]
-     auto ret = nh->spinOnce();
-          ^~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:73:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::timer1(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:89:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:69:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-arm-none-eabi-g++ -o "main_stm32f411.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32f411\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32f411.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: main_stm32f411.elf
- 
-arm-none-eabi-objdump -h -S  main_stm32f411.elf  > "main_stm32f411.list"
-arm-none-eabi-objcopy  -O binary  main_stm32f411.elf  "main_stm32f411.bin"
-arm-none-eabi-size   main_stm32f411.elf 
-   text	   data	    bss	    dec	    hex	filename
- 101284	   2528	  10304	 114116	  1bdc4	main_stm32f411.elf
-Finished building: default.size.stdout
-Finished building: main_stm32f411.bin
- 
- 
-Finished building: main_stm32f411.list
- 
-22:38:09 **** Incremental Build of configuration Debug for project main_stm32f411 ****
-make -j4 all 
-arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32F4 -DSTM32F411xE -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID_CPP/src" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/ring_buffer" -I"D:/repos_temp/4WheelCar/src/rosserial" -O1 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/rosserial/Rosserial.d" -MT"src/rosserial/Rosserial.o"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/rosserial/Rosserial.o"
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'void ros_serial::Rosserial::sub_motor_cb(const carmen_msgs::FirmwareCommandWrite&)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:46:37: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
-     printf("TT %d", msg.left_motor_p);
-                     ~~~~~~~~~~~~~~~~^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:65:87: warning: capture of variable 'ros_serial::this_local' with non-automatic storage duration
-     sub_motor = new ros::Subscriber<carmen_msgs::FirmwareCommandWrite>("/motor_sub", [this_local](const carmen_msgs::FirmwareCommandWrite& msg){
-                                                                                       ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:20:25: note: 'ros_serial::Rosserial* ros_serial::this_local' declared here
- static class Rosserial *this_local = nullptr;
-                         ^~~~~~~~~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::process_in_data(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:72:10: warning: unused variable 'ret' [-Wunused-variable]
-     auto ret = nh->spinOnce();
-          ^~~
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:73:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::timer1(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:89:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp: In member function 'virtual bool ros_serial::Rosserial::initialize(const QP::QEvt*)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.cpp:69:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-arm-none-eabi-g++ -o "main_stm32f411.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32f411\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32f411.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: main_stm32f411.elf
- 
-arm-none-eabi-objdump -h -S  main_stm32f411.elf  > "main_stm32f411.list"
-arm-none-eabi-objcopy  -O binary  main_stm32f411.elf  "main_stm32f411.bin"
-arm-none-eabi-size   main_stm32f411.elf 
-   text	   data	    bss	    dec	    hex	filename
- 101316	   2528	  10304	 114148	  1bde4	main_stm32f411.elf
-Finished building: default.size.stdout
- 
-Finished building: main_stm32f411.bin
- 
-Finished building: main_stm32f411.list
  

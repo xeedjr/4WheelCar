@@ -62,6 +62,16 @@ public:
 	Communication(UART_HandleTypeDef *huart, motor::Motor *motor);
 	virtual ~Communication();
 
+	void startAO() {
+	    start(8U, // priority
+	                 queueSto, Q_DIM(queueSto),
+	#ifndef WIN32
+	                 stack, sizeof(stack)); // no stack
+	#else
+	                 nullptr, 0); // no stack
+	#endif
+	}
+
 	void update_data (float pitch, float roll, float heading) {
         auto ev = Q_NEW(Event, kIMUUpdateData);
         ev->u[0].f = pitch;

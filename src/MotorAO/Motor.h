@@ -47,6 +47,17 @@ public:
 	Motor(TB6612FNG *drive, RPMEncoderOptical *enc1, RPMEncoderOptical *enc2);
 	virtual ~Motor();
 
+	void startAO() {
+	    // TODO Auto-generated constructor stub
+	    start(4U, // priority
+	                 queueSto, Q_DIM(queueSto),
+	#ifndef WIN32
+	                 stack, sizeof(stack)); // no stack
+	#else
+	                 nullptr, 0); // no stack
+	#endif
+	}
+
 	void SetSpeedL(float s) {
 		auto ev = Q_NEW(Event, SET_SPEED_L_SIG);
 		ev->u[0].f = s;

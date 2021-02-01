@@ -95,6 +95,24 @@ Q_STATE_DEF(RosserialQM, Ready) {
             status_ = Q_RET_HANDLED;
             break;
         }
+        //.${ros_serial::RosserialQM::SM::Ready::SONAR_PUBLISH}
+        case SONAR_PUBLISH_SIG: {
+            sonar_pubV(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
+        //.${ros_serial::RosserialQM::SM::Ready::MOTOR_PUBLISH}
+        case MOTOR_PUBLISH_SIG: {
+            motor_pubV(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
+        //.${ros_serial::RosserialQM::SM::Ready::IMU_PUBLISH}
+        case IMU_PUBLISH_SIG: {
+            imu_pubV(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
         default: {
             status_ = super(&top);
             break;

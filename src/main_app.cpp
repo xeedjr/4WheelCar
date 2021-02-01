@@ -116,6 +116,11 @@ void main_cpp(void) {
 	                   );
 	xTimerStart( t, 0 );
 
+	motorp->startAO();
+	rosserialp->startAO();
+	//communication->startAO();
+	imu->startAO();
+
 	QF::run();
 }
 

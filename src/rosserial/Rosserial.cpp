@@ -27,15 +27,6 @@ void roserial_update1() {
 Rosserial::Rosserial()
 {
     this_local = this;
-
-	// TODO Auto-generated constructor stub
-	this->start(8U, // priority
-				 queueSto, Q_DIM(queueSto),
-#ifndef WIN32
-				 stack, sizeof(stack)); // no stack
-#else
-	 	 	 	 nullptr, 0); // no stack
-#endif
 }
 
 Rosserial::~Rosserial() {
@@ -73,7 +64,7 @@ bool Rosserial::process_in_data(const QP::QEvt *e) {
 }
 
 bool Rosserial::timer1(const QP::QEvt *e) {
-    static uint16_t range = 0;
+/*    static uint16_t range = 0;
     range_msg_fl.range = range++;
     range_msg_fl.header.stamp = nh->now();
     pub_range_fl->publish(&range_msg_fl);
@@ -85,8 +76,31 @@ bool Rosserial::timer1(const QP::QEvt *e) {
     motor_msg.left_motor_velocity = +125;
     motor_msg.right_motor_velocity = -100;
     pub_motor->publish(&motor_msg);
-
+*/
 }
+
+bool Rosserial::sonar_pubV(const QP::QEvt *e) {
+    auto ev = (Event*)e;
+
+    range_msg_fl.range = ev->u[0].f;
+    range_msg_fl.header.stamp = nh->now();
+    pub_range_fl->publish(&range_msg_fl);
+
+    range_msg_fr.range = ev->u[1].f;
+    range_msg_fr.header.stamp = nh->now();
+    pub_range_fr->publish(&range_msg_fr);
+}
+
+bool Rosserial::motor_pubV(const QP::QEvt *e) {
+    auto ev = (Event*)e;
+    motor_msg.left_motor_velocity = ev->u[0].f;
+    motor_msg.right_motor_velocity = ev->u[1].f;
+    pub_motor->publish(&motor_msg);
+}
+
+bool Rosserial::imu_pubV(const QP::QEvt *e) {
+}
+
 
 }
 

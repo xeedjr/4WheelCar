@@ -12,7 +12,6 @@
 
 #include "RosserialQM.h"
 #include <ros.h>
-#include "ros_topics.h"
 #include "sensor_msgs/Range.h"
 #include "carmen_msgs/FirmwareCommandWrite.h"
 #include "carmen_msgs/FirmwareStateRead.h"
@@ -60,10 +59,36 @@ private:
     bool initialize(const QP::QEvt *e);
     bool process_in_data(const QP::QEvt *e);
     bool timer1(const QP::QEvt *e);
+    bool sonar_pubV(const QP::QEvt *e);
+    bool motor_pubV(const QP::QEvt *e);
+    bool imu_pubV(const QP::QEvt *e);
 
 public:
 	Rosserial();
 	virtual ~Rosserial();
+
+	void startAO(){
+	    start(8U, // priority
+	                 queueSto, Q_DIM(queueSto),
+	#ifndef WIN32
+	                 stack, sizeof(stack)); // no stack
+	#else
+	                 nullptr, 0); // no stack
+	#endif
+	}
+
+	void sonar_pub(float left, float right) {
+	    auto ev = (Event*)Q_NEW(QP::QEvt, SONAR_PUBLISH_SIG);
+	    ev->u[0].f = left;
+	    ev->u[1].f = right;
+	    POST(ev, this);
+	}
+    void motor_pub(float left, float right) {
+        auto ev = (Event*)Q_NEW(QP::QEvt, MOTOR_PUBLISH_SIG);
+        ev->u[0].f = left;
+        ev->u[1].f = right;
+        POST(ev, this);
+    }
 
 };
 };
