@@ -34745,3 +34745,7 @@
 2021-02-07 21:42:36,383 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
 2021-02-07 22:00:21,175 [INFO] I2cTimingTraitement:320 - 0x307075B1
 2021-02-07 22:00:21,291 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-07 22:08:24,577 [INFO] Activator:170 - 
+
+
+2021-02-07 22:08:24,593 [INFO] Activator:171 - !SESSION log4j initialized
