@@ -4,10 +4,14 @@
  <package name="motor" stereotype="0x00" namespace="motor">
   <class name="MotorAO" superclass="qpcpp::QActive">
    <attribute name="VIRTUAL_FUNCTIONS" type=" " visibility="0x02" properties="0x00"/>
-   <attribute name="m_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00"/>
+   <attribute name="m_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00">
+    <code>= {this, TIMEOUT_SIG, 0U};</code>
+   </attribute>
+   <attribute name="encoders_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00">
+    <code>= {this, ENCODERS_SPEED_SIG, 0U};</code>
+   </attribute>
    <operation name="MotorAO" type="" visibility="0x00" properties="0x00">
-    <code>  : QActive(Q_STATE_CAST(&amp;MotorAO::initial)),
-    m_timeEvt(this, TIMEOUT_SIG, 0U)</code>
+    <code>  : QActive(Q_STATE_CAST(&amp;MotorAO::initial))</code>
    </operation>
    <statechart properties="0x00">
     <initial target="../1">
@@ -17,7 +21,7 @@
     </initial>
     <state name="initialize">
      <entry>POST(Q_NEW(Event, INITIALIZE_SIG), this);</entry>
-     <tran trig="INITIALIZE" target="../../2/1">
+     <tran trig="INITIALIZE" target="../../2/2">
       <tran_glyph conn="11,21,3,3,32,-1,2">
        <action box="0,-2,10,2"/>
       </tran_glyph>
@@ -27,10 +31,18 @@
      </state_glyph>
     </state>
     <state name="PIDControl">
-     <entry>pid_init(e);</entry>
+     <entry>m_timeEvt.armX(TICKS_TIMEOUT_SEC/5, TICKS_TIMEOUT_SEC/5);
+encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);
+pid_init(e);</entry>
      <tran trig="TIMEOUT">
       <action>pid_timeout(e);</action>
       <tran_glyph conn="40,48,3,-1,18">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="ENCODERS_SPEED">
+      <action>get_wheel_speed(e);</action>
+      <tran_glyph conn="40,53,3,-1,18">
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
@@ -77,10 +89,13 @@ namespace motor {
     virtual bool pid_init(const QP::QEvt *e) = 0; \
     virtual bool pid_timeout(const QP::QEvt *e) = 0; \
     virtual bool set_speed_left(const QP::QEvt *e) = 0; \
-    virtual bool set_speed_right(const QP::QEvt *e) = 0;
+    virtual bool set_speed_right(const QP::QEvt *e) = 0; \
+    virtual bool get_wheel_speed(const QP::QEvt *e) = 0; \
+
 
 enum Signals {
     TIMEOUT_SIG = QP::Q_USER_SIG, // time event timeout
+    ENCODERS_SPEED_SIG,
 
     INITIALIZE_SIG,
 

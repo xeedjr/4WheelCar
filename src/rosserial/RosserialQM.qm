@@ -5,7 +5,7 @@
   <class name="RosserialQM" superclass="qpcpp::QActive">
    <attribute name="VIRTUAL_FUNCTIONS" type=" " visibility="0x02" properties="0x00"/>
    <attribute name="spin_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00">
-    <code>{this, RECEIVED_BYTE_SIG, 0U};</code>
+    <code>{this, SPIN_SIG, 0U};</code>
    </attribute>
    <attribute name="timer1_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00">
     <code>{this, TIMER1_SIG, 0U};</code>
@@ -66,6 +66,12 @@ timer1_timeEvt.disarm();</exit>
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
+     <tran trig="SPIN">
+      <action>spin_data(e);</action>
+      <tran_glyph conn="45,27,3,-1,18">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
      <state_glyph node="45,13,31,49">
       <entry box="1,2,6,2"/>
       <exit box="1,4,6,2"/>
@@ -98,11 +104,13 @@ namespace ros_serial {
     virtual bool sonar_pubV(const QP::QEvt *e) = 0; \
     virtual bool motor_pubV(const QP::QEvt *e) = 0; \
     virtual bool imu_pubV(const QP::QEvt *e) = 0; \
+    virtual bool spin_data(const QP::QEvt *e) = 0; \
 
 
 enum Signals {
     TIMEOUT_SIG = QP::Q_USER_SIG, // time event timeout
     TIMER1_SIG,
+    SPIN_SIG,
 
     INITIALIZE_SIG,
 

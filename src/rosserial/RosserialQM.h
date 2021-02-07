@@ -28,11 +28,13 @@ namespace ros_serial {
     virtual bool sonar_pubV(const QP::QEvt *e) = 0; \
     virtual bool motor_pubV(const QP::QEvt *e) = 0; \
     virtual bool imu_pubV(const QP::QEvt *e) = 0; \
+    virtual bool spin_data(const QP::QEvt *e) = 0; \
 
 
 enum Signals {
     TIMEOUT_SIG = QP::Q_USER_SIG, // time event timeout
     TIMER1_SIG,
+    SPIN_SIG,
 
     INITIALIZE_SIG,
 
@@ -57,7 +59,7 @@ namespace ros_serial {
 class RosserialQM : public QP::QActive {
 private:
       VIRTUAL_FUNCTIONS;
-    QP::QTimeEvt spin_timeEvt{this, RECEIVED_BYTE_SIG, 0U};
+    QP::QTimeEvt spin_timeEvt{this, SPIN_SIG, 0U};
     QP::QTimeEvt timer1_timeEvt{this, TIMER1_SIG, 0U};
 
 public:

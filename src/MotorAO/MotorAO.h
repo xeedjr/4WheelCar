@@ -25,10 +25,13 @@ namespace motor {
     virtual bool pid_init(const QP::QEvt *e) = 0; \
     virtual bool pid_timeout(const QP::QEvt *e) = 0; \
     virtual bool set_speed_left(const QP::QEvt *e) = 0; \
-    virtual bool set_speed_right(const QP::QEvt *e) = 0;
+    virtual bool set_speed_right(const QP::QEvt *e) = 0; \
+    virtual bool get_wheel_speed(const QP::QEvt *e) = 0; \
+
 
 enum Signals {
     TIMEOUT_SIG = QP::Q_USER_SIG, // time event timeout
+    ENCODERS_SPEED_SIG,
 
     INITIALIZE_SIG,
 
@@ -68,7 +71,8 @@ namespace motor {
 class MotorAO : public QP::QActive {
 private:
       VIRTUAL_FUNCTIONS;
-    QP::QTimeEvt m_timeEvt;
+    QP::QTimeEvt m_timeEvt= {this, TIMEOUT_SIG, 0U};
+    QP::QTimeEvt encoders_timeEvt= {this, ENCODERS_SPEED_SIG, 0U};
 
 public:
     MotorAO();

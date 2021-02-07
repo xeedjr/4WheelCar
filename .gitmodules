@@ -22,3 +22,6 @@
 [submodule "src/thirdparty/ring_buffer"]
 	path = src/thirdparty/ring_buffer
 	url = https://github.com/xeedjr/Embedded_RingBuf_CPP.git
+[submodule "src/thirdparty/PID3"]
+	path = src/thirdparty/PID3
+	url = https://github.com/tekdemo/MiniPID.git

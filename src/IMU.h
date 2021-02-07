@@ -12,13 +12,14 @@
 #include <functional>
 #include "qpcpp.hpp"
 
-#include "IMUInterface.h"
 #include "MPU9250.h"
 #include "MadgwickAHRS.h"
 
 class IMU : public QP::QActive {
 
-    IMUInterface *imu_interface;
+    std::function<void (float, float, float)> update_imu_cb;
+    std::function<void (float*, uint8_t)> us_sensor_cb;
+    std::function<void (float*, uint8_t)> tof_sensors_cb;
 
 	enum Signals {
 		kTimer = QP::Q_USER_SIG,
@@ -63,7 +64,10 @@ class IMU : public QP::QActive {
 	void initialize();
 	void loop();
 public:
-	IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface);
+	IMU(MPU9250FIFO *mpu9250,
+	        std::function<void (float, float, float)> update_imu_cb,
+	        std::function<void (float*, uint8_t)> us_sensor_cb,
+            std::function<void (float*, uint8_t)> tof_sensors_cb);
 	virtual ~IMU();
 
 	void startAO() {

@@ -13,25 +13,45 @@
 
 #include "MotorAO.h"
 
-#include "pid.h"
+#include "MiniPID.h"
 #include "TB6612FNG.h"
-#include "RPMEncoderOptical.h"
+#include "WheelMotorEncoder.h"
 
 namespace motor {
-
+//26.7 rad/sec on 100pwm
 class Motor : public motor::MotorAO {
 	TB6612FNG *drive;
-	RPMEncoderOptical *enc1;
-	RPMEncoderOptical *enc2;
+	std::function<void(double*, uint8_t)> wheel_position_cb;
 
-	/// PID
-	unsigned long pidPeriod = 500;
-	unsigned long setpoint = 512;
-	int32_t kp = 1011120;
-	int32_t ki = 1320*1000;
-	int32_t kd = 5280 * 1000;
-	uint8_t qn = 22;    // Set QN to 32 - DAC resolution
-	Pid::PID pidController = Pid::PID(setpoint, kp, ki, kd, qn);
+	enum WheelType {
+	  kL,
+	  kR,
+	};
+	struct Wheel {
+	    WheelMotorEncoder *enc;
+
+	    MiniPID *pid;
+
+        float target_wheel_speed = 0;
+	    float current_wheel_speed = 0;
+	    double prev_curr_pos = 0;
+	    float pwm = 0;
+	    float pwm_based_on_targed = 0;
+
+
+	    void init_pid() {
+	    }
+	    void pid_update() {
+	        pwm_based_on_targed = (100.0 / 27.6) * target_wheel_speed;
+	        pwm = pid->getOutput(std::abs(current_wheel_speed), std::abs(target_wheel_speed));
+
+	    }
+        void enc_update_speed() {
+            auto curr_pos = enc->get_wheel_position();
+            current_wheel_speed = (curr_pos - prev_curr_pos) * 10.0;
+            prev_curr_pos = curr_pos;
+        }
+	} wheel[2];
 
 private:
 	Event const *current_event  = nullptr;
@@ -43,8 +63,9 @@ private:
     bool set_speed_right(const QP::QEvt *e);
     bool pid_init(const QP::QEvt *e);
     bool pid_timeout(const QP::QEvt *e);
+    bool get_wheel_speed(const QP::QEvt *e);
 public:
-	Motor(TB6612FNG *drive, RPMEncoderOptical *enc1, RPMEncoderOptical *enc2);
+	Motor(TB6612FNG *drive, WheelMotorEncoder *enc1, WheelMotorEncoder *enc2, std::function<void(double*, uint8_t)> wheel_position_cb);
 	virtual ~Motor();
 
 	void startAO() {
@@ -58,14 +79,14 @@ public:
 	#endif
 	}
 
-	void SetSpeedL(float s) {
+	void SetSpeedL(float rad_sec) {
 		auto ev = Q_NEW(Event, SET_SPEED_L_SIG);
-		ev->u[0].f = s;
+		ev->u[0].f = rad_sec;
 		POST(ev, this);
 	};
-	void SetSpeedR(float s) {
+	void SetSpeedR(float rad_sec) {
 		auto ev = Q_NEW(Event, SET_SPEED_R_SIG);
-		ev->u[0].f = s;
+		ev->u[0].f = rad_sec;
 		POST(ev, this);
 	};
 };

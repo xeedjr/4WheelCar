@@ -13,11 +13,16 @@
 /// 10ms tick
 #define TICKS_TIMEOUT_S 100
 
-IMU::IMU(MPU9250FIFO *mpu9250, IMUInterface *imu_interface) :
-		QActive(Q_STATE_CAST(&IMU::initial)),
-		mpu9250(mpu9250),
-		imu_interface(imu_interface),
-		m_timeEvt(this, kTimer, 0U)
+IMU::IMU(MPU9250FIFO *mpu9250,
+        std::function<void (float, float, float)> update_imu_cb,
+        std::function<void (float*, uint8_t)> us_sensor_cb,
+        std::function<void (float*, uint8_t)> tof_sensors_cb) :
+            QActive(Q_STATE_CAST(&IMU::initial)),
+            mpu9250(mpu9250),
+            m_timeEvt(this, kTimer, 0U),
+            update_imu_cb(update_imu_cb),
+            us_sensor_cb(us_sensor_cb),
+            tof_sensors_cb(tof_sensors_cb)
 {
 
 }
@@ -62,7 +67,7 @@ Q_STATE_DEF(IMU, WaitAPI) {
 	}
 	case kDataReady: {
 		loop();
-		imu_interface->update_data(roll, pitch, heading);
+		this->update_imu_cb(roll, pitch, heading);
 		status_ = Q_RET_HANDLED;
 		break;
 	}

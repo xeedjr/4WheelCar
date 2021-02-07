@@ -13,9 +13,10 @@
 #include "RosserialQM.h"
 #include <ros.h>
 #include "sensor_msgs/Range.h"
+#include "geometry_msgs/Twist.h"
 #include "carmen_msgs/FirmwareCommandWrite.h"
 #include "carmen_msgs/FirmwareStateRead.h"
-
+#include "Motor.h"
 
 namespace ros_serial {
 
@@ -30,7 +31,6 @@ struct Event : public QP::QEvt {
          uint32_t u32;
          uint64_t u64;
          bool b;
-         std::function<void(bool)> b_cb;
          U() {};
          ~U() {};
     } u[3];
@@ -48,13 +48,18 @@ class Rosserial : public RosserialQM {
     ros::Publisher *pub_motor;
 
     ros::Subscriber<carmen_msgs::FirmwareCommandWrite> *sub_motor;
+    ros::Subscriber<geometry_msgs::Twist> *sub_cmd_vel;
+
 private:
+    TIM_HandleTypeDef *htim;
+    motor::Motor *motor;
 	Event const *active_event  = nullptr;
 
 	uint8_t stack[1024];
     QP::QEvt const *queueSto[127] = {0};
 
     void sub_motor_cb(const carmen_msgs::FirmwareCommandWrite& msg);
+    void sub_cmd_vel_cb(const geometry_msgs::Twist& msg);
 
     bool initialize(const QP::QEvt *e);
     bool process_in_data(const QP::QEvt *e);
@@ -62,9 +67,10 @@ private:
     bool sonar_pubV(const QP::QEvt *e);
     bool motor_pubV(const QP::QEvt *e);
     bool imu_pubV(const QP::QEvt *e);
+    bool spin_data(const QP::QEvt *e);
 
 public:
-	Rosserial();
+	Rosserial(TIM_HandleTypeDef *htim, motor::Motor *motor);
 	virtual ~Rosserial();
 
 	void startAO(){

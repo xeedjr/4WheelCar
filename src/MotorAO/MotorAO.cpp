@@ -34,8 +34,7 @@ namespace motor {
 //.${motor::MotorAO} .........................................................
 //.${motor::MotorAO::MotorAO} ................................................
 MotorAO::MotorAO()
-  : QActive(Q_STATE_CAST(&MotorAO::initial)),
-    m_timeEvt(this, TIMEOUT_SIG, 0U)
+  : QActive(Q_STATE_CAST(&MotorAO::initial))
 {}
 
 //.${motor::MotorAO::SM} .....................................................
@@ -71,6 +70,8 @@ Q_STATE_DEF(MotorAO, PIDControl) {
     switch (e->sig) {
         //.${motor::MotorAO::SM::PIDControl}
         case Q_ENTRY_SIG: {
+            m_timeEvt.armX(TICKS_TIMEOUT_SEC/5, TICKS_TIMEOUT_SEC/5);
+            encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);
             pid_init(e);
             status_ = Q_RET_HANDLED;
             break;
@@ -78,6 +79,12 @@ Q_STATE_DEF(MotorAO, PIDControl) {
         //.${motor::MotorAO::SM::PIDControl::TIMEOUT}
         case TIMEOUT_SIG: {
             pid_timeout(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
+        //.${motor::MotorAO::SM::PIDControl::ENCODERS_SPEED}
+        case ENCODERS_SPEED_SIG: {
+            get_wheel_speed(e);
             status_ = Q_RET_HANDLED;
             break;
         }
