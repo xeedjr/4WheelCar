@@ -53,21 +53,20 @@ bool Rosserial::initialize(const QP::QEvt *e) {
 
     nh->initNode();
 
-    pub_range_fl = new ros::Publisher( "/left_sonar", &range_msg_fl);
+    /// Publishers
+
+    pub_range_fl = new ros::Publisher( "/car/sonar/left", &range_msg_fl);
     nh->advertise(*pub_range_fl);
 
-    pub_range_fr = new ros::Publisher( "/right_sonar", &range_msg_fr);
+    pub_range_fr = new ros::Publisher( "/car/right/left", &range_msg_fr);
     nh->advertise(*pub_range_fr);
 
-    pub_motor = new ros::Publisher( "/motor_pub", &motor_msg);
+    pub_motor = new ros::Publisher( "/car/wheels/odometry", &motor_msg);
     nh->advertise(*pub_motor);
 
-    sub_motor = new ros::Subscriber<carmen_msgs::FirmwareCommandWrite>("/motor_sub", [this_local](const carmen_msgs::FirmwareCommandWrite& msg){
-        this_local->sub_motor_cb(msg);
-    });
-    nh->subscribe(*sub_motor);
+    /// Subscriptions
 
-    sub_cmd_vel = new ros::Subscriber<geometry_msgs::Twist>("/joy_teleop/cmd_vel", [this_local](const geometry_msgs::Twist& msg){
+    sub_cmd_vel = new ros::Subscriber<geometry_msgs::Vector3>("/car/wheels/speed", [this_local](const geometry_msgs::Vector3& msg){
         this_local->sub_cmd_vel_cb(msg);
     });
     nh->subscribe(*sub_cmd_vel);
@@ -102,13 +101,9 @@ bool Rosserial::timer1(const QP::QEvt *e) {
 
 }
 
-void Rosserial::sub_motor_cb(const carmen_msgs::FirmwareCommandWrite& msg) {
-    printf("TT %d", msg.left_motor_p);
-}
-
-void Rosserial::sub_cmd_vel_cb(const geometry_msgs::Twist& msg) {
-    motor->SetSpeedL(msg.linear.x);
-    motor->SetSpeedR(msg.linear.x);
+void Rosserial::sub_cmd_vel_cb(const geometry_msgs::Vector3& msg) {
+    motor->SetSpeedL(msg.x);
+    motor->SetSpeedR(msg.y);
 }
 
 bool Rosserial::sonar_pubV(const QP::QEvt *e) {

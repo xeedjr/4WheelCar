@@ -13,7 +13,7 @@
 #include "cmsis_os.h"
 #include "MPU9250.h"
 #include "MPU9250HALSTM32HALI2C.h"
-#include "IMU.h"
+#include "Sensors.h"
 #include "tim.h"
 #include <ros.h>
 #include "Rosserial.h"
@@ -34,7 +34,7 @@ RPMEncoderOptical *enc1;
 RPMEncoderOptical *enc2;
 MPU9250FIFO *mpu;
 MPU9250HALSTM32HALI2C *mpuHal;
-IMU *imu;
+sensors::Sensors *sensorsp;
 motor::Motor *motorp;
 ros_serial::Rosserial *rosserialp;
 HallEncoder *encoder1;
@@ -49,8 +49,8 @@ extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	switch(GPIO_Pin) {
 	case (GPIO_PIN_5) : {
-		if (imu != nullptr)
-			imu->data_ready();
+		if (sensorsp != nullptr)
+		    sensorsp->data_ready();
 		break;
 	}
 	}
@@ -90,13 +90,8 @@ void main_cpp(void) {
 		sizeof(poolStor3),
 		100);
 
-
 	us_trigger = new USTrigger(&htim5);
 	us_sensor = new USSensor(&htim2);
-
-//	auto clock = HAL_RCC_GetPCLK1Freq()/htim2.Init.Prescaler;
-//	auto pulses = 0.04/(1.0/(float)clock);
-//	enc1 = new RPMEncoderOptical(&htim2, TIM_CHANNEL_1, TIM_CHANNEL_2, pulses);
 
 	//encoder1 = new HallEncoder(&htim4);
 	wheel_encode = new WheelMotorEncoder(&htim4, 34);
@@ -116,14 +111,13 @@ void main_cpp(void) {
 	                                rosserialp->motor_pub(vals[0], vals[1]);
 	                            });
 
-    //communication = new Communication(&huart6, motorp);
 	rosserialp = new ros_serial::Rosserial(&htim16, motorp);
 
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
 	mpu = new (mmm) MPU9250FIFO(mpuHal);
-	imu = new IMU(mpu,
+	sensorsp = new sensors::Sensors(mpu, us_sensor,
 	                [](float r, float p, float y){ /// IMU
-	                    // none
+	                    rosserialp->imu_pub(r, p, y);
 	                },
                     [](float* vals, uint8_t n){ /// US
 	                    rosserialp->sonar_pub(vals[0], vals[1]);
@@ -150,8 +144,8 @@ void main_cpp(void) {
 	    motorp->startAO();
 	if (rosserialp)
 	    rosserialp->startAO();
-	if (imu)
-	    imu->startAO();
+	if (sensorsp)
+	    sensorsp->startAO();
 
 	QF::run();
 }

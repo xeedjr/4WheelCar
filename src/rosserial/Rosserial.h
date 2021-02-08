@@ -47,8 +47,7 @@ class Rosserial : public RosserialQM {
     carmen_msgs::FirmwareStateRead motor_msg;
     ros::Publisher *pub_motor;
 
-    ros::Subscriber<carmen_msgs::FirmwareCommandWrite> *sub_motor;
-    ros::Subscriber<geometry_msgs::Twist> *sub_cmd_vel;
+    ros::Subscriber<geometry_msgs::Vector3> *sub_cmd_vel;
 
 private:
     TIM_HandleTypeDef *htim;
@@ -58,8 +57,7 @@ private:
 	uint8_t stack[1024];
     QP::QEvt const *queueSto[127] = {0};
 
-    void sub_motor_cb(const carmen_msgs::FirmwareCommandWrite& msg);
-    void sub_cmd_vel_cb(const geometry_msgs::Twist& msg);
+    void sub_cmd_vel_cb(const geometry_msgs::Vector3& msg);
 
     bool initialize(const QP::QEvt *e);
     bool process_in_data(const QP::QEvt *e);
@@ -83,6 +81,13 @@ public:
 	#endif
 	}
 
+    void imu_pub(float r, float p, float y) {
+        auto ev = (Event*)Q_NEW(QP::QEvt, IMU_PUBLISH_SIG);
+        ev->u[0].f = r;
+        ev->u[1].f = p;
+        ev->u[1].f = y;
+        POST(ev, this);
+    }
 	void sonar_pub(float left, float right) {
 	    auto ev = (Event*)Q_NEW(QP::QEvt, SONAR_PUBLISH_SIG);
 	    ev->u[0].f = left;
