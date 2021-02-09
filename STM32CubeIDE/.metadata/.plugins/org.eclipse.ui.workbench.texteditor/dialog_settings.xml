@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Freq"/>
+		<item key="selection" value="BusinessLogic"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="BusinessLogic"/>
+			<item value="USBD_CDC_ReceivePacke"/>
 			<item value="timer"/>
 			<item value="Freq"/>
 			<item value="kDataReady"/>
@@ -21,8 +23,6 @@
 			<item value="HAL_TIM_RegisterCallback"/>
 			<item value="DIR"/>
 			<item value="direction"/>
-			<item value="direc"/>
-			<item value="HAL_TIM_PERIOD_ELAPSED_CB_ID"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Sensors"/>
