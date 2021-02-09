@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="IRQ"/>
+		<item key="selection" value="Freq"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="timer"/>
+			<item value="Freq"/>
+			<item value="kDataReady"/>
+			<item value="IMU"/>
 			<item value="IRQ"/>
 			<item value="SampleTime"/>
 			<item value="timeChange"/>
@@ -19,12 +23,9 @@
 			<item value="direction"/>
 			<item value="direc"/>
 			<item value="HAL_TIM_PERIOD_ELAPSED_CB_ID"/>
-			<item value="TIM4"/>
-			<item value="ISR"/>
-			<item value="HAL_TIM_BASE_MSPINIT_CB_ID"/>
-			<item value="USE_HAL_TIM_REGISTER_CALLBACKS"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Sensors"/>
 			<item value="Rosserial"/>
 			<item value="Communication"/>
 			<item value="mpu9250-&gt;"/>
