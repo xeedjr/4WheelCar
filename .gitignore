@@ -1,2 +1,6 @@
 Debug
 /src/SensorsAO/.SensorsAO
+/src/MotorAO/.MotorAO
+/src/rosserial/.RosserialQM
+/STM32CubeIDE/stm32f746
+/STM32CubeIDE/FreeRTOS_TAD_logs
