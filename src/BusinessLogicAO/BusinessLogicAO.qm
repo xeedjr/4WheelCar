@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model version="5.1.0" links="0">
+ <framework name="qpcpp"/>
+ <package name="application" stereotype="0x02" namespace="business_logic">
+  <class name="BusinessLogicBase" superclass="qpcpp::QActive">
+   <operation name="setImuHandler" type="void" visibility="0x01" properties="0x04">
+    <specifiers>= 0</specifiers>
+    <documentation>Sets IMU data</documentation>
+    <parameter name="event" type="Event const*"/>
+   </operation>
+   <operation name="setEncodersHandler" type="void" visibility="0x01" properties="0x04">
+    <specifiers>= 0</specifiers>
+    <parameter name="event" type="Event const*"/>
+   </operation>
+   <operation name="commandHandler" type="void" visibility="0x01" properties="0x04">
+    <specifiers>= 0</specifiers>
+   </operation>
+   <operation name="BusinessLogicBase" type="" visibility="0x00" properties="0x00">
+    <code>  : QActive(Q_STATE_CAST(&amp;BusinessLogicBase::initial))</code>
+   </operation>
+   <statechart properties="0x00">
+    <initial target="../1">
+     <initial_glyph conn="7,3,5,0,13,6">
+      <action box="0,-2,10,2"/>
+     </initial_glyph>
+    </initial>
+    <state name="idle">
+     <entry brief="init_orion"/>
+     <tran trig="BL_SET_IMU">
+      <action>this-&gt;setImuHandler(Q_EVT_CAST(Event));</action>
+      <tran_glyph conn="31,15,1,-1,29">
+       <action box="0,-2,20,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="BL_SET_ENCODERS">
+      <action>this-&gt;setEncodersHandler(Q_EVT_CAST(Event));</action>
+      <tran_glyph conn="31,19,1,-1,25">
+       <action box="0,-2,20,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="BL_COMMAND">
+      <action>this-&gt;commandHandler();</action>
+      <tran_glyph conn="31,23,1,-1,26">
+       <action box="0,-2,18,2"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="14,9,17,19">
+      <entry box="1,2,12,2"/>
+     </state_glyph>
+    </state>
+    <state_diagram size="80,50"/>
+   </statechart>
+  </class>
+ </package>
+ <directory name=".">
+  <file name="BusinessLogicBase.h" properties="external"/>
+  <file name="BusinessLogicBase.cpp" properties="external"/>
+ </directory>
+</model>

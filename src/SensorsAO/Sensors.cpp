@@ -31,7 +31,7 @@ Sensors::~Sensors() {
 
 bool Sensors::initialize(const QP::QEvt *e) {
     // start communication with Sensors
-    status = mpu9250->begin();
+/*    status = mpu9250->begin();
     if (status < 0) {
       exit(1);
     }
@@ -57,6 +57,7 @@ bool Sensors::initialize(const QP::QEvt *e) {
 
     if (mpu9250->enableDataReadyInterrupt() < 0)
         exit(1);
+        */
 }
 
 bool Sensors::imu_loop(const QP::QEvt *e) {

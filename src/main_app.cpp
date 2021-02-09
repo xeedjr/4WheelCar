@@ -8,6 +8,13 @@
 #include "qpcpp.hpp"
 #include <new>
 
+#include "BusinessLogicAO/BusinessLogic.h"
+#include "BusinessLogicAO/VirtualComPort.h"
+#include "orion_protocol/orion_frame_transport.h"
+#include "orion_protocol/orion_cobs_framer.h"
+#include "orion_protocol/orion_header.h"
+#include "orion_protocol/orion_minor.h"
+
 #include "TB6612FNG.h"
 #include "RPMEncoderOptical.h"
 #include "cmsis_os.h"
@@ -29,6 +36,12 @@
 using namespace std;
 using namespace QP;
 
+carmen_hardware::VirtualComPort *p_com_port;
+orion::COBSFramer *p_cobs_framer;
+orion::FrameTransport *p_frame_transport;
+orion::Minor *p_minor;
+business_logic::BusinessLogic *p_business_logic;
+
 TB6612FNG *driver;
 RPMEncoderOptical *enc1;
 RPMEncoderOptical *enc2;
@@ -44,6 +57,14 @@ USTrigger *us_trigger;
 USSensor *us_sensor;
 
 volatile static float time = 0;
+
+extern "C" void send_new_command_event(void)
+{
+  if (nullptr != p_business_logic)
+  {
+    p_business_logic->sendNewCommandEvent();
+  }
+}
 
 extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -113,6 +134,12 @@ void main_cpp(void) {
 
 	rosserialp = new ros_serial::Rosserial(&htim16, motorp);
 
+    p_com_port = new carmen_hardware::VirtualComPort();
+    p_cobs_framer = new orion::COBSFramer();
+    p_frame_transport = new orion::FrameTransport(p_com_port, p_cobs_framer);
+    p_minor = new orion::Minor(p_frame_transport);
+    p_business_logic = new business_logic::BusinessLogic(p_minor);
+
 	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
 	mpu = new (mmm) MPU9250FIFO(mpuHal);
 	sensorsp = new sensors::Sensors(mpu, us_sensor,
@@ -140,6 +167,8 @@ void main_cpp(void) {
 	                   );
 	xTimerStart( t, 0 );
 
+    if (p_business_logic)
+        p_business_logic->startAO();
 	if (motorp)
 	    motorp->startAO();
 	if (rosserialp)

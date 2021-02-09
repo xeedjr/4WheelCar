@@ -48,6 +48,7 @@ class Motor : public motor::MotorAO {
 	    }
         void enc_update_speed() {
             auto curr_pos = enc->get_wheel_position();
+            //printf("%f \n", curr_pos);
             current_wheel_speed = (curr_pos - prev_curr_pos) * 10.0;
             prev_curr_pos = curr_pos;
         }

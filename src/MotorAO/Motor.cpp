@@ -71,7 +71,7 @@ bool Motor::pid_timeout(const QP::QEvt *e) {
     drive->drive(TB6612FNG::Channels::kB, TB6612FNG::Mode::kCCW, wheel[kL].pwm_based_on_targed + wheel[kL].pwm);
     drive->drive(TB6612FNG::Channels::kA, TB6612FNG::Mode::kCCW, wheel[kL].pwm_based_on_targed + wheel[kR].pwm);
 
-    printf("%f %f %f %f\n", std::abs(wheel[kL].target_wheel_speed), std::abs(wheel[kL].current_wheel_speed),  wheel[kL].pwm_based_on_targed, wheel[kL].pwm);
+    //printf("%f %f %f %f\n", std::abs(wheel[kL].target_wheel_speed), std::abs(wheel[kL].current_wheel_speed),  wheel[kL].pwm_based_on_targed, wheel[kL].pwm);
 
     return true;
 };
