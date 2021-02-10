@@ -19,13 +19,25 @@ void BusinessLogic::startAO() {
 #endif
 }
 
-void BusinessLogic::update_data(float alpha, float beta, float gamma)
+void BusinessLogic::update_Sensors_cb(float y, float p, float r)
 {
-	auto event = Q_NEW(Event, BL_SET_IMU_SIG);
-	event->data.imu.alpha = (int32_t)(alpha * 1000);
-	event->data.imu.beta = (int32_t)(beta * 1000);
-	event->data.imu.gamma = (int32_t)(gamma * 1000);
-	POST(event, this);
+    auto event = Q_NEW(Event, BL_SET_IMU_SIG);
+    event->data.imu.alpha = (int32_t)(y * 1000);
+    event->data.imu.beta = (int32_t)(p * 1000);
+    event->data.imu.gamma = (int32_t)(r * 1000);
+    POST(event, this);
+}
+
+void BusinessLogic::us_sensor_cb(float* data, uint8_t num) {
+
+}
+
+void BusinessLogic::tof_sensors_cb(float* data, uint8_t num) {
+
+}
+
+void BusinessLogic::wheel_position_cb(double* data, uint8_t num) {
+
 }
 
 void BusinessLogic::setEncoders(int32_t left, int32_t right)

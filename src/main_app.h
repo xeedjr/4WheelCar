@@ -14,6 +14,8 @@ extern "C"
 
 #include <stdint.h>
 
+//#define USE_ROSSERIAL
+
 void send_new_command_event(void);
 
 #ifdef __cplusplus

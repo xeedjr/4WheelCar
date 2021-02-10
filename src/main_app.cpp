@@ -40,23 +40,25 @@ carmen_hardware::VirtualComPort *p_com_port;
 orion::COBSFramer *p_cobs_framer;
 orion::FrameTransport *p_frame_transport;
 orion::Minor *p_minor;
-business_logic::BusinessLogic *p_business_logic;
-
 TB6612FNG *driver;
 RPMEncoderOptical *enc1;
 RPMEncoderOptical *enc2;
 MPU9250FIFO *mpu;
 MPU9250HALSTM32HALI2C *mpuHal;
-sensors::Sensors *sensorsp;
-motor::Motor *motorp;
-ros_serial::Rosserial *rosserialp;
 HallEncoder *encoder1;
 WheelMotorEncoder *wheel_encode;
 WheelMotorEncoder *wheel_encode2;
 USTrigger *us_trigger;
 USSensor *us_sensor;
 
-volatile static float time = 0;
+/// AO
+sensors::Sensors *sensorsp;
+motor::Motor *motorp;
+#ifdef USE_ROSSERIAL
+    ros_serial::Rosserial *rosserialp;
+#else
+    business_logic::BusinessLogic *p_business_logic;
+#endif
 
 extern "C" void send_new_command_event(void)
 {
@@ -127,31 +129,26 @@ void main_cpp(void) {
 		  &htim15, TIM_CHANNEL_1,
 		  &htim15, TIM_CHANNEL_2);
 
-	motorp = new motor::Motor(driver, wheel_encode, wheel_encode2,
-	                            [](double* vals, uint8_t n){ /// Wheel position
-	                                rosserialp->motor_pub(vals[0], vals[1]);
-	                            });
 
-	rosserialp = new ros_serial::Rosserial(&htim16, motorp);
+    mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
+    mpu = new (mmm) MPU9250FIFO(mpuHal);
 
     p_com_port = new carmen_hardware::VirtualComPort();
     p_cobs_framer = new orion::COBSFramer();
     p_frame_transport = new orion::FrameTransport(p_com_port, p_cobs_framer);
     p_minor = new orion::Minor(p_frame_transport);
-    p_business_logic = new business_logic::BusinessLogic(p_minor);
 
-	mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
-	mpu = new (mmm) MPU9250FIFO(mpuHal);
+    /// AO
+#ifdef USE_ROSSERIAL
+    rosserialp = new ros_serial::Rosserial(&htim16, motorp);
+#else
+    p_business_logic = new business_logic::BusinessLogic(p_minor);
+#endif
+
+    motorp = new motor::Motor(driver, wheel_encode, wheel_encode2, p_business_logic);
+
 	sensorsp = new sensors::Sensors(mpu, us_sensor,
-	                [](float r, float p, float y){ /// IMU
-	                    rosserialp->imu_pub(r, p, y);
-	                },
-                    [](float* vals, uint8_t n){ /// US
-	                    rosserialp->sonar_pub(vals[0], vals[1]);
-                    },
-                    [](float* vals, uint8_t n){ /// TOF
-                        /// none
-                    });
+	                                p_business_logic);
 
 
 	/// Start QP
@@ -167,12 +164,15 @@ void main_cpp(void) {
 	                   );
 	xTimerStart( t, 0 );
 
-    if (p_business_logic)
-        p_business_logic->startAO();
 	if (motorp)
 	    motorp->startAO();
+#ifdef USE_ROSSERIAL
 	if (rosserialp)
 	    rosserialp->startAO();
+#else
+    if (p_business_logic)
+        p_business_logic->startAO();
+#endif
 	if (sensorsp)
 	    sensorsp->startAO();
 

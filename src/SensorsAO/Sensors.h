@@ -15,15 +15,13 @@
 #include "USSensor.h"
 #include "MadgwickAHRS.h"
 #include "SensorsAO.h"
+#include "SensorsInterface.h"
 
 namespace sensors {
 
 class Sensors : public sensors::SensorsAO {
 
-    std::function<void (float, float, float)> update_Sensors_cb;
-    std::function<void (float*, uint8_t)> us_sensor_cb;
-    std::function<void (float*, uint8_t)> tof_sensors_cb;
-
+    SensorsInterface *interface;
 
 	Event const *active_event  = nullptr;
 
@@ -47,9 +45,7 @@ class Sensors : public sensors::SensorsAO {
 public:
 	Sensors(MPU9250FIFO *mpu9250,
 	        USSensor *sonars,
-	        std::function<void (float, float, float)> update_Sensors_cb,
-	        std::function<void (float*, uint8_t)> us_sensor_cb,
-            std::function<void (float*, uint8_t)> tof_sensors_cb);
+	        SensorsInterface *interface);
 	virtual ~Sensors();
 
 	void startAO() {

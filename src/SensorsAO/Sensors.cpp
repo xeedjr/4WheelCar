@@ -14,14 +14,10 @@ namespace sensors {
 
 Sensors::Sensors(MPU9250FIFO *mpu9250,
         USSensor *sonars,
-        std::function<void (float, float, float)> update_Sensors_cb,
-        std::function<void (float*, uint8_t)> us_sensor_cb,
-        std::function<void (float*, uint8_t)> tof_sensors_cb) :
+        SensorsInterface *interface) :
             mpu9250(mpu9250),
             sonars(sonars),
-            update_Sensors_cb(update_Sensors_cb),
-            us_sensor_cb(us_sensor_cb),
-            tof_sensors_cb(tof_sensors_cb)
+            interface(interface)
 {
 
 }
@@ -82,7 +78,7 @@ bool Sensors::sonic_process(const QP::QEvt *e) {
     sonars_data[0] = sonars->get_distance(0);
     sonars_data[1] = sonars->get_distance(1);
 
-    us_sensor_cb(sonars_data, 2);
+    interface->us_sensor_cb(sonars_data, 2);
 }
 
 

@@ -9,9 +9,9 @@
 
 namespace motor {
 
-Motor::Motor(TB6612FNG *drive, WheelMotorEncoder *enc1, WheelMotorEncoder *enc2, std::function<void(double*, uint8_t)> wheel_position_cb) :
+Motor::Motor(TB6612FNG *drive, WheelMotorEncoder *enc1, WheelMotorEncoder *enc2, MotorInterface *interface) :
 	drive(drive),
-	wheel_position_cb(wheel_position_cb)
+	interface(interface)
 {
     wheel[kL].enc = enc1;
     wheel[kR].enc = enc2;

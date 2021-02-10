@@ -2,20 +2,21 @@
 #define BUSINESS_LOGIC_H_
 
 #include "BusinessLogicBase.h"
-#include "IMUInterface.h"
 #include "orion_protocol/orion_minor.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <cstddef>
 #include "qpcpp.h"
 #include "Motor.h"
+#include "SensorsInterface.h"
+#include "MotorInterface.h"
 
 #define COMMAND_BUFFER_SIZE (1024)
 
 namespace business_logic
 {
 
-class BusinessLogic : public BusinessLogicBase, public IMUInterface
+class BusinessLogic : public BusinessLogicBase, public sensors::SensorsInterface, public motor::MotorInterface
 {
 public:
     BusinessLogic(orion::Minor *minor);
@@ -25,7 +26,11 @@ public:
 
     void startAO();
 
-    virtual void update_data(float alpha, float beta, float gamma);
+    virtual void update_Sensors_cb(float, float, float);
+    virtual void us_sensor_cb(float*, uint8_t);
+    virtual void tof_sensors_cb(float*, uint8_t);
+
+    virtual void wheel_position_cb(double*, uint8_t);
 
     void setEncoders(int32_t left, int32_t right);
 

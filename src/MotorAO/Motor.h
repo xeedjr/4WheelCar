@@ -16,12 +16,13 @@
 #include "MiniPID.h"
 #include "TB6612FNG.h"
 #include "WheelMotorEncoder.h"
+#include "MotorInterface.h"
 
 namespace motor {
 //26.7 rad/sec on 100pwm
 class Motor : public motor::MotorAO {
 	TB6612FNG *drive;
-	std::function<void(double*, uint8_t)> wheel_position_cb;
+	MotorInterface *interface;
 
 	enum WheelType {
 	  kL,
@@ -66,7 +67,7 @@ private:
     bool pid_timeout(const QP::QEvt *e);
     bool get_wheel_speed(const QP::QEvt *e);
 public:
-	Motor(TB6612FNG *drive, WheelMotorEncoder *enc1, WheelMotorEncoder *enc2, std::function<void(double*, uint8_t)> wheel_position_cb);
+	Motor(TB6612FNG *drive, WheelMotorEncoder *enc1, WheelMotorEncoder *enc2, MotorInterface *interface);
 	virtual ~Motor();
 
 	void startAO() {
