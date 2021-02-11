@@ -21,10 +21,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
-#include "orion_protocol/orion_circular_buffer.h"
-#include "main_app.h"
-/* USER CODE BEGIN INCLUDE */
 
+/* USER CODE BEGIN INCLUDE */
+#include "orion_protocol/orion_circular_buffer.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/

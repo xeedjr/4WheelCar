@@ -10,7 +10,7 @@
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height" value="1030"/>
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x" value="233"/>
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y" value="0"/>
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/main_stm32f411/src/BusinessLogicAO}"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/src/SensorsAO}"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -43,7 +43,7 @@
 		</list>
 	</section>
 	<section name="NewClassWizardPage">
-		<item key="namespaceSelected" value="false"/>
+		<item key="namespaceSelected" value="true"/>
 		<item key="testFileSelected" value="false"/>
 		<item key="stubImpl0" value="DEFINITION"/>
 		<item key="stubSelected0" value="true"/>
@@ -58,6 +58,7 @@
 		<item key="stubSelected4" value="false"/>
 		<item key="stubImpl5" value="DEFINITION"/>
 		<item key="stubSelected5" value="false"/>
+		<item key="namespace" value="motor"/>
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="false"/>

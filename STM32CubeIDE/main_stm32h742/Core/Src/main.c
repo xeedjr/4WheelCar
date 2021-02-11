@@ -95,13 +95,15 @@ int main(void)
   MX_ETH_Init();
   MX_USART3_UART_Init();
   MX_USART6_UART_Init();
-  MX_I2C1_Init();
   MX_TIM15_Init();
   MX_TIM4_Init();
   MX_TIM3_Init();
   MX_TIM16_Init();
   MX_TIM2_Init();
   MX_TIM5_Init();
+  MX_I2C2_Init();
+  MX_I2C4_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   main_cpp();
@@ -180,11 +182,13 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART3|RCC_PERIPHCLK_USART6
-                              |RCC_PERIPHCLK_I2C1|RCC_PERIPHCLK_USB;
+                              |RCC_PERIPHCLK_I2C2|RCC_PERIPHCLK_I2C1
+                              |RCC_PERIPHCLK_I2C4|RCC_PERIPHCLK_USB;
   PeriphClkInitStruct.Usart234578ClockSelection = RCC_USART234578CLKSOURCE_D2PCLK1;
   PeriphClkInitStruct.Usart16ClockSelection = RCC_USART16CLKSOURCE_D2PCLK2;
   PeriphClkInitStruct.I2c123ClockSelection = RCC_I2C123CLKSOURCE_D2PCLK1;
   PeriphClkInitStruct.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
+  PeriphClkInitStruct.I2c4ClockSelection = RCC_I2C4CLKSOURCE_D3PCLK1;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();

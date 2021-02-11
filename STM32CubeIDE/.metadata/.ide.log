@@ -36063,3 +36063,1438 @@
 
 
 2021-02-10 20:30:29,016 [INFO] Activator:171 - !SESSION log4j initialized
+2021-02-11 22:51:59,752 [INFO] Activator:170 - 
+
+
+2021-02-11 22:51:59,868 [INFO] Activator:171 - !SESSION log4j initialized
+2021-02-11 22:57:20,322 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2021-02-11 22:57:22,448 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304
+2021-02-11 22:57:22,595 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/mcu/
+2021-02-11 22:57:22,603 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/boardmanager/
+2021-02-11 22:57:22,604 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:22,604 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:22,608 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:22,893 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:22,896 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:22,897 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:22,899 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:22,905 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-11 22:57:22,911 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:23,478 [INFO] RulesReader:52 - Compatibility file has been processed (228 Rules)
+2021-02-11 22:57:24,469 [INFO] MicroXplorer:565 - Detected Java Version = 1.8.0_252
+2021-02-11 22:57:24,470 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/mcu/
+2021-02-11 22:57:24,473 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/boardmanager/
+2021-02-11 22:57:24,473 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:24,474 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:24,474 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:24,474 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,475 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:24,475 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,475 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:24,476 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,477 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:24,477 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,477 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:24,478 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,478 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,479 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-11 22:57:24,479 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:24,480 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:25,498 [INFO] MainPanel:190 - HeapMemory: 405798912
+2021-02-11 22:57:26,041 [INFO] DbMcusXml:71 - Set database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/mcu/
+2021-02-11 22:57:26,042 [INFO] DbBoardsPdsc:57 - Set plugin database path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/boardmanager/
+2021-02-11 22:57:26,042 [INFO] DbMcus:259 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:26,042 [INFO] DbBoards:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:26,042 [INFO] DbExamples:329 - Set plugin images path to: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/plugins/mcufinder/images/
+2021-02-11 22:57:26,044 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,044 [INFO] DbMcusDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:26,045 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,045 [INFO] DbMcusJson:63 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:26,046 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,046 [INFO] DbBoardsDocs:112 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:26,046 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,047 [INFO] DbBoardsJson:56 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:26,047 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,047 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,047 [INFO] CrossReferenceDbSqlite:196 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/cs/
+2021-02-11 22:57:26,047 [WARN] DbFile:36 - Overriding database path with different value: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder/ => C:\Users\Bogdan\.stmcufinder\plugins\mcufinder
+2021-02-11 22:57:26,048 [INFO] DbExamplesSqlite:699 - Set database path to: C:\Users\Bogdan\.stmcufinder\plugins\mcufinder//mcu/
+2021-02-11 22:57:26,108 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304
+2021-02-11 22:57:26,110 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=, ]
+2021-02-11 22:57:26,203 [INFO] PluginManage:292 - Check plugin analytics
+2021-02-11 22:57:27,161 [INFO] AnalyticsPlugin:225 - Accepted Software Licenses: 
+2021-02-11 22:57:27,162 [INFO] AnalyticsPlugin:227 - Accepted CMSIS Pack Licenses: 
+2021-02-11 22:57:27,163 [INFO] AnalyticsPlugin:229 - Accepted Firmware Licenses: 
+2021-02-11 22:57:27,165 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2021-02-11 22:57:27,165 [INFO] PluginManage:292 - Check plugin clock
+2021-02-11 22:57:27,254 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2021-02-11 22:57:27,254 [INFO] PluginManage:292 - Check plugin ddr
+2021-02-11 22:57:27,306 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2021-02-11 22:57:27,306 [INFO] PluginManage:292 - Check plugin filemanager
+2021-02-11 22:57:28,192 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2021-02-11 22:57:28,192 [INFO] PluginManage:292 - Check plugin ipmanager
+2021-02-11 22:57:28,246 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2021-02-11 22:57:28,247 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2021-02-11 22:57:28,312 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2021-02-11 22:57:28,313 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2021-02-11 22:57:28,469 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2021-02-11 22:57:28,469 [INFO] PluginManage:292 - Check plugin power
+2021-02-11 22:57:28,711 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2021-02-11 22:57:28,712 [INFO] PluginManage:292 - Check plugin projectmanager
+2021-02-11 22:57:28,748 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2021-02-11 22:57:28,748 [INFO] PluginManage:292 - Check plugin thirdparty
+2021-02-11 22:57:29,602 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2021-02-11 22:57:29,603 [INFO] PluginManage:292 - Check plugin tools
+2021-02-11 22:57:29,603 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2021-02-11 22:57:29,604 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2021-02-11 22:57:29,604 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [1/15]
+2021-02-11 22:57:29,644 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2021-02-11 22:57:29,644 [INFO] PluginManage:292 - Check plugin tutovideos
+2021-02-11 22:57:30,500 [INFO] PluginManage:342 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2021-02-11 22:57:30,501 [INFO] PluginManage:292 - Check plugin updater
+2021-02-11 22:57:30,584 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2021-02-11 22:57:30,585 [INFO] PluginManage:265 - PluginManage : Loaded plugins [13]
+2021-02-11 22:57:32,605 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [2/15]
+2021-02-11 22:57:34,412 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 22:57:35,151 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,152 [INFO] PluginManager:203 - loadIPPluginJar : add adc
+2021-02-11 22:57:35,169 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,169 [INFO] PluginManager:203 - loadIPPluginJar : add aes
+2021-02-11 22:57:35,237 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,237 [INFO] PluginManager:203 - loadIPPluginJar : add can
+2021-02-11 22:57:35,295 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,295 [INFO] PluginManager:203 - loadIPPluginJar : add comp
+2021-02-11 22:57:35,323 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,324 [INFO] PluginManager:203 - loadIPPluginJar : add cryp
+2021-02-11 22:57:35,361 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,361 [INFO] PluginManager:203 - loadIPPluginJar : add dfsdm
+2021-02-11 22:57:35,388 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,390 [INFO] PluginManager:203 - loadIPPluginJar : add dma
+2021-02-11 22:57:35,399 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,399 [INFO] PluginManager:203 - loadIPPluginJar : add fatfs
+2021-02-11 22:57:35,444 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,444 [INFO] PluginManager:203 - loadIPPluginJar : add fmc
+2021-02-11 22:57:35,579 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,580 [INFO] PluginManager:203 - loadIPPluginJar : add freertos
+2021-02-11 22:57:35,605 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [3/15]
+2021-02-11 22:57:35,614 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,615 [INFO] PluginManager:203 - loadIPPluginJar : add genericplugin
+2021-02-11 22:57:35,687 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,687 [INFO] PluginManager:203 - loadIPPluginJar : add gfxmmu
+2021-02-11 22:57:35,709 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,709 [INFO] PluginManager:203 - loadIPPluginJar : add gic
+2021-02-11 22:57:35,717 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,718 [INFO] PluginManager:203 - loadIPPluginJar : add gpio
+2021-02-11 22:57:35,750 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,751 [INFO] PluginManager:203 - loadIPPluginJar : add gtzc
+2021-02-11 22:57:35,756 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,757 [INFO] PluginManager:203 - loadIPPluginJar : add hash
+2021-02-11 22:57:35,840 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,840 [INFO] PluginManager:203 - loadIPPluginJar : add i2c
+2021-02-11 22:57:35,854 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,854 [INFO] PluginManager:203 - loadIPPluginJar : add i2s
+2021-02-11 22:57:35,859 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,859 [INFO] PluginManager:203 - loadIPPluginJar : add ipddr
+2021-02-11 22:57:35,887 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,887 [INFO] PluginManager:203 - loadIPPluginJar : add lorawan
+2021-02-11 22:57:35,899 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,900 [INFO] PluginManager:203 - loadIPPluginJar : add ltdc
+2021-02-11 22:57:35,931 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,931 [INFO] PluginManager:203 - loadIPPluginJar : add mdma
+2021-02-11 22:57:35,980 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:35,981 [INFO] PluginManager:203 - loadIPPluginJar : add nvic
+2021-02-11 22:57:36,000 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,001 [INFO] PluginManager:203 - loadIPPluginJar : add opamp
+2021-02-11 22:57:36,043 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,044 [INFO] PluginManager:203 - loadIPPluginJar : add openamp
+2021-02-11 22:57:36,064 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,065 [INFO] PluginManager:203 - loadIPPluginJar : add pdm2pcm
+2021-02-11 22:57:36,094 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,099 [INFO] PluginManager:203 - loadIPPluginJar : add plateformsettings
+2021-02-11 22:57:36,116 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,117 [INFO] PluginManager:203 - loadIPPluginJar : add quadspi
+2021-02-11 22:57:36,157 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,157 [INFO] PluginManager:203 - loadIPPluginJar : add resmgrutility
+2021-02-11 22:57:36,173 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,173 [INFO] PluginManager:203 - loadIPPluginJar : add sai
+2021-02-11 22:57:36,190 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,190 [INFO] PluginManager:203 - loadIPPluginJar : add spi
+2021-02-11 22:57:36,207 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,207 [INFO] PluginManager:203 - loadIPPluginJar : add stm32_wpan
+2021-02-11 22:57:36,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,246 [INFO] PluginManager:203 - loadIPPluginJar : add tim
+2021-02-11 22:57:36,252 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,253 [INFO] PluginManager:203 - loadIPPluginJar : add touchsensing
+2021-02-11 22:57:36,267 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,268 [INFO] PluginManager:203 - loadIPPluginJar : add tracer_emb
+2021-02-11 22:57:36,332 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,333 [INFO] PluginManager:203 - loadIPPluginJar : add ts
+2021-02-11 22:57:36,369 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,370 [INFO] PluginManager:203 - loadIPPluginJar : add tsc
+2021-02-11 22:57:36,390 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,390 [INFO] PluginManager:203 - loadIPPluginJar : add ucpd
+2021-02-11 22:57:36,475 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:57:36,475 [INFO] PluginManager:203 - loadIPPluginJar : add usart
+2021-02-11 22:57:38,606 [INFO] ThirdPartyUpdaterWithRetryManager:56 - Updater plugin not ready yet. [4/15]
+2021-02-11 22:57:38,808 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:39,164 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:39,483 [WARN] DetailPanel:347 - Failed to get advertising image, set to default
+2021-02-11 22:57:39,489 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:39,541 [WARN] DetailPanel:347 - Failed to get advertising image, set to default
+2021-02-11 22:57:39,668 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:39,669 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-11 22:57:41,606 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:41,606 [ERROR] AbstractThirdPartyUpdaterManager:153 - java.lang.Integer cannot be cast to java.util.List
+2021-02-11 22:57:41,606 [INFO] ThirdParty:887 - Integrity check success = false
+2021-02-11 22:57:41,607 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2021-02-11 22:57:41,607 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2021-02-11 22:57:41,607 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-11 22:57:41,719 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-11 22:57:41,726 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 22:57:41,728 [FATAL] Updater:284 - Updater called before beeing initialized
+2021-02-11 22:57:41,862 [ERROR] Updater:1065 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2021-02-11 22:57:41,942 [INFO] Updater:1002 - Updater Version found : 6.1.1
+2021-02-11 22:57:42,213 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304
+2021-02-11 22:58:01,037 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 22:58:01,038 [INFO] MainUpdater:249 - Updater Check For Update Now.
+2021-02-11 22:58:01,039 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 22:58:01,373 [INFO] CheckServerUpdateThread:102 - End of CheckServer Thread
+2021-02-11 22:58:01,462 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 22:58:01,494 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 22:58:02,507 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 22:58:02,507 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 22:58:02,507 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-11 22:58:02,508 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-11 22:58:02,508 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-11 22:58:02,511 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 22:58:02,512 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 311114168 Bytes (405798912)
+2021-02-11 22:58:02,514 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 22:58:02,515 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 22:58:02,515 [INFO] OpenFileManager:274 - Change cursor
+2021-02-11 22:58:02,578 [WARN] ThirdParty:204 - Use empty third party IP manager
+2021-02-11 22:58:02,644 [WARN] IntegrityCheckThread:59 - waiting for thirdparty lock release [integrity check]
+2021-02-11 22:58:02,645 [INFO] IntegrityCheckThread:61 - entering critical section [integrity check]
+2021-02-11 22:58:02,702 [INFO] ThirdParty:887 - Integrity check success = true
+2021-02-11 22:58:02,702 [INFO] IntegrityCheckThread:75 - exiting critical section [integrity check]
+2021-02-11 22:58:02,703 [INFO] IntegrityCheckThread:78 - End integrity checks thread
+2021-02-11 22:58:25,956 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-02-11 22:58:25,957 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-02-11 22:58:25,957 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-02-11 22:58:25,958 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-02-11 22:58:25,958 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-02-11 22:58:25,965 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,966 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,966 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,966 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,967 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,967 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,967 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,967 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,968 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,969 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,970 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,970 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,970 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,971 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,971 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,971 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,971 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,971 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,972 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,972 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,972 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,972 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,973 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,973 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,973 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 22:58:25,993 [INFO] RtosManager:778 - Current active RTOS is FREERTOS [Cortex-M7NS]
+2021-02-11 22:58:26,013 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (DFSDMFreq_Value) has invalid value (120000000)
+2021-02-11 22:58:26,028 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2021-02-11 22:58:27,383 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 577749944 Bytes (801112064)
+2021-02-11 22:58:27,385 [INFO] DbMcusXml:97 - Load MCU database from C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\/mcu/families.xml
+2021-02-11 22:58:29,785 [INFO] DbMcusJson:92 - JSON generation date=Wed Dec 09 19:22:40 EET 2020 (1607534560)
+2021-02-11 22:58:31,237 [INFO] DbMcus:176 - Found 1835 MCUs (1796 are supported by CubeMX, 1804 are visible in CubeMX)
+2021-02-11 22:58:31,343 [INFO] ApiDb:238 - Load user favorites file C:\Users\Bogdan/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2021-02-11 22:58:31,344 [INFO] ApiDb:242 - User favorites MCUs=[]
+2021-02-11 22:58:31,344 [INFO] DbMcus:188 - Set 0 / 0 favorites MCUs
+2021-02-11 22:58:31,575 [WARN] ThirdParty:749 - waiting for thirdparty lock release [change project]
+2021-02-11 22:58:31,575 [INFO] ThirdParty:751 - entering critical section [change project]
+2021-02-11 22:58:31,575 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-02-11 22:58:31,576 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-02-11 22:58:31,576 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-02-11 22:58:31,576 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-02-11 22:58:31,576 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-02-11 22:58:31,577 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-02-11 22:58:31,578 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-02-11 22:58:31,578 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-02-11 22:58:31,578 [INFO] ThirdParty:757 - exiting critical section [change project]
+2021-02-11 22:58:33,420 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 22:58:33,423 [INFO] PinOutPanel:1434 - setPackage(STM32H743ZITx,LQFP144)
+2021-02-11 22:58:35,244 [INFO] UtilMem:74 - Before build in PCC Used Memory: 548668344 Bytes (893386752)
+2021-02-11 22:58:37,761 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 22:58:37,914 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 22:58:38,060 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 22:58:38,081 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 22:58:38,884 [INFO] UtilMem:74 - After build in PCC Used Memory: 592192072 Bytes (893386752)
+2021-02-11 22:58:39,669 [INFO] ApiDbMcu:456 - Load IP Config File for FREERTOS
+2021-02-11 22:58:39,756 [INFO] ApiDbMcu:456 - Load IP Config File for USB_DEVICE
+2021-02-11 22:58:40,010 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,010 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,011 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,011 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,011 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,011 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,012 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,012 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,013 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,013 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,014 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,014 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,014 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,015 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,015 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,016 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,016 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,017 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,017 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,017 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,018 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,018 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,019 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,019 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,020 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,020 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,022 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,022 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,023 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,024 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,026 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,026 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,027 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,029 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,030 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,031 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,032 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,033 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,034 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,035 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,036 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,037 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,038 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,039 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,039 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,040 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,041 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,042 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,043 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,043 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,044 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,045 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,046 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,047 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,048 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,049 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,049 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,050 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,052 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,053 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,054 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,055 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,061 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,062 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,063 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,065 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,066 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,067 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,068 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,069 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,070 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,071 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,072 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,073 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,074 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,075 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,076 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,078 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,079 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,080 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,081 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,084 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,086 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,087 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,089 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,090 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,091 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,093 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,095 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,096 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 22:58:40,187 [INFO] ApiDbMcu:456 - Load IP Config File for PDM2PCM
+2021-02-11 22:58:40,358 [WARN] FreeRTOS:980 - Null or empty value: should not occur! (nothing added to the table)
+2021-02-11 22:58:40,453 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2021-02-11 22:58:40,881 [INFO] RtosManager:591 - Active RTOS found at IOC load: FREERTOS [Cortex-M7NS]
+2021-02-11 22:58:40,997 [INFO] OpenFileManager:294 - Restore cursor
+2021-02-11 22:59:22,744 [INFO] Gpio:248 - dependency for GPIO [DEBUG, ETH, I2C1, RCC, TIM2, TIM3, TIM4, TIM5, TIM15, USART3, USART6, USB_OTG_FS]
+2021-02-11 22:59:36,834 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 610884472 Bytes (893386752)
+2021-02-11 23:00:01,933 [INFO] DbMcusDocs:145 - JSON generation date=Wed Dec 09 19:22:40 EET 2020 (1607534560)
+2021-02-11 23:00:02,166 [INFO] DbMcusDocs:81 - Found 612 MCUs documents
+2021-02-11 23:00:57,876 [INFO] Gpio:248 - dependency for GPIO [DEBUG, ETH, I2C1, RCC, TIM2, TIM3, TIM4, TIM5, TIM15, USART3, USART6, USB_OTG_FS]
+2021-02-11 23:01:19,231 [INFO] Gpio:248 - dependency for GPIO [DEBUG, ETH, I2C1, RCC, TIM2, TIM3, TIM4, TIM5, TIM15, USART3, USART6, USB_OTG_FS]
+2021-02-11 23:02:51,796 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 707790096 Bytes (893386752)
+2021-02-11 23:02:55,893 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 726136048 Bytes (893386752)
+2021-02-11 23:03:40,066 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 582712032 Bytes (893386752)
+2021-02-11 23:03:42,463 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: FREERTOS
+2021-02-11 23:03:42,463 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,463 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,463 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,464 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,464 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_DEVICE
+2021-02-11 23:03:42,464 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-11 23:03:42,464 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_OTG_FS
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,465 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:03:42,466 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DEBUG
+2021-02-11 23:03:42,467 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-11 23:03:42,467 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ETH
+2021-02-11 23:03:42,469 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\
+2021-02-11 23:03:55,135 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp_save
+2021-02-11 23:03:57,311 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp
+2021-02-11 23:03:58,551 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c_save
+2021-02-11 23:03:58,995 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c
+2021-02-11 23:03:59,034 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h_save
+2021-02-11 23:03:59,280 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h
+2021-02-11 23:03:59,291 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2021-02-11 23:04:00,927 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2021-02-11 23:04:01,066 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp
+2021-02-11 23:04:01,220 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2021-02-11 23:04:01,331 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp
+2021-02-11 23:04:01,843 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2021-02-11 23:04:04,661 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2021-02-11 23:04:05,766 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2021-02-11 23:04:06,117 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp
+2021-02-11 23:04:07,072 [WARN] IPConfigManager:92 - WARNING: Missing Config File for DEBUG ip!!
+2021-02-11 23:04:15,201 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:15,548 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:04:15,600 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp_save
+2021-02-11 23:04:15,706 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp
+2021-02-11 23:04:15,730 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp_save
+2021-02-11 23:04:15,818 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp
+2021-02-11 23:04:15,862 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp_save
+2021-02-11 23:04:15,976 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp
+2021-02-11 23:04:16,144 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-02-11 23:04:16,243 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp
+2021-02-11 23:04:16,255 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-02-11 23:04:16,340 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp
+2021-02-11 23:04:16,374 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp_save
+2021-02-11 23:04:16,465 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp
+2021-02-11 23:04:16,493 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp_save
+2021-02-11 23:04:16,577 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp
+2021-02-11 23:04:16,606 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h_save
+2021-02-11 23:04:16,772 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h
+2021-02-11 23:04:16,822 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c_save
+2021-02-11 23:04:17,028 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c
+2021-02-11 23:04:17,032 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:17,180 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp_save
+2021-02-11 23:04:17,363 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp
+2021-02-11 23:04:17,366 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:17,423 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c_save
+2021-02-11 23:04:17,722 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c
+2021-02-11 23:04:17,752 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h_save
+2021-02-11 23:04:17,978 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h
+2021-02-11 23:04:17,980 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:18,013 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c_save
+2021-02-11 23:04:18,242 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c
+2021-02-11 23:04:18,262 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h_save
+2021-02-11 23:04:18,437 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h
+2021-02-11 23:04:18,441 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:18,494 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c_save
+2021-02-11 23:04:19,076 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c
+2021-02-11 23:04:19,091 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h_save
+2021-02-11 23:04:19,230 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h
+2021-02-11 23:04:19,234 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:19,272 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c_save
+2021-02-11 23:04:19,544 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c
+2021-02-11 23:04:19,561 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h_save
+2021-02-11 23:04:19,702 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h
+2021-02-11 23:04:19,706 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:04:19,731 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:04:20,313 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c_save
+2021-02-11 23:04:20,637 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c
+2021-02-11 23:04:20,798 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h_save
+2021-02-11 23:04:20,943 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h
+2021-02-11 23:04:21,061 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h_save
+2021-02-11 23:04:21,160 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h
+2021-02-11 23:04:21,206 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c_save
+2021-02-11 23:04:21,936 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c
+2021-02-11 23:04:22,379 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h_save
+2021-02-11 23:04:22,538 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h
+2021-02-11 23:04:22,697 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c_save
+2021-02-11 23:04:22,910 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c
+2021-02-11 23:04:22,968 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h_save
+2021-02-11 23:04:23,093 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h
+2021-02-11 23:04:23,147 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c_save
+2021-02-11 23:04:23,341 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c
+2021-02-11 23:04:23,818 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c_save
+2021-02-11 23:04:24,284 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c
+2021-02-11 23:04:24,364 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h_save
+2021-02-11 23:04:24,508 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h
+2021-02-11 23:04:26,061 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c_save
+2021-02-11 23:04:26,629 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c
+2021-02-11 23:04:26,665 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp_save
+2021-02-11 23:04:26,744 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp
+2021-02-11 23:04:26,769 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2021-02-11 23:04:26,902 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c
+2021-02-11 23:04:27,001 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h_save
+2021-02-11 23:04:27,307 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h
+2021-02-11 23:04:27,526 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h_save
+2021-02-11 23:04:27,668 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h
+2021-02-11 23:04:27,867 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c_save
+2021-02-11 23:04:28,040 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c
+2021-02-11 23:04:43,945 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 13596mS.
+2021-02-11 23:04:43,967 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.2
+2021-02-11 23:04:44,589 [INFO] ConfigFileManager:1238 - The Die is : DIE450
+2021-02-11 23:04:44,705 [INFO] ApiDbMcu:456 - Load IP Config File for FATFS
+2021-02-11 23:04:44,772 [INFO] ApiDbMcu:456 - Load IP Config File for LIBJPEG
+2021-02-11 23:04:45,168 [INFO] ApiDbMcu:456 - Load IP Config File for LWIP
+2021-02-11 23:04:45,301 [INFO] ApiDbMcu:456 - Load IP Config File for MBEDTLS
+2021-02-11 23:04:45,538 [INFO] ApiDbMcu:456 - Load IP Config File for USB_HOST
+2021-02-11 23:05:27,960 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 43993mS.
+2021-02-11 23:05:27,961 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-11 23:05:27,970 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-11 23:20:18,277 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:20:18,686 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-11 23:22:01,479 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:03,458 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:16,033 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:32,826 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:36,560 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:43,208 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:57,186 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:23:57,288 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:24:02,301 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:24:02,491 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:24:07,100 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 690623232 Bytes (977272832)
+2021-02-11 23:24:17,968 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 714962512 Bytes (977272832)
+2021-02-11 23:24:27,452 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 535626328 Bytes (977272832)
+2021-02-11 23:24:28,427 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: FREERTOS
+2021-02-11 23:24:28,427 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,427 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,427 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,427 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,428 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_DEVICE
+2021-02-11 23:24:28,428 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-11 23:24:28,428 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-11 23:24:28,428 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:24:28,429 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:24:28,429 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_OTG_FS
+2021-02-11 23:24:28,429 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-11 23:24:28,429 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:24:28,430 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:24:28,430 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,430 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:24:28,430 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DEBUG
+2021-02-11 23:24:28,431 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-11 23:24:28,432 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ETH
+2021-02-11 23:24:28,433 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\
+2021-02-11 23:24:32,999 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp_save
+2021-02-11 23:24:33,209 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp
+2021-02-11 23:24:34,154 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c_save
+2021-02-11 23:24:34,581 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c
+2021-02-11 23:24:34,609 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h_save
+2021-02-11 23:24:34,952 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h
+2021-02-11 23:24:34,963 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2021-02-11 23:24:35,667 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2021-02-11 23:24:35,803 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp
+2021-02-11 23:24:35,812 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2021-02-11 23:24:35,910 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp
+2021-02-11 23:24:36,102 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2021-02-11 23:24:36,235 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2021-02-11 23:24:36,403 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2021-02-11 23:24:36,556 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp
+2021-02-11 23:24:36,873 [WARN] IPConfigManager:92 - WARNING: Missing Config File for DEBUG ip!!
+2021-02-11 23:24:40,143 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:40,182 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:24:40,269 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp_save
+2021-02-11 23:24:40,377 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp
+2021-02-11 23:24:40,407 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp_save
+2021-02-11 23:24:40,471 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp
+2021-02-11 23:24:40,551 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp_save
+2021-02-11 23:24:40,611 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp
+2021-02-11 23:24:40,699 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-02-11 23:24:40,769 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp
+2021-02-11 23:24:40,776 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-02-11 23:24:40,873 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp
+2021-02-11 23:24:40,930 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp_save
+2021-02-11 23:24:41,000 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp
+2021-02-11 23:24:41,038 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp_save
+2021-02-11 23:24:41,090 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp
+2021-02-11 23:24:41,188 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h_save
+2021-02-11 23:24:41,327 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h
+2021-02-11 23:24:41,485 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c_save
+2021-02-11 23:24:41,716 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c
+2021-02-11 23:24:41,719 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:41,770 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp_save
+2021-02-11 23:24:41,843 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp
+2021-02-11 23:24:41,845 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:41,977 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c_save
+2021-02-11 23:24:42,141 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c
+2021-02-11 23:24:42,175 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h_save
+2021-02-11 23:24:42,272 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h
+2021-02-11 23:24:42,276 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:42,308 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c_save
+2021-02-11 23:24:42,444 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c
+2021-02-11 23:24:42,455 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h_save
+2021-02-11 23:24:42,555 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h
+2021-02-11 23:24:42,558 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:42,597 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c_save
+2021-02-11 23:24:42,884 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c
+2021-02-11 23:24:42,896 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h_save
+2021-02-11 23:24:42,994 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h
+2021-02-11 23:24:42,998 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:43,028 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c_save
+2021-02-11 23:24:43,163 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c
+2021-02-11 23:24:43,175 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h_save
+2021-02-11 23:24:43,275 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h
+2021-02-11 23:24:43,279 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:24:43,292 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:24:43,451 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c_save
+2021-02-11 23:24:43,540 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c
+2021-02-11 23:24:43,593 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h_save
+2021-02-11 23:24:43,696 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h
+2021-02-11 23:24:43,781 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h_save
+2021-02-11 23:24:43,878 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h
+2021-02-11 23:24:44,001 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c_save
+2021-02-11 23:24:44,259 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c
+2021-02-11 23:24:44,326 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h_save
+2021-02-11 23:24:44,432 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h
+2021-02-11 23:24:44,482 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c_save
+2021-02-11 23:24:44,577 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c
+2021-02-11 23:24:44,883 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h_save
+2021-02-11 23:24:44,985 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h
+2021-02-11 23:24:45,024 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c_save
+2021-02-11 23:24:45,294 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c
+2021-02-11 23:24:45,414 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c_save
+2021-02-11 23:24:45,709 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c
+2021-02-11 23:24:45,751 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h_save
+2021-02-11 23:24:45,901 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h
+2021-02-11 23:24:46,406 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c_save
+2021-02-11 23:24:46,538 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c
+2021-02-11 23:24:46,575 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp_save
+2021-02-11 23:24:46,674 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp
+2021-02-11 23:24:46,754 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2021-02-11 23:24:46,828 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c
+2021-02-11 23:24:46,928 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h_save
+2021-02-11 23:24:47,075 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h
+2021-02-11 23:24:47,277 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h_save
+2021-02-11 23:24:47,396 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h
+2021-02-11 23:24:47,471 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c_save
+2021-02-11 23:24:47,598 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c
+2021-02-11 23:24:53,699 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 5441mS.
+2021-02-11 23:24:53,713 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.2
+2021-02-11 23:24:54,071 [INFO] ConfigFileManager:1238 - The Die is : DIE450
+2021-02-11 23:25:00,885 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 7172mS.
+2021-02-11 23:25:00,887 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-11 23:25:00,897 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-11 23:35:15,610 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:35:15,712 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:35:58,087 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 23:35:58,087 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 23:35:58,242 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:35:59,579 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:35:59,602 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:36:00,223 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 23:36:00,223 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 23:36:00,223 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-11 23:36:00,223 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-11 23:36:00,224 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-11 23:36:00,225 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 23:36:00,234 [WARN] IpParametersView:138 - Warning: This peripheral hasn't parameters
+2021-02-11 23:36:00,239 [WARN] MainPanel:236 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2021-02-11 23:36:00,241 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 408287256 Bytes (1073741824)
+2021-02-11 23:36:00,242 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 23:36:00,242 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 23:36:00,242 [INFO] OpenFileManager:274 - Change cursor
+2021-02-11 23:36:00,243 [WARN] ThirdParty:204 - Use empty third party IP manager
+2021-02-11 23:36:00,445 [INFO] RulesReader:52 - Compatibility file has been processed (228 Rules)
+2021-02-11 23:36:13,628 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-02-11 23:36:13,628 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-02-11 23:36:13,628 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-02-11 23:36:13,628 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-02-11 23:36:13,629 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-02-11 23:36:13,630 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,630 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,630 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,630 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,631 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,632 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,632 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,632 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,632 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,632 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,633 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,633 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,633 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,633 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,633 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,634 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,635 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-11 23:36:13,643 [INFO] RtosManager:778 - Current active RTOS is FREERTOS [Cortex-M7NS]
+2021-02-11 23:36:13,653 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (DFSDMFreq_Value) has invalid value (120000000)
+2021-02-11 23:36:13,664 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2021-02-11 23:36:14,317 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 777206800 Bytes (1073741824)
+2021-02-11 23:36:14,319 [WARN] ThirdParty:749 - waiting for thirdparty lock release [change project]
+2021-02-11 23:36:14,319 [INFO] ThirdParty:751 - entering critical section [change project]
+2021-02-11 23:36:14,319 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-02-11 23:36:14,319 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-02-11 23:36:14,319 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-02-11 23:36:14,319 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-02-11 23:36:14,320 [INFO] ThirdParty:757 - exiting critical section [change project]
+2021-02-11 23:36:14,560 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 23:36:15,075 [INFO] PinOutPanel:1434 - setPackage(STM32H743ZITx,LQFP144)
+2021-02-11 23:36:17,267 [INFO] UtilMem:74 - Before build in PCC Used Memory: 571047976 Bytes (1073741824)
+2021-02-11 23:36:18,146 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 23:36:18,368 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 23:36:18,414 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 23:36:18,419 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-11 23:36:18,531 [INFO] UtilMem:74 - After build in PCC Used Memory: 628725816 Bytes (1073741824)
+2021-02-11 23:36:18,844 [INFO] ApiDbMcu:456 - Load IP Config File for FREERTOS
+2021-02-11 23:36:18,951 [INFO] ApiDbMcu:456 - Load IP Config File for USB_DEVICE
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,056 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,057 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,058 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,059 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,060 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,061 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,061 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,061 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,061 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,062 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,062 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,063 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,063 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,064 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,064 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,065 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,065 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,066 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,066 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,066 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,067 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,067 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,067 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,068 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,068 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,068 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,069 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,069 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,069 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,070 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,071 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,071 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,072 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,072 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,073 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,073 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,074 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,074 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,075 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,075 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,076 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,076 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,077 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,077 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,077 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,078 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,079 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,079 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,080 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,080 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,081 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,081 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,082 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,082 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,083 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,083 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,084 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,085 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,085 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,086 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,086 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,087 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,088 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,089 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,089 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,091 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,092 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,093 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,094 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,096 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,097 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,099 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,100 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,101 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,102 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-11 23:36:19,225 [INFO] ApiDbMcu:456 - Load IP Config File for PDM2PCM
+2021-02-11 23:36:19,242 [WARN] FreeRTOS:980 - Null or empty value: should not occur! (nothing added to the table)
+2021-02-11 23:36:19,262 [INFO] RtosManager:591 - Active RTOS found at IOC load: FREERTOS [Cortex-M7NS]
+2021-02-11 23:36:19,266 [INFO] OpenFileManager:294 - Restore cursor
+2021-02-11 23:37:13,878 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:37:14,024 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:37:18,063 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 616515856 Bytes (1073741824)
+2021-02-11 23:37:19,658 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 640633200 Bytes (1073741824)
+2021-02-11 23:37:27,685 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 778622248 Bytes (1073741824)
+2021-02-11 23:37:28,396 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: FREERTOS
+2021-02-11 23:37:28,396 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,396 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,396 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,396 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_DEVICE
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_OTG_FS
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:37:28,397 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DEBUG
+2021-02-11 23:37:28,398 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-11 23:37:28,398 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ETH
+2021-02-11 23:37:28,400 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\
+2021-02-11 23:37:32,361 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp_save
+2021-02-11 23:37:32,432 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp
+2021-02-11 23:37:33,247 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c_save
+2021-02-11 23:37:33,372 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c
+2021-02-11 23:37:33,387 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h_save
+2021-02-11 23:37:33,531 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h
+2021-02-11 23:37:33,540 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2021-02-11 23:37:34,742 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2021-02-11 23:37:34,861 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp
+2021-02-11 23:37:34,886 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2021-02-11 23:37:34,967 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp
+2021-02-11 23:37:34,984 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2021-02-11 23:37:35,143 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2021-02-11 23:37:35,155 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2021-02-11 23:37:35,315 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp
+2021-02-11 23:37:35,535 [WARN] IPConfigManager:92 - WARNING: Missing Config File for DEBUG ip!!
+2021-02-11 23:37:39,774 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:39,824 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:37:39,860 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp_save
+2021-02-11 23:37:39,947 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp
+2021-02-11 23:37:39,955 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp_save
+2021-02-11 23:37:40,022 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp
+2021-02-11 23:37:40,032 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp_save
+2021-02-11 23:37:40,085 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp
+2021-02-11 23:37:40,092 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-02-11 23:37:40,155 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp
+2021-02-11 23:37:40,162 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-02-11 23:37:40,225 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp
+2021-02-11 23:37:40,232 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp_save
+2021-02-11 23:37:40,481 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp
+2021-02-11 23:37:40,490 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp_save
+2021-02-11 23:37:40,550 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp
+2021-02-11 23:37:40,562 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h_save
+2021-02-11 23:37:40,658 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h
+2021-02-11 23:37:40,679 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c_save
+2021-02-11 23:37:40,842 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c
+2021-02-11 23:37:40,845 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:40,875 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp_save
+2021-02-11 23:37:40,952 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp
+2021-02-11 23:37:40,954 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:40,984 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c_save
+2021-02-11 23:37:41,110 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c
+2021-02-11 23:37:41,122 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h_save
+2021-02-11 23:37:41,218 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h
+2021-02-11 23:37:41,222 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:41,254 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c_save
+2021-02-11 23:37:41,471 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c
+2021-02-11 23:37:41,484 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h_save
+2021-02-11 23:37:41,600 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h
+2021-02-11 23:37:41,603 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:41,635 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c_save
+2021-02-11 23:37:41,885 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c
+2021-02-11 23:37:41,895 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h_save
+2021-02-11 23:37:42,005 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h
+2021-02-11 23:37:42,008 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:42,039 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c_save
+2021-02-11 23:37:42,182 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c
+2021-02-11 23:37:42,192 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h_save
+2021-02-11 23:37:42,327 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h
+2021-02-11 23:37:42,331 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:37:42,343 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:37:42,383 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c_save
+2021-02-11 23:37:42,497 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c
+2021-02-11 23:37:42,510 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h_save
+2021-02-11 23:37:42,819 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h
+2021-02-11 23:37:42,833 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h_save
+2021-02-11 23:37:42,994 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h
+2021-02-11 23:37:43,007 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c_save
+2021-02-11 23:37:43,154 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c
+2021-02-11 23:37:43,167 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h_save
+2021-02-11 23:37:43,300 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h
+2021-02-11 23:37:43,315 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c_save
+2021-02-11 23:37:43,447 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c
+2021-02-11 23:37:43,471 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h_save
+2021-02-11 23:37:43,621 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h
+2021-02-11 23:37:43,646 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c_save
+2021-02-11 23:37:43,782 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c
+2021-02-11 23:37:43,851 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c_save
+2021-02-11 23:37:43,972 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c
+2021-02-11 23:37:43,983 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h_save
+2021-02-11 23:37:44,078 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h
+2021-02-11 23:37:44,609 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c_save
+2021-02-11 23:37:44,749 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c
+2021-02-11 23:37:44,762 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp_save
+2021-02-11 23:37:44,842 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp
+2021-02-11 23:37:44,852 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2021-02-11 23:37:45,026 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c
+2021-02-11 23:37:45,069 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h_save
+2021-02-11 23:37:45,181 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h
+2021-02-11 23:37:45,274 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h_save
+2021-02-11 23:37:45,381 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h
+2021-02-11 23:37:45,393 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c_save
+2021-02-11 23:37:45,497 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c
+2021-02-11 23:37:46,750 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 704mS.
+2021-02-11 23:37:46,765 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.2
+2021-02-11 23:37:47,061 [INFO] ConfigFileManager:1238 - The Die is : DIE450
+2021-02-11 23:37:47,130 [INFO] ApiDbMcu:456 - Load IP Config File for FATFS
+2021-02-11 23:37:47,237 [INFO] ApiDbMcu:456 - Load IP Config File for LIBJPEG
+2021-02-11 23:37:47,319 [INFO] ApiDbMcu:456 - Load IP Config File for LWIP
+2021-02-11 23:37:47,364 [INFO] ApiDbMcu:456 - Load IP Config File for MBEDTLS
+2021-02-11 23:37:47,441 [INFO] ApiDbMcu:456 - Load IP Config File for USB_HOST
+2021-02-11 23:37:55,479 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 8714mS.
+2021-02-11 23:37:55,481 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-11 23:37:55,490 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
+2021-02-11 23:42:07,471 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 717264872 Bytes (1073741824)
+2021-02-11 23:42:09,820 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 739947688 Bytes (1073741824)
+2021-02-11 23:42:18,993 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 579444216 Bytes (1073741824)
+2021-02-11 23:42:19,927 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: FREERTOS
+2021-02-11 23:42:19,927 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,927 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_DEVICE
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:42:19,928 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_OTG_FS
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-11 23:42:19,929 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DEBUG
+2021-02-11 23:42:19,931 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-11 23:42:19,931 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ETH
+2021-02-11 23:42:19,933 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\
+2021-02-11 23:42:23,065 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp_save
+2021-02-11 23:42:23,225 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp
+2021-02-11 23:42:23,602 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c_save
+2021-02-11 23:42:23,766 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c
+2021-02-11 23:42:23,794 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h_save
+2021-02-11 23:42:23,942 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h
+2021-02-11 23:42:23,949 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2021-02-11 23:42:24,524 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2021-02-11 23:42:24,604 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp
+2021-02-11 23:42:24,611 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2021-02-11 23:42:24,689 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp
+2021-02-11 23:42:24,716 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2021-02-11 23:42:24,836 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2021-02-11 23:42:24,875 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2021-02-11 23:42:24,976 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp
+2021-02-11 23:42:25,160 [WARN] IPConfigManager:92 - WARNING: Missing Config File for DEBUG ip!!
+2021-02-11 23:42:28,369 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:28,466 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:42:28,493 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp_save
+2021-02-11 23:42:28,624 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp
+2021-02-11 23:42:28,705 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp_save
+2021-02-11 23:42:28,929 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp
+2021-02-11 23:42:28,971 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp_save
+2021-02-11 23:42:29,052 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp
+2021-02-11 23:42:29,229 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-02-11 23:42:29,292 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp
+2021-02-11 23:42:29,602 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-02-11 23:42:29,653 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp
+2021-02-11 23:42:29,732 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp_save
+2021-02-11 23:42:29,803 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp
+2021-02-11 23:42:30,116 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp_save
+2021-02-11 23:42:30,195 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp
+2021-02-11 23:42:30,248 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h_save
+2021-02-11 23:42:30,361 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h
+2021-02-11 23:42:30,413 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c_save
+2021-02-11 23:42:30,532 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c
+2021-02-11 23:42:30,536 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:30,648 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp_save
+2021-02-11 23:42:30,704 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp
+2021-02-11 23:42:30,706 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:30,759 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c_save
+2021-02-11 23:42:30,887 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c
+2021-02-11 23:42:30,911 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h_save
+2021-02-11 23:42:31,061 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h
+2021-02-11 23:42:31,064 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:31,099 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c_save
+2021-02-11 23:42:31,244 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c
+2021-02-11 23:42:31,255 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h_save
+2021-02-11 23:42:31,377 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h
+2021-02-11 23:42:31,380 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:31,416 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c_save
+2021-02-11 23:42:31,620 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c
+2021-02-11 23:42:31,631 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h_save
+2021-02-11 23:42:31,737 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h
+2021-02-11 23:42:31,740 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:31,774 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c_save
+2021-02-11 23:42:31,916 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c
+2021-02-11 23:42:31,940 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h_save
+2021-02-11 23:42:32,043 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h
+2021-02-11 23:42:32,046 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-11 23:42:32,056 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-11 23:42:32,121 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c_save
+2021-02-11 23:42:32,208 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c
+2021-02-11 23:42:32,335 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h_save
+2021-02-11 23:42:32,476 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h
+2021-02-11 23:42:32,506 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h_save
+2021-02-11 23:42:32,643 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h
+2021-02-11 23:42:32,675 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c_save
+2021-02-11 23:42:32,907 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c
+2021-02-11 23:42:32,965 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h_save
+2021-02-11 23:42:33,098 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h
+2021-02-11 23:42:33,142 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c_save
+2021-02-11 23:42:33,324 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c
+2021-02-11 23:42:33,357 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h_save
+2021-02-11 23:42:33,485 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h
+2021-02-11 23:42:33,552 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c_save
+2021-02-11 23:42:33,853 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c
+2021-02-11 23:42:33,966 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c_save
+2021-02-11 23:42:34,105 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c
+2021-02-11 23:42:34,134 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h_save
+2021-02-11 23:42:34,223 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h
+2021-02-11 23:42:34,677 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c_save
+2021-02-11 23:42:34,850 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c
+2021-02-11 23:42:34,921 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp_save
+2021-02-11 23:42:35,003 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp
+2021-02-11 23:42:35,053 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2021-02-11 23:42:35,455 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c
+2021-02-11 23:42:35,533 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h_save
+2021-02-11 23:42:35,716 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h
+2021-02-11 23:42:36,180 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h_save
+2021-02-11 23:42:36,481 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h
+2021-02-11 23:42:36,684 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c_save
+2021-02-11 23:42:36,878 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c
+2021-02-11 23:42:44,382 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 6174mS.
+2021-02-11 23:42:44,396 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.2
+2021-02-11 23:42:45,426 [INFO] ConfigFileManager:1238 - The Die is : DIE450
+2021-02-11 23:42:52,224 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 7828mS.
+2021-02-11 23:42:52,225 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-11 23:42:52,235 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-11 23:51:22,665 [INFO] NvicIntPanel:90 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,519x515,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2021-02-11 23:59:32,302 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 23:59:32,303 [INFO] MainUpdater:2644 - connection check result : 10
+2021-02-11 23:59:32,411 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:59:32,443 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:59:34,377 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:59:35,518 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:59:35,613 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-11 23:59:40,416 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 23:59:40,416 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 23:59:40,417 [WARN] ThirdParty:783 - waiting for thirdparty lock release [close project]
+2021-02-11 23:59:40,417 [INFO] ThirdParty:785 - entering critical section [close project]
+2021-02-11 23:59:40,417 [INFO] ThirdParty:796 - exiting critical section [close project]
+2021-02-11 23:59:40,418 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-11 23:59:40,425 [WARN] IpParametersView:138 - Warning: This peripheral hasn't parameters
+2021-02-11 23:59:40,430 [WARN] MainPanel:236 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2021-02-11 23:59:40,432 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 616299920 Bytes (1073741824)
+2021-02-11 23:59:40,433 [INFO] MicroXplorer:385 - Change Database Path : 
+2021-02-11 23:59:40,433 [INFO] MicroXplorer:415 - Change Database Version : DB.6.0.10
+2021-02-11 23:59:40,433 [INFO] OpenFileManager:274 - Change cursor
+2021-02-11 23:59:40,434 [WARN] ThirdParty:204 - Use empty third party IP manager
+2021-02-11 23:59:43,279 [INFO] RulesReader:52 - Compatibility file has been processed (228 Rules)
+2021-02-12 00:00:24,154 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-02-12 00:00:24,154 [INFO] RtosManager:464 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-02-12 00:00:24,154 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-02-12 00:00:24,154 [INFO] RtosManager:464 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-02-12 00:00:24,154 [WARN] ModelIntegratedComponent:182 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,156 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,157 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,157 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,157 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,157 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,157 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,158 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,159 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,160 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,161 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,162 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,163 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,163 [WARN] ModelIntegratedComponent:51 - No mode defined for component null
+2021-02-12 00:00:24,168 [INFO] RtosManager:778 - Current active RTOS is FREERTOS [Cortex-M7NS]
+2021-02-12 00:00:24,178 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Parameter (DFSDMFreq_Value) has invalid value (120000000)
+2021-02-12 00:00:24,189 [INFO] ImportTextPane:162 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2021-02-12 00:00:24,885 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 712768928 Bytes (1073741824)
+2021-02-12 00:00:24,886 [WARN] ThirdParty:749 - waiting for thirdparty lock release [change project]
+2021-02-12 00:00:24,886 [INFO] ThirdParty:751 - entering critical section [change project]
+2021-02-12 00:00:24,886 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-02-12 00:00:24,886 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-02-12 00:00:24,887 [INFO] ThirdParty:939 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-02-12 00:00:24,888 [INFO] ThirdParty:757 - exiting critical section [change project]
+2021-02-12 00:00:25,131 [INFO] PinOutPanel:1434 - setPackage(No Configuration,No Configuration)
+2021-02-12 00:00:25,257 [INFO] PinOutPanel:1434 - setPackage(STM32H743ZITx,LQFP144)
+2021-02-12 00:00:27,639 [INFO] UtilMem:74 - Before build in PCC Used Memory: 531773864 Bytes (1073741824)
+2021-02-12 00:00:48,638 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-12 00:00:50,559 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-12 00:00:50,592 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-12 00:00:50,600 [INFO] SharedServices:72 - Folder for power plug-in: C:/Users/Bogdan/.stm32cubemx/plugins/power
+2021-02-12 00:00:55,767 [INFO] UtilMem:74 - After build in PCC Used Memory: 589445544 Bytes (1073741824)
+2021-02-12 00:01:04,139 [INFO] ApiDbMcu:456 - Load IP Config File for FREERTOS
+2021-02-12 00:01:04,198 [INFO] ApiDbMcu:456 - Load IP Config File for USB_DEVICE
+2021-02-12 00:01:05,196 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,197 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,197 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,197 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,197 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,197 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,198 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,199 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,199 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,199 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,199 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,199 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,200 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,200 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,200 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,200 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,201 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,201 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,201 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,201 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,202 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,202 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,202 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,202 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,202 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,203 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,203 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,204 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,205 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,205 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,206 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,206 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,207 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,207 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,207 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,208 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,208 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,209 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,209 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,209 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,210 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,210 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,210 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,211 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,211 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,212 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,212 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,213 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,214 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,214 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,215 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,215 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,216 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,216 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,217 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,218 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,218 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,219 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,220 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,220 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,221 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,222 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,222 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,223 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,224 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,224 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,225 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,225 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,226 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,227 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,227 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,228 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,228 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,229 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,230 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,230 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,231 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,232 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,233 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,233 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,234 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,235 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,236 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,237 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,238 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,240 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,242 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,243 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,244 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,246 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,247 [INFO] IPUIPlugin:64 - create IPUIPlugin
+2021-02-12 00:01:05,267 [INFO] ApiDbMcu:456 - Load IP Config File for PDM2PCM
+2021-02-12 00:01:05,465 [WARN] FreeRTOS:980 - Null or empty value: should not occur! (nothing added to the table)
+2021-02-12 00:01:05,490 [INFO] RtosManager:591 - Active RTOS found at IOC load: FREERTOS [Cortex-M7NS]
+2021-02-12 00:01:05,494 [INFO] OpenFileManager:294 - Restore cursor
+2021-02-12 00:01:11,569 [INFO] I2cTimingTraitement:320 - 0x307075B1
+2021-02-12 00:01:50,433 [INFO] I2cTimingTraitement:320 - 0x00B03FDB
+2021-02-12 00:02:09,906 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 602554800 Bytes (1073741824)
+2021-02-12 00:02:11,816 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 625097144 Bytes (1073741824)
+2021-02-12 00:02:20,356 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 875709368 Bytes (1073741824)
+2021-02-12 00:02:21,834 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: FREERTOS
+2021-02-12 00:02:21,834 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_DEVICE
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: SYS
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: RCC
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: I2C
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USB_OTG_FS
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: NVIC
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: USART
+2021-02-12 00:02:21,835 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,836 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: TIM1_8H7
+2021-02-12 00:02:21,836 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: DEBUG
+2021-02-12 00:02:21,837 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: GPIO
+2021-02-12 00:02:21,837 [INFO] BlockDiagram:2735 - set Specific Code input for plugin: ETH
+2021-02-12 00:02:21,838 [INFO] CodeGenerator:639 - code generatio: config db path: C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.1.1.202012091304\\db\
+2021-02-12 00:02:28,539 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp_save
+2021-02-12 00:02:28,633 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\license.tmp
+2021-02-12 00:02:29,594 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c_save
+2021-02-12 00:02:29,739 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\gpio.c
+2021-02-12 00:02:29,753 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h_save
+2021-02-12 00:02:29,878 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\gpio.h
+2021-02-12 00:02:29,884 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line test
+2021-02-12 00:02:34,521 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp_save
+2021-02-12 00:02:34,576 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_vars.tmp
+2021-02-12 00:02:34,583 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp_save
+2021-02-12 00:02:34,639 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_inc.tmp
+2021-02-12 00:02:34,652 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp_save
+2021-02-12 00:02:34,733 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_HalInit.tmp
+2021-02-12 00:02:34,745 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp_save
+2021-02-12 00:02:35,337 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\usb_otg_fs_Msp.tmp
+2021-02-12 00:02:37,590 [WARN] IPConfigManager:92 - WARNING: Missing Config File for DEBUG ip!!
+2021-02-12 00:02:45,528 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:02:45,566 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-12 00:03:35,111 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp_save
+2021-02-12 00:03:35,188 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_inc.tmp
+2021-02-12 00:03:35,197 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp_save
+2021-02-12 00:03:35,290 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_vars.tmp
+2021-02-12 00:03:35,303 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp_save
+2021-02-12 00:03:35,373 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_pfp.tmp
+2021-02-12 00:03:35,383 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-02-12 00:03:35,452 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_obj_creat.tmp
+2021-02-12 00:03:35,458 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-02-12 00:03:35,518 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_kernelStart.tmp
+2021-02-12 00:03:35,525 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp_save
+2021-02-12 00:03:35,597 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_default_thread.tmp
+2021-02-12 00:03:36,540 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp_save
+2021-02-12 00:03:36,592 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\rtos_threads.tmp
+2021-02-12 00:03:36,603 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h_save
+2021-02-12 00:03:36,699 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\FreeRTOSConfig.h
+2021-02-12 00:03:36,721 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c_save
+2021-02-12 00:03:36,845 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\freertos.c
+2021-02-12 00:03:36,849 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:36,878 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp_save
+2021-02-12 00:03:36,939 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\cortex.tmp
+2021-02-12 00:03:37,623 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:37,654 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c_save
+2021-02-12 00:03:37,782 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\eth.c
+2021-02-12 00:03:37,794 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h_save
+2021-02-12 00:03:37,889 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\eth.h
+2021-02-12 00:03:37,893 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:37,925 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c_save
+2021-02-12 00:03:39,254 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\i2c.c
+2021-02-12 00:03:39,265 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h_save
+2021-02-12 00:03:39,429 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\i2c.h
+2021-02-12 00:03:39,432 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:39,466 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c_save
+2021-02-12 00:03:39,656 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\tim.c
+2021-02-12 00:03:39,668 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h_save
+2021-02-12 00:03:40,061 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\tim.h
+2021-02-12 00:03:41,259 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:44,298 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c_save
+2021-02-12 00:03:48,662 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\usart.c
+2021-02-12 00:03:48,677 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h_save
+2021-02-12 00:03:51,127 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\usart.h
+2021-02-12 00:03:51,131 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-02-12 00:03:51,141 [INFO] Middleware:1252 - No code input for Bsp Dependency
+2021-02-12 00:03:51,174 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c_save
+2021-02-12 00:03:51,256 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.c
+2021-02-12 00:03:51,267 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h_save
+2021-02-12 00:03:51,869 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usb_device.h
+2021-02-12 00:03:51,881 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h_save
+2021-02-12 00:03:51,989 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.h
+2021-02-12 00:03:52,001 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c_save
+2021-02-12 00:03:54,293 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\Target\usbd_conf.c
+2021-02-12 00:03:54,305 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h_save
+2021-02-12 00:03:54,413 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.h
+2021-02-12 00:03:54,425 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c_save
+2021-02-12 00:03:54,517 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_desc.c
+2021-02-12 00:03:54,541 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h_save
+2021-02-12 00:03:54,648 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.h
+2021-02-12 00:03:54,670 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c_save
+2021-02-12 00:03:54,787 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\USB_DEVICE\App\usbd_cdc_if.c
+2021-02-12 00:03:54,884 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c_save
+2021-02-12 00:03:54,986 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_it.c
+2021-02-12 00:03:54,997 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h_save
+2021-02-12 00:03:55,082 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_it.h
+2021-02-12 00:03:55,722 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c_save
+2021-02-12 00:03:55,844 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_msp.c
+2021-02-12 00:03:55,870 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp_save
+2021-02-12 00:03:55,926 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\MXTmpFiles\system.tmp
+2021-02-12 00:03:55,936 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2021-02-12 00:03:56,009 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\stm32h7xx_hal_timebase_tim.c
+2021-02-12 00:03:56,051 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h_save
+2021-02-12 00:03:56,184 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\stm32h7xx_hal_conf.h
+2021-02-12 00:03:56,285 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h_save
+2021-02-12 00:03:56,404 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Inc\main.h
+2021-02-12 00:03:56,419 [INFO] CodeEngine:229 - oldGeneratedFile, D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c_save
+2021-02-12 00:03:56,633 [INFO] CodeEngine:247 - Generated code: D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\Core\Src\main.c
+2021-02-12 00:04:00,253 [INFO] ProjectBuilder:2328 - Time for Copy HAL[1] : 3072mS.
+2021-02-12 00:04:00,267 [INFO] ProjectBuilder:3259 - Project Generator version: 3.11.2
+2021-02-12 00:04:00,532 [INFO] ConfigFileManager:1238 - The Die is : DIE450
+2021-02-12 00:04:01,111 [INFO] ApiDbMcu:456 - Load IP Config File for FATFS
+2021-02-12 00:04:01,131 [INFO] ApiDbMcu:456 - Load IP Config File for LIBJPEG
+2021-02-12 00:04:01,167 [INFO] ApiDbMcu:456 - Load IP Config File for LWIP
+2021-02-12 00:04:01,191 [INFO] ApiDbMcu:456 - Load IP Config File for MBEDTLS
+2021-02-12 00:04:01,212 [INFO] ApiDbMcu:456 - Load IP Config File for USB_HOST
+2021-02-12 00:04:11,244 [INFO] ProjectBuilder:3425 - Time for Generating toolchain IDE Files: 10977mS.
+2021-02-12 00:04:11,245 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 1mS.
+2021-02-12 00:04:11,263 [INFO] ProjectBuilder:2207 - Time for Copy CMSIS : 0mS.
