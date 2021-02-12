@@ -28,8 +28,9 @@
      </state_glyph>
     </state>
     <state name="WaitAPI">
-     <entry>sonic_timeEvt.armX(TICKS_TIMEOUT_SEC/100, TICKS_TIMEOUT_SEC/100);
-initialize(e);</entry>
+     <entry>initialize(e);
+/// Should be after initializing IMU works very slow
+sonic_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);</entry>
      <tran trig="IMU_DATA_READY">
       <action>imu_loop(e);</action>
       <tran_glyph conn="45,29,3,-1,24">
@@ -38,11 +39,11 @@ initialize(e);</entry>
      </tran>
      <tran trig="SONCI_TIMEOUT">
       <action>sonic_process(nullptr);</action>
-      <tran_glyph conn="45,33,3,-1,24">
+      <tran_glyph conn="45,21,3,-1,23">
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
-     <state_glyph node="45,12,31,29">
+     <state_glyph node="45,12,31,37">
       <entry box="1,2,6,2"/>
      </state_glyph>
     </state>

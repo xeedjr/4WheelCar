@@ -33,15 +33,7 @@ bool Motor::set_speed_left(const QP::QEvt *e) {
     auto ev = (Event*)e;
 
     wheel[kL].target_wheel_speed = ev->u[0].f;
-/*
-    float speed = ev->u[0].f;
-    float pwm = (100.0/1.0)*fabs(speed);
-    TB6612FNG::Mode mode = TB6612FNG::Mode::kCW;
-    if (speed > 0) {
-        mode = TB6612FNG::Mode::kCCW;
-    }
-    drive->drive(TB6612FNG::Channels::kA, mode, pwm);
-    */
+
     return true;
 };
 
@@ -64,12 +56,19 @@ bool Motor::pid_init(const QP::QEvt *e) {
 
 bool Motor::pid_timeout(const QP::QEvt *e) {
     auto ev = (Event*)e;
+    auto L_direction = TB6612FNG::Mode::kCCW;
+    auto R_direction = TB6612FNG::Mode::kCCW;
 
     wheel[kL].pid_update();
     wheel[kR].pid_update();
 
-    drive->drive(TB6612FNG::Channels::kB, TB6612FNG::Mode::kCCW, wheel[kL].pwm_based_on_targed + wheel[kL].pwm);
-    drive->drive(TB6612FNG::Channels::kA, TB6612FNG::Mode::kCCW, wheel[kL].pwm_based_on_targed + wheel[kR].pwm);
+    if (wheel[kL].target_wheel_speed > 0)
+        L_direction = TB6612FNG::Mode::kCW;
+    if (wheel[kR].target_wheel_speed > 0)
+        R_direction = TB6612FNG::Mode::kCW;
+
+    drive->drive(TB6612FNG::Channels::kB, L_direction, wheel[kL].pwm_based_on_targed + wheel[kL].pwm);
+    drive->drive(TB6612FNG::Channels::kA, R_direction, wheel[kR].pwm_based_on_targed + wheel[kR].pwm);
 
     //printf("%f %f %f %f\n", std::abs(wheel[kL].target_wheel_speed), std::abs(wheel[kL].current_wheel_speed),  wheel[kL].pwm_based_on_targed, wheel[kL].pwm);
 
@@ -83,6 +82,9 @@ bool Motor::get_wheel_speed(const QP::QEvt *e) {
 
     wheel[kL].enc_update_speed();
     wheel[kR].enc_update_speed();
+
+    double positions[2] = {wheel[kL].enc->get_position(), wheel[kR].enc->get_position()};
+    interface->wheel_position_cb(positions, 2);
 
     return true;
 };

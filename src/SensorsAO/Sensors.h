@@ -26,7 +26,7 @@ class Sensors : public sensors::SensorsAO {
 	Event const *active_event  = nullptr;
 
 	uint8_t stack[2048];
-    QP::QEvt const *queueSto[10];
+    QP::QEvt const *queueSto[25];
 
 	Madgwick filter;
 	MPU9250FIFO *mpu9250;
@@ -35,8 +35,9 @@ class Sensors : public sensors::SensorsAO {
 	USSensor *sonars;
 	float sonars_data[3];
 
-	float roll, pitch, heading;
+	float roll, pitch, yaw;
 	char buff[50];
+	bool data_irq_is_enabled = false;
 
     bool initialize(const QP::QEvt *e);
     bool imu_loop(const QP::QEvt *e);
@@ -59,6 +60,9 @@ public:
 	}
 
 	void data_ready() {
+	    if (!data_irq_is_enabled)
+	        return;
+
 		POST_FROM_ISR(Q_NEW_FROM_ISR(Event, IMU_DATA_READY_SIG), nullptr, this);
 	};
 };

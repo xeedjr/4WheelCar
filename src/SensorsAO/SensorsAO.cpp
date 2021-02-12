@@ -70,8 +70,9 @@ Q_STATE_DEF(SensorsAO, WaitAPI) {
     switch (e->sig) {
         //.${sensors::SensorsAO::SM::WaitAPI}
         case Q_ENTRY_SIG: {
-            sonic_timeEvt.armX(TICKS_TIMEOUT_SEC/100, TICKS_TIMEOUT_SEC/100);
             initialize(e);
+            /// Should be after initializing IMU works very slow
+            sonic_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);
             status_ = Q_RET_HANDLED;
             break;
         }

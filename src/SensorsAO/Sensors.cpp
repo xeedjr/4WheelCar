@@ -54,6 +54,7 @@ bool Sensors::initialize(const QP::QEvt *e) {
     if (mpu9250->enableDataReadyInterrupt() < 0)
         exit(1);
 
+    data_irq_is_enabled = true;
 }
 
 bool Sensors::imu_loop(const QP::QEvt *e) {
@@ -67,9 +68,10 @@ bool Sensors::imu_loop(const QP::QEvt *e) {
         // print the heading, pitch and roll
         roll = filter.getRoll();
         pitch = filter.getPitch();
-        heading = filter.getYaw();
+        yaw = filter.getYaw();
 
-          printf("Orient: %f\t %f\t %f \n\r", roll, pitch, heading);
+        interface->update_Sensors_cb(roll, pitch, yaw);
+        //          printf("Orient: %f\t %f\t %f \n\r", roll, pitch, yaw);
     }
 }
 
