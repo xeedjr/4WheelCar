@@ -7,6 +7,7 @@ namespace business_logic {
 
 BusinessLogic::BusinessLogic(orion::Minor *minor): BusinessLogicBase(), minor_(minor)
 {
+    setAttr(QP::TASK_NAME_ATTR, "BL");
 }
 
 void BusinessLogic::startAO() {

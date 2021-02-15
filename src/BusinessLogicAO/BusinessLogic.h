@@ -48,7 +48,7 @@ protected:
     void process_set_pid_receive(void);
 
 private:
-    uint8_t stack[1024];    ///< QP AO Stack
+    uint8_t stack[3*1024];    ///< QP AO Stack
     QP::QEvt const *queueSto[10];    ///< QP AO message queue
 
     orion::Minor *minor_ = NULL;
