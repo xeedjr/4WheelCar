@@ -25,7 +25,7 @@ class Sensors : public sensors::SensorsAO {
 
 	Event const *active_event  = nullptr;
 
-	uint8_t stack[2048];
+	uint8_t stack[10*1048];
     QP::QEvt const *queueSto[25];
 
 	Madgwick filter;

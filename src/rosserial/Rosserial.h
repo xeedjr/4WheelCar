@@ -17,6 +17,8 @@
 #include "carmen_msgs/FirmwareCommandWrite.h"
 #include "carmen_msgs/FirmwareStateRead.h"
 #include "Motor.h"
+#include "SensorsInterface.h"
+#include "MotorInterface.h"
 
 namespace ros_serial {
 
@@ -38,7 +40,7 @@ struct Event : public QP::QEvt {
     Event(QP::QSignal const s) : QEvt(s) {};
 };
 
-class Rosserial : public RosserialQM {
+class Rosserial : public RosserialQM, public sensors::SensorsInterface, public motor::MotorInterface {
 
     sensor_msgs::Range range_msg_fl;
     ros::Publisher *pub_range_fl;
@@ -47,17 +49,17 @@ class Rosserial : public RosserialQM {
     carmen_msgs::FirmwareStateRead motor_msg;
     ros::Publisher *pub_motor;
 
-    ros::Subscriber<geometry_msgs::Vector3> *sub_cmd_vel;
+    ros::Subscriber<geometry_msgs::Twist> *sub_cmd_vel;
 
 private:
     TIM_HandleTypeDef *htim;
     motor::Motor *motor;
 	Event const *active_event  = nullptr;
 
-	uint8_t stack[1024];
-    QP::QEvt const *queueSto[127] = {0};
+	uint8_t stack[10*1024];
+    QP::QEvt const *queueSto[1024] = {0};
 
-    void sub_cmd_vel_cb(const geometry_msgs::Vector3& msg);
+    void sub_cmd_vel_cb(const geometry_msgs::Twist& msg);
 
     bool initialize(const QP::QEvt *e);
     bool process_in_data(const QP::QEvt *e);
@@ -67,10 +69,20 @@ private:
     bool imu_pubV(const QP::QEvt *e);
     bool spin_data(const QP::QEvt *e);
 
+    virtual void update_Sensors_cb(float, float, float);
+    virtual void us_sensor_cb(float*, uint8_t);
+    virtual void tof_sensors_cb(float*, uint8_t);
+    virtual void wheel_position_cb(double*, uint8_t);
+
 public:
-	Rosserial(TIM_HandleTypeDef *htim, motor::Motor *motor);
+	Rosserial(TIM_HandleTypeDef *htim);
 	virtual ~Rosserial();
 
+    bool recv_is_enabled = false;
+
+	void setMotorAO(motor::Motor *motor) {
+	    this->motor = motor;
+	};
 	void startAO(){
 	    start(8U, // priority
 	                 queueSto, Q_DIM(queueSto),
@@ -79,6 +91,7 @@ public:
 	#else
 	                 nullptr, 0); // no stack
 	#endif
+        recv_is_enabled = true;
 	}
 
     void imu_pub(float r, float p, float y) {

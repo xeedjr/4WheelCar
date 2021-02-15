@@ -4,9 +4,9 @@
  *  Created on: Oct 11, 2020
  *      Author: Bogdan
  */
-#include <Motor.h>
 #include "qpcpp.hpp"
 #include <new>
+#include "main_app.h"
 
 #include "BusinessLogicAO/BusinessLogic.h"
 #include "BusinessLogicAO/VirtualComPort.h"
@@ -15,6 +15,7 @@
 #include "orion_protocol/orion_header.h"
 #include "orion_protocol/orion_minor.h"
 
+#include <Motor.h>
 #include "TB6612FNG.h"
 #include "RPMEncoderOptical.h"
 #include "cmsis_os.h"
@@ -62,10 +63,13 @@ motor::Motor *motorp;
 
 extern "C" void send_new_command_event(void)
 {
+#ifdef USE_ROSSERIAL
+#else
   if (nullptr != p_business_logic)
   {
     p_business_logic->sendNewCommandEvent();
   }
+#endif
 }
 
 extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -140,16 +144,26 @@ void main_cpp(void) {
 
     /// AO
 #ifdef USE_ROSSERIAL
-    rosserialp = new ros_serial::Rosserial(&htim16, motorp);
+    rosserialp = new ros_serial::Rosserial(&htim16);
 #else
     p_business_logic = new business_logic::BusinessLogic(p_minor);
 #endif
 
+#ifdef USE_ROSSERIAL
+    motorp = new motor::Motor(driver, wheel_encode, wheel_encode2, rosserialp);
+    rosserialp->setMotorAO(motorp);
+#else
     motorp = new motor::Motor(driver, wheel_encode, wheel_encode2, p_business_logic);
+    p_business_logic->setMotor(motorp);
+#endif
 
-	sensorsp = new sensors::Sensors(mpu, us_sensor,
-	                                p_business_logic);
-
+#ifdef USE_ROSSERIAL
+    sensorsp = new sensors::Sensors(mpu, us_sensor,
+                                        rosserialp);
+#else
+    sensorsp = new sensors::Sensors(mpu, us_sensor,
+                                    p_business_logic);
+#endif
 
 	/// Start QP
 
@@ -175,6 +189,9 @@ void main_cpp(void) {
 #endif
 	if (sensorsp)
 	    sensorsp->startAO();
+
+  //  motorp->SetSpeedL(10.0);
+  //  motorp->SetSpeedR(10.0);
 
 	QF::run();
 }

@@ -33,6 +33,7 @@ class Motor : public motor::MotorAO {
 
 	    MiniPID *pid;
 
+	    bool is_reverse = false;
         float target_wheel_speed = 0;
 	    float current_wheel_speed = 0;
 	    double prev_curr_pos = 0;
@@ -43,14 +44,14 @@ class Motor : public motor::MotorAO {
 	    void init_pid() {
 	    }
 	    void pid_update() {
-	        pwm_based_on_targed = (100.0 / 27.6) * target_wheel_speed;
+	        pwm_based_on_targed = (100.0 / 27.6) * std::abs(target_wheel_speed);
 	        pwm = pid->getOutput(std::abs(current_wheel_speed), std::abs(target_wheel_speed));
 
 	    }
         void enc_update_speed() {
             auto curr_pos = enc->get_wheel_position();
             //printf("%f \n", curr_pos);
-            current_wheel_speed = (curr_pos - prev_curr_pos) * 10.0;
+            current_wheel_speed = std::abs((curr_pos - prev_curr_pos) * 10.0);
             prev_curr_pos = curr_pos;
         }
 	} wheel[2];
@@ -58,7 +59,7 @@ class Motor : public motor::MotorAO {
 private:
 	Event const *current_event  = nullptr;
 
-	uint8_t stack[1024];
+	uint8_t stack[10*1024];
     QP::QEvt const *queueSto[10];
 
     bool set_speed_left(const QP::QEvt *e);

@@ -19,7 +19,7 @@ Sensors::Sensors(MPU9250FIFO *mpu9250,
             sonars(sonars),
             interface(interface)
 {
-
+    setAttr(QP::TASK_NAME_ATTR, "Sensors");
 }
 
 Sensors::~Sensors() {
@@ -27,7 +27,7 @@ Sensors::~Sensors() {
 
 bool Sensors::initialize(const QP::QEvt *e) {
     // start communication with Sensors
-    status = mpu9250->begin();
+/*    status = mpu9250->begin();
     if (status < 0) {
       exit(1);
     }
@@ -55,6 +55,7 @@ bool Sensors::initialize(const QP::QEvt *e) {
         exit(1);
 
     data_irq_is_enabled = true;
+    */
 }
 
 bool Sensors::imu_loop(const QP::QEvt *e) {

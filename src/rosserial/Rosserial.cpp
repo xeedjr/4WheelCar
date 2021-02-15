@@ -20,16 +20,19 @@ static ros::NodeHandle_<NewHardware>  *nh;
 static class Rosserial *this_local = nullptr;
 
 void roserial_update1(uint8_t ch) {
+    if (!this_local->recv_is_enabled)
+        return;
+
     auto ev = (Event*)Q_NEW_FROM_ISR(Event, RECEIVED_BYTE_SIG);
     ev->u[0].u8 = ch;
     this_local->POST_FROM_ISR(ev, nullptr, this);
 }
 
-Rosserial::Rosserial(TIM_HandleTypeDef *htim, motor::Motor *motor) :
-        motor(motor),
+Rosserial::Rosserial(TIM_HandleTypeDef *htim) :
         htim(htim)
 {
     this_local = this;
+    setAttr(QP::TASK_NAME_ATTR, "Rosserial");
 }
 
 Rosserial::~Rosserial() {
@@ -66,7 +69,7 @@ bool Rosserial::initialize(const QP::QEvt *e) {
 
     /// Subscriptions
 
-    sub_cmd_vel = new ros::Subscriber<geometry_msgs::Vector3>("/car/wheels/speed", [this_local](const geometry_msgs::Vector3& msg){
+    sub_cmd_vel = new ros::Subscriber<geometry_msgs::Twist>("/joy_teleop/cmd_vel", [this_local](const geometry_msgs::Twist& msg){
         this_local->sub_cmd_vel_cb(msg);
     });
     nh->subscribe(*sub_cmd_vel);
@@ -101,9 +104,19 @@ bool Rosserial::timer1(const QP::QEvt *e) {
 
 }
 
-void Rosserial::sub_cmd_vel_cb(const geometry_msgs::Vector3& msg) {
-    motor->SetSpeedL(msg.x);
-    motor->SetSpeedR(msg.y);
+void Rosserial::sub_cmd_vel_cb(const geometry_msgs::Twist& msg) {
+    const float R_wheel = 0.034; ///M radius wheel
+    const float R_base = 0.2; ///
+    /// s=r*rad
+    float rad_per_sec_linear = (msg.linear.x) / (R_wheel);   ///rad = s / R
+
+    float m_per_sec_ang = (R_base) * (msg.angular.z);   ///s=r*rad
+    float rad_per_sec_ang =  (m_per_sec_ang) / (R_wheel);   ///s=r*rad
+
+    //printf("%f %f\n", (rad_per_sec_linear - rad_per_sec_ang), rad_per_sec_linear + rad_per_sec_ang);
+
+    motor->SetSpeedL(rad_per_sec_linear - rad_per_sec_ang);
+    motor->SetSpeedR(rad_per_sec_linear + rad_per_sec_ang);
 }
 
 bool Rosserial::sonar_pubV(const QP::QEvt *e) {
@@ -129,9 +142,30 @@ bool Rosserial::imu_pubV(const QP::QEvt *e) {
 }
 
 
+/// public interfaces
+void Rosserial::update_Sensors_cb(float y, float p, float r)
+{
+
+}
+
+void Rosserial::us_sensor_cb(float* data, uint8_t num) {
+
+}
+
+void Rosserial::tof_sensors_cb(float* data, uint8_t num) {
+
+}
+
+void Rosserial::wheel_position_cb(double* data, uint8_t num) {
+
+}
+
 }
 
 
 void roserial_update(uint8_t ch) {
     ros_serial::roserial_update1(ch);
 }
+
+
+
