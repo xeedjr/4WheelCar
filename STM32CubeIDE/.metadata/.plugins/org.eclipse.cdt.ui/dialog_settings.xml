@@ -10,7 +10,7 @@
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height" value="1030"/>
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x" value="233"/>
 	<item key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y" value="0"/>
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/src/SensorsAO}"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="QF_EQUEUE_CTR_SIZE=4"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -34,6 +34,9 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="CDC_Receive_FS"/>
+			<item value="send_new_command_event"/>
+			<item value="MX_USB_DEVICE_Init"/>
 			<item value="xTaskCreate"/>
 			<item value="8000000"/>
 			<item value="swap"/>

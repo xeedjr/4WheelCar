@@ -190,11 +190,12 @@ void main_cpp(void) {
 	if (sensorsp)
 	    sensorsp->startAO();
 
-  //  motorp->SetSpeedL(10.0);
-  //  motorp->SetSpeedR(10.0);
+    //motorp->SetSpeedL(-10.0);
+    //motorp->SetSpeedR(-10.0);
 
 	QF::run();
 }
+
 
 
 void DefaultTask(void const * argument)

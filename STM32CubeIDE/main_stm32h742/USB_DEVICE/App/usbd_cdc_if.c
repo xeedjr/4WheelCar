@@ -32,7 +32,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+#define INPUT_BUFFER_SIZE (1024)
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -50,7 +50,8 @@
   */
 
 /* USER CODE BEGIN PRIVATE_TYPES */
-
+static uint8_t input_buffer[INPUT_BUFFER_SIZE] = { 0 };
+static orion_circular_buffer_t circular_buffer;
 /* USER CODE END PRIVATE_TYPES */
 
 /**
@@ -75,7 +76,7 @@
   */
 
 /* USER CODE BEGIN PRIVATE_MACRO */
-#define INPUT_BUFFER_SIZE (1024)
+
 /* USER CODE END PRIVATE_MACRO */
 
 /**
@@ -95,8 +96,7 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-static uint8_t input_buffer[INPUT_BUFFER_SIZE] = { 0 };
-static orion_circular_buffer_t circular_buffer;
+
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -157,6 +157,7 @@ static int8_t CDC_Init_FS(void)
   /* Set Application Buffers */
   USBD_CDC_SetTxBuffer(&hUsbDeviceFS, UserTxBufferFS, 0);
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, UserRxBufferFS);
+  orion_circular_buffer_init(&circular_buffer, input_buffer, INPUT_BUFFER_SIZE);
   return (USBD_OK);
   /* USER CODE END 3 */
 }
@@ -265,6 +266,10 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+
+  orion_circular_buffer_add(&circular_buffer, Buf, *Len);
+  send_new_command_event();
+
   return (USBD_OK);
   /* USER CODE END 6 */
 }

@@ -58,6 +58,8 @@ void TIM2_IRQHandler(void);
 void TIM3_IRQHandler(void);
 void TIM4_IRQHandler(void);
 void USART6_IRQHandler(void);
+void OTG_FS_EP1_OUT_IRQHandler(void);
+void OTG_FS_EP1_IN_IRQHandler(void);
 void OTG_FS_IRQHandler(void);
 void TIM16_IRQHandler(void);
 void TIM17_IRQHandler(void);

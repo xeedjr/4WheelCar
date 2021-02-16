@@ -111,7 +111,7 @@ bool Motor::get_wheel_speed(const QP::QEvt *e) {
     wheel[kL].enc_update_speed();
     wheel[kR].enc_update_speed();
 
-    printf("%f, %f\n", wheel[kL].current_wheel_speed, wheel[kR].current_wheel_speed);
+   // printf("%f, %f\n", wheel[kL].current_wheel_speed, wheel[kR].current_wheel_speed);
 
     double positions[2] = {wheel[kL].enc->get_position(), wheel[kR].enc->get_position()};
     interface->wheel_position_cb(positions, 2);
