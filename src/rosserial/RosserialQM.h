@@ -29,6 +29,7 @@ namespace ros_serial {
     virtual bool motor_pubV(const QP::QEvt *e) = 0; \
     virtual bool imu_pubV(const QP::QEvt *e) = 0; \
     virtual bool spin_data(const QP::QEvt *e) = 0; \
+    virtual bool wheel_position_updateV(const QP::QEvt *e) = 0; \
 
 
 enum Signals {
@@ -44,6 +45,7 @@ enum Signals {
     SONAR_PUBLISH_SIG,
     IMU_PUBLISH_SIG,
     MOTOR_PUBLISH_SIG,
+    WHEEL_POSITION_UPDATE_SIG,
 
 
     MAX_SIG         // the last signal

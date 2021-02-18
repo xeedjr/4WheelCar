@@ -31,6 +31,8 @@ public:
     virtual void tof_sensors_cb(float*, uint8_t);
 
     virtual void wheel_position_cb(double*, uint8_t);
+    virtual void wheel_curr_speed_cb(double*, uint8_t);
+
 
     void setEncoders(int32_t left, int32_t right);
 

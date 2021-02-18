@@ -113,8 +113,11 @@ bool Motor::get_wheel_speed(const QP::QEvt *e) {
 
    // printf("%f, %f\n", wheel[kL].current_wheel_speed, wheel[kR].current_wheel_speed);
 
-    double positions[2] = {wheel[kL].enc->get_position(), wheel[kR].enc->get_position()};
+    double positions[2] = {wheel[kL].current_wheel_pos, wheel[kR].current_wheel_pos};
     interface->wheel_position_cb(positions, 2);
+
+    double speeds[2] = {wheel[kL].current_wheel_speed, wheel[kR].current_wheel_speed};
+    interface->wheel_curr_speed_cb(speeds, 2);
 
     return true;
 };

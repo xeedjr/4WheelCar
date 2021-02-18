@@ -12,8 +12,10 @@
 
 #include "RosserialQM.h"
 #include <ros.h>
+#include <tf/transform_broadcaster.h>
 #include "sensor_msgs/Range.h"
 #include "geometry_msgs/Twist.h"
+#include "nav_msgs/Odometry.h"
 #include "carmen_msgs/FirmwareCommandWrite.h"
 #include "carmen_msgs/FirmwareStateRead.h"
 #include "Motor.h"
@@ -42,12 +44,16 @@ struct Event : public QP::QEvt {
 
 class Rosserial : public RosserialQM, public sensors::SensorsInterface, public motor::MotorInterface {
 
+    tf::TransformBroadcaster broadcaster;
+
     sensor_msgs::Range range_msg_fl;
     ros::Publisher *pub_range_fl;
     sensor_msgs::Range range_msg_fr;
     ros::Publisher *pub_range_fr;
     carmen_msgs::FirmwareStateRead motor_msg;
     ros::Publisher *pub_motor;
+    nav_msgs::Odometry odom_msg;
+    ros::Publisher *odom_pub;
 
     ros::Subscriber<geometry_msgs::Twist> *sub_cmd_vel;
 
@@ -68,6 +74,8 @@ private:
     bool motor_pubV(const QP::QEvt *e);
     bool imu_pubV(const QP::QEvt *e);
     bool spin_data(const QP::QEvt *e);
+    bool wheel_position_updateV(const QP::QEvt *e);
+
 
     virtual void update_Sensors_cb(float, float, float);
     virtual void us_sensor_cb(float*, uint8_t);
@@ -92,6 +100,14 @@ public:
 	                 nullptr, 0); // no stack
 	#endif
         recv_is_enabled = true;
+	}
+
+	void receive_data(uint8_t *buff, uint32_t len) {
+	    for (int i = 0; i < len; i++) {
+            auto ev = (Event*)Q_NEW_FROM_ISR(Event, RECEIVED_BYTE_SIG);
+            ev->u[0].u8 = buff[i];
+            POST_FROM_ISR(ev, nullptr, this);
+	    };
 	}
 
     void imu_pub(float r, float p, float y) {

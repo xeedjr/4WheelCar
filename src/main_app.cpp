@@ -8,6 +8,9 @@
 #include <new>
 #include "main_app.h"
 
+#include "usbd_cdc_if.h"
+#include "usb_device.h"
+
 #include "BusinessLogicAO/BusinessLogic.h"
 #include "BusinessLogicAO/VirtualComPort.h"
 #include "orion_protocol/orion_frame_transport.h"
@@ -61,16 +64,15 @@ motor::Motor *motorp;
     business_logic::BusinessLogic *p_business_logic;
 #endif
 
+#ifndef USE_ROSSERIAL
 extern "C" void send_new_command_event(void)
 {
-#ifdef USE_ROSSERIAL
-#else
   if (nullptr != p_business_logic)
   {
     p_business_logic->sendNewCommandEvent();
   }
-#endif
 }
+#endif
 
 extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -108,6 +110,8 @@ uint8_t poolStor3[40*1024];
 uint8_t mmm[sizeof(MPU9250FIFO)] = {0};
 
 void main_cpp(void) {
+    printf("MainApp: Started!\n");
+
     QF::init(); // initialize the framework
 
 	QF::poolInit(poolStor2,
@@ -116,6 +120,9 @@ void main_cpp(void) {
 	QF::poolInit(poolStor3,
 		sizeof(poolStor3),
 		100);
+
+	/// init USB CDC
+	MX_USB_DEVICE_Init();
 
 	us_trigger = new USTrigger(&htim5);
 	us_sensor = new USSensor(&htim2);
@@ -145,6 +152,9 @@ void main_cpp(void) {
     /// AO
 #ifdef USE_ROSSERIAL
     rosserialp = new ros_serial::Rosserial(&htim16);
+    CDC_Receive_FS_CB = [](uint8_t* Buf, uint32_t Len){
+        rosserialp->receive_data(Buf, Len);
+    };
 #else
     p_business_logic = new business_logic::BusinessLogic(p_minor);
 #endif
@@ -178,6 +188,8 @@ void main_cpp(void) {
 	                   );
 	xTimerStart( t, 0 );
 
+    printf("MainApp: start AOs\n");
+
 	if (motorp)
 	    motorp->startAO();
 #ifdef USE_ROSSERIAL
@@ -190,8 +202,8 @@ void main_cpp(void) {
 	if (sensorsp)
 	    sensorsp->startAO();
 
-    //motorp->SetSpeedL(-10.0);
-    //motorp->SetSpeedR(-10.0);
+//    motorp->SetSpeedL(20.0);
+//    motorp->SetSpeedR(20.0);
 
 	QF::run();
 }

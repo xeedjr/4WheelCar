@@ -2,6 +2,7 @@
 #include <assert.h>
 #include "protocol.h"
 #include "qpcpp.h"
+#include "logging.h"
 
 namespace business_logic {
 
@@ -41,24 +42,28 @@ void BusinessLogic::wheel_position_cb(double* data, uint8_t num) {
 
 }
 
+void BusinessLogic::wheel_curr_speed_cb(double*, uint8_t) {
+
+}
+
 void BusinessLogic::setEncoders(int32_t left, int32_t right)
 {
-	auto event = Q_NEW(Event, BL_SET_ENCODERS_SIG);
-	event->data.encoders.left = left;
-	event->data.encoders.right = right;
-	POST(event, this);
+    auto event = Q_NEW(Event, BL_SET_ENCODERS_SIG);
+    event->data.encoders.left = left;
+    event->data.encoders.right = right;
+    POST(event, this);
 }
 
 void BusinessLogic::sendNewCommandEvent()
 {
-	auto event = Q_NEW(Event, BL_COMMAND_SIG);
-	POST(event, this);
+    auto event = Q_NEW_FROM_ISR(Event, BL_COMMAND_SIG);
+    POST_FROM_ISR(event, nullptr, this);
 }
 
 void BusinessLogic::setMotor(motor::Motor *motor)
 {
-	assert(NULL != motor);
-	this->motor_ = motor;
+    assert(NULL != motor);
+    this->motor_ = motor;
 }
 
 void BusinessLogic::process_handshake_receive(void)
@@ -70,6 +75,7 @@ void BusinessLogic::process_handshake_receive(void)
             (carmen_hardware::MessageType)command_header->common.message_id);
     carmen_hardware::HandshakeResult handshake_result;
     handshake_result.header.common.sequence_id = command_header->common.sequence_id;
+    LOG_DEBUG("BusinessLogic::process_handshake_receive Sending response to handshake\n");
     // TODO: Add code to validate that protocol versions coincide else send error code e.g. minor.validate method
     this->minor_->sendResult((uint8_t*)&handshake_result, sizeof(handshake_result));
 }
@@ -133,14 +139,18 @@ void BusinessLogic::process_set_pid_receive(void)
 
 void BusinessLogic::commandHandler()
 {
+    LOG_DEBUG("BusinessLogic::commandHandler Insider command handler\n");
+
     if (this->minor_->receiveCommand(this->command_buffer_, COMMAND_BUFFER_SIZE, this->command_size_))
     {
+        LOG_DEBUG("BusinessLogic::commandHandler Command received\n");
         assert(NULL != this->command_buffer_);
         assert(this->command_size_ >= sizeof(orion::CommandHeader));
         orion::CommandHeader * command_header = reinterpret_cast<orion::CommandHeader*>(this->command_buffer_);
         switch (static_cast<carmen_hardware::MessageType>(command_header->common.message_id))
         {
             case carmen_hardware::MessageType::Handshake:
+                LOG_DEBUG("BusinessLogic::commandHandler Hanshake received\n");
                 process_handshake_receive();
                 break;
             case carmen_hardware::MessageType::SetCommands:

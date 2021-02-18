@@ -34,6 +34,9 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="CDC_Transmit_FS"/>
+			<item value="USBD_Interface_fops_FS"/>
+			<item value="TM_USBD_CDC_GetArray"/>
 			<item value="CDC_Receive_FS"/>
 			<item value="send_new_command_event"/>
 			<item value="MX_USB_DEVICE_Init"/>

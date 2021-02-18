@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="circular_buffer"/>
+		<item key="selection" value="negotiateTopics"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="negotiateTopics"/>
+			<item value="configured_"/>
+			<item value="INPUT_BUFFER_SIZE"/>
+			<item value="TransmitCplt"/>
+			<item value="CDC_TransmitCplt_FS"/>
+			<item value="USBD_Interface_fops_FS"/>
 			<item value="circular_buffer"/>
 			<item value="orion_circular_buffer_dequeue"/>
 			<item value="orion_circular_buffer_is_empty"/>
 			<item value="pwm_based_on_targed"/>
-			<item value="negotiateTopics"/>
-			<item value="configured_"/>
 			<item value="sonic_timeEvt"/>
 			<item value="time"/>
 			<item value="BusinessLogic"/>
 			<item value="USBD_CDC_ReceivePacke"/>
 			<item value="timer"/>
-			<item value="Freq"/>
-			<item value="kDataReady"/>
-			<item value="IMU"/>
-			<item value="IRQ"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Sensors"/>

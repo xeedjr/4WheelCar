@@ -106,8 +106,6 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-  MX_USB_DEVICE_Init();
-
   main_cpp();
 
   /* USER CODE END 2 */

@@ -36,6 +36,7 @@ class Motor : public motor::MotorAO {
 	    bool is_reverse = false;
         float target_wheel_speed = 0;
 	    float current_wheel_speed = 0;
+	    float current_wheel_pos = 0;
 	    double prev_curr_pos = 0;
 	    float pwm = 0;
 	    float pwm_based_on_targed = 0;
@@ -49,10 +50,12 @@ class Motor : public motor::MotorAO {
 
 	    }
         void enc_update_speed() {
-            auto curr_pos = enc->get_wheel_position();
+            current_wheel_pos = enc->get_wheel_position();
+            if (is_reverse)
+                current_wheel_pos *= -1.0;
             //printf("%f \n", curr_pos);
-            current_wheel_speed = std::abs((curr_pos - prev_curr_pos) * 10.0);
-            prev_curr_pos = curr_pos;
+            current_wheel_speed = std::abs((current_wheel_pos - prev_curr_pos) * 10.0);
+            prev_curr_pos = current_wheel_pos;
         }
 	} wheel[2];
 
