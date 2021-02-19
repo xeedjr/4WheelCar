@@ -31,7 +31,10 @@ void BusinessLogic::update_Sensors_cb(float y, float p, float r)
 }
 
 void BusinessLogic::us_sensor_cb(float* data, uint8_t num) {
-
+    auto event = Q_NEW(Event, BL_SET_US_SIG);
+    event->data.us_data.left = data[0];
+    event->data.us_data.right = data[1];
+    POST(event, this);
 }
 
 void BusinessLogic::tof_sensors_cb(float* data, uint8_t num) {
@@ -39,7 +42,10 @@ void BusinessLogic::tof_sensors_cb(float* data, uint8_t num) {
 }
 
 void BusinessLogic::wheel_position_cb(double* data, uint8_t num) {
-
+    auto event = Q_NEW(Event, BL_SET_WHEEL_POS_SIG);
+    event->data.wheel_pos_data.left = data[0];
+    event->data.wheel_pos_data.right = data[1];
+    POST(event, this);
 }
 
 void BusinessLogic::wheel_curr_speed_cb(double*, uint8_t) {
@@ -62,13 +68,13 @@ void BusinessLogic::sendNewCommandEvent()
 
 void BusinessLogic::setMotor(motor::Motor *motor)
 {
-    assert(NULL != motor);
+    assert(nullptr != motor);
     this->motor_ = motor;
 }
 
 void BusinessLogic::process_handshake_receive(void)
 {
-    assert(NULL != this->command_buffer_);
+    assert(nullptr != this->command_buffer_);
     assert(this->command_size_ >= sizeof(orion::CommandHeader));
     orion::CommandHeader * command_header = reinterpret_cast<orion::CommandHeader*>(this->command_buffer_);
     assert(carmen_hardware::MessageType::Handshake ==
@@ -80,24 +86,48 @@ void BusinessLogic::process_handshake_receive(void)
     this->minor_->sendResult((uint8_t*)&handshake_result, sizeof(handshake_result));
 }
 
-void BusinessLogic::setImuHandler(Event const* event)
+void BusinessLogic::setImuHandler(QP::QEvt const * e)
 {
-    assert(NULL != event);
+    auto event = reinterpret_cast<Event const *>(e);
+
+    assert(nullptr != event);
     this->imu_angle_alpha_ = event->data.imu.alpha; 
     this->imu_angle_beta_ = event->data.imu.beta; 
     this->imu_angle_gamma_ = event->data.imu.gamma; 
 }
 
-void BusinessLogic::setEncodersHandler(Event const* event)
+void BusinessLogic::setEncodersHandler(QP::QEvt const * e)
 {
-    assert(NULL != event);
+    auto event = reinterpret_cast<Event const *>(e);
+
+    assert(nullptr != event);
     this->encoder_left_ = event->data.encoders.left; 
     this->encoder_right_ = event->data.encoders.right; 
 }
 
+void BusinessLogic::setUSHandler(QP::QEvt const * e)
+{
+    auto event = reinterpret_cast<Event const *>(e);
+    assert(nullptr != event);
+
+    us_left = event->data.us_data.left;
+    us_right = event->data.us_data.right;
+}
+
+void BusinessLogic::setWheelsPosHandler(QP::QEvt const * e)
+{
+    auto event = reinterpret_cast<Event const *>(e);
+    assert(nullptr != event);
+
+    wheel_pos_left = event->data.wheel_pos_data.left;
+    wheel_pos_right = event->data.wheel_pos_data.right;
+
+}
+
+
 void BusinessLogic::process_set_commands_receive(void)
 {
-    assert(NULL != this->command_buffer_);
+    assert(nullptr != this->command_buffer_);
     assert(this->command_size_ >= sizeof(carmen_hardware::SetCommandsCommand));
     carmen_hardware::SetCommandsCommand * command =
             reinterpret_cast<carmen_hardware::SetCommandsCommand*>(this->command_buffer_);
@@ -120,7 +150,7 @@ void BusinessLogic::process_set_commands_receive(void)
 
 void BusinessLogic::process_set_pid_receive(void)
 {
-    assert(NULL != this->command_buffer_);
+    assert(nullptr != this->command_buffer_);
     assert(this->command_size_ >= sizeof(carmen_hardware::SetPIDCommand));
     carmen_hardware::SetPIDCommand * command =
             reinterpret_cast<carmen_hardware::SetPIDCommand*>(this->command_buffer_);
@@ -144,7 +174,7 @@ void BusinessLogic::commandHandler()
     if (this->minor_->receiveCommand(this->command_buffer_, COMMAND_BUFFER_SIZE, this->command_size_))
     {
         LOG_DEBUG("BusinessLogic::commandHandler Command received\n");
-        assert(NULL != this->command_buffer_);
+        assert(nullptr != this->command_buffer_);
         assert(this->command_size_ >= sizeof(orion::CommandHeader));
         orion::CommandHeader * command_header = reinterpret_cast<orion::CommandHeader*>(this->command_buffer_);
         switch (static_cast<carmen_hardware::MessageType>(command_header->common.message_id))
