@@ -144,6 +144,13 @@ void BusinessLogic::process_set_commands_receive(void)
     reply.imu_angle_alpha = this->imu_angle_alpha_;
     reply.imu_angle_beta = this->imu_angle_beta_;
     reply.imu_angle_gamma = this->imu_angle_gamma_;
+
+    reply.ultra_sonic_left = this->us_left*10;
+    reply.ultra_sonic_right = this->us_right*10;
+
+    reply.encoder_pos_left = this->wheel_pos_left*1000;
+    reply.encoder_pos_right = this->wheel_pos_right*1000;
+
     // TODO: Add code to validate that protocol versions coincide else send error code e.g. minor.validate method
     this->minor_->sendResult((uint8_t*)&reply, sizeof(reply));
 }

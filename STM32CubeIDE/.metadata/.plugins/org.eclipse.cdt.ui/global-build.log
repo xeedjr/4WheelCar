@@ -1,37 +1,6 @@
-22:14:11 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+18:37:59 **** Incremental Build of configuration Debug for project main_stm32h742 ****
 make -j4 all 
 arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/BusinessLogicAO/BusinessLogic.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/BusinessLogicAO/BusinessLogic.d" -MT"src/BusinessLogicAO/BusinessLogic.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/BusinessLogicAO/BusinessLogic.o"
-arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/main_app.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/main_app.d" -MT"src/main_app.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/main_app.o"
-In file included from D:/repos_temp/4WheelCar/src/SensorsAO/Sensors.h:17:0,
-                 from D:/repos_temp/4WheelCar/src/main_app.cpp:27:
-D:/repos_temp/4WheelCar/src/SensorsAO/SensorsAO.h:24:0: warning: "VIRTUAL_FUNCTIONS" redefined
- #define VIRTUAL_FUNCTIONS \
- 
-In file included from D:/repos_temp/4WheelCar/src/MotorAO/Motor.h:14:0,
-                 from D:/repos_temp/4WheelCar/src/BusinessLogicAO/BusinessLogic.h:10,
-                 from D:/repos_temp/4WheelCar/src/main_app.cpp:14:
-D:/repos_temp/4WheelCar/src/MotorAO/MotorAO.h:24:0: note: this is the location of the previous definition
- #define VIRTUAL_FUNCTIONS \
- 
-In file included from D:/repos_temp/4WheelCar/src/rosserial/Rosserial.h:13:0,
-                 from D:/repos_temp/4WheelCar/src/main_app.cpp:30:
-D:/repos_temp/4WheelCar/src/rosserial/RosserialQM.h:24:0: warning: "VIRTUAL_FUNCTIONS" redefined
- #define VIRTUAL_FUNCTIONS \
- 
-In file included from D:/repos_temp/4WheelCar/src/SensorsAO/Sensors.h:17:0,
-                 from D:/repos_temp/4WheelCar/src/main_app.cpp:27:
-D:/repos_temp/4WheelCar/src/SensorsAO/SensorsAO.h:24:0: note: this is the location of the previous definition
- #define VIRTUAL_FUNCTIONS \
- 
-In file included from D:/repos_temp/4WheelCar/src/main_app.cpp:30:0:
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.h: In member function 'void ros_serial::Rosserial::receive_data(uint8_t*, uint32_t)':
-D:/repos_temp/4WheelCar/src/rosserial/Rosserial.h:106:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-      for (int i = 0; i < len; i++) {
-                      ~~^~~~~
-D:/repos_temp/4WheelCar/src/main_app.cpp: In function 'int __io_putchar(int)':
-D:/repos_temp/4WheelCar/src/main_app.cpp:92:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
 arm-none-eabi-g++ -o "main_stm32h742.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32h742.map" -Wl,--gc-sections -static  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: main_stm32h742.elf
  
@@ -39,7 +8,96 @@ arm-none-eabi-objdump -h -S  main_stm32h742.elf  > "main_stm32h742.list"
 arm-none-eabi-objcopy  -O binary  main_stm32h742.elf  "main_stm32h742.bin"
 arm-none-eabi-size   main_stm32h742.elf 
    text	   data	    bss	    dec	    hex	filename
- 186992	   3096	 103704	 293792	  47ba0	main_stm32h742.elf
+ 187104	   3096	 103704	 293904	  47c10	main_stm32h742.elf
+Finished building: default.size.stdout
+Finished building: main_stm32h742.bin
+ 
+ 
+Finished building: main_stm32h742.list
+ 
+18:38:16 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187104	   3096	 103704	 293904	  47c10	main_stm32h742.elf
+Finished building: default.size.stdout
+ 
+18:38:41 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187104	   3096	 103704	 293904	  47c10	main_stm32h742.elf
+Finished building: default.size.stdout
+ 
+18:41:18 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187104	   3096	 103704	 293904	  47c10	main_stm32h742.elf
+Finished building: default.size.stdout
+ 
+18:46:21 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal/USSensor.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/thirdparty/devices_stm32_hal/USSensor.d" -MT"src/thirdparty/devices_stm32_hal/USSensor.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/thirdparty/devices_stm32_hal/USSensor.o"
+arm-none-eabi-g++ -o "main_stm32h742.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32h742.map" -Wl,--gc-sections -static  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32h742.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32h742.elf  > "main_stm32h742.list"
+arm-none-eabi-objcopy  -O binary  main_stm32h742.elf  "main_stm32h742.bin"
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187160	   3096	 103704	 293960	  47c48	main_stm32h742.elf
+Finished building: default.size.stdout
+Finished building: main_stm32h742.bin
+ 
+ 
+Finished building: main_stm32h742.list
+ 
+18:52:16 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal/USSensor.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/thirdparty/devices_stm32_hal/USSensor.d" -MT"src/thirdparty/devices_stm32_hal/USSensor.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/thirdparty/devices_stm32_hal/USSensor.o"
+arm-none-eabi-g++ -o "main_stm32h742.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32h742.map" -Wl,--gc-sections -static  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32h742.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32h742.elf  > "main_stm32h742.list"
+arm-none-eabi-objcopy  -O binary  main_stm32h742.elf  "main_stm32h742.bin"
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187208	   3096	 103704	 294008	  47c78	main_stm32h742.elf
+Finished building: default.size.stdout
+Finished building: main_stm32h742.bin
+ 
+ 
+Finished building: main_stm32h742.list
+ 
+18:58:12 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal/USSensor.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/thirdparty/devices_stm32_hal/USSensor.d" -MT"src/thirdparty/devices_stm32_hal/USSensor.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/thirdparty/devices_stm32_hal/USSensor.o"
+arm-none-eabi-g++ -o "main_stm32h742.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32h742.map" -Wl,--gc-sections -static  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32h742.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32h742.elf  > "main_stm32h742.list"
+arm-none-eabi-objcopy  -O binary  main_stm32h742.elf  "main_stm32h742.bin"
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187160	   3096	 103704	 293960	  47c48	main_stm32h742.elf
+Finished building: default.size.stdout
+Finished building: main_stm32h742.bin
+ 
+ 
+Finished building: main_stm32h742.list
+ 
+19:03:48 **** Incremental Build of configuration Debug for project main_stm32h742 ****
+make -j4 all 
+arm-none-eabi-g++ "D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal/USSensor.cpp" -mcpu=cortex-m7 -std=gnu++14 -g3 '-DQF_EQUEUE_CTR_SIZE=4' -DQ_EVT_CTOR -DUSE_HAL_DRIVER -DSTM32H7 -DSTM32H743xx -DDEBUG '-DTICKS_TIMEOUT_SEC=100' -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/repos_temp/4WheelCar/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/devices_stm32_hal" -I"D:/repos_temp/4WheelCar/src/thirdparty/MadgwickAHRS/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/mpu9250/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/src" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/ports/freertos" -I"D:/repos_temp/4WheelCar/src/thirdparty/qpcpp/include" -I"D:/repos_temp/4WheelCar/src/thirdparty/orion/orion_protocol/include" -I"D:/repos_temp/4WheelCar/src/MotorAO" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I"D:/repos_temp/4WheelCar/src/thirdparty/rosserial_arduino_lib/src" -I"D:/repos_temp/4WheelCar/src/rosserial" -I"D:/repos_temp/4WheelCar/src/thirdparty/PID3" -I"D:/repos_temp/4WheelCar/src/SensorsAO" -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"src/thirdparty/devices_stm32_hal/USSensor.d" -MT"src/thirdparty/devices_stm32_hal/USSensor.o"  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "src/thirdparty/devices_stm32_hal/USSensor.o"
+arm-none-eabi-g++ -o "main_stm32h742.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\repos_temp\4WheelCar\STM32CubeIDE\main_stm32h742\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="main_stm32h742.map" -Wl,--gc-sections -static  -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: main_stm32h742.elf
+ 
+arm-none-eabi-objdump -h -S  main_stm32h742.elf  > "main_stm32h742.list"
+arm-none-eabi-objcopy  -O binary  main_stm32h742.elf  "main_stm32h742.bin"
+arm-none-eabi-size   main_stm32h742.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 187160	   3096	 103704	 293960	  47c48	main_stm32h742.elf
 Finished building: default.size.stdout
 Finished building: main_stm32h742.bin
  
