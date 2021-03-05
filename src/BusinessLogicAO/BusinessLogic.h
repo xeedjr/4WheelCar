@@ -41,6 +41,12 @@ typedef struct
     float right;
 } WheelPosData;
 
+typedef struct
+{
+    float left;
+    float right;
+} WheelSpeedData;
+
 struct Event : public QP::QEvt {
     union
     {
@@ -48,6 +54,7 @@ struct Event : public QP::QEvt {
         EncodersData encoders;
         USData us_data;
         WheelPosData wheel_pos_data;
+        WheelSpeedData wheel_speed_data;
     } data;
 
     Event(QP::QSignal const s) : QEvt(s) {};
@@ -83,6 +90,8 @@ protected:
     virtual void commandHandler();
     virtual void setUSHandler(QP::QEvt const * e);
     virtual void setWheelsPosHandler(QP::QEvt const * e);
+    virtual void setWheelsSpeedHandler(QP::QEvt const * e);
+    virtual void heartBeat(QP::QEvt const * e);
 
     void process_handshake_receive(void);
     void process_set_commands_receive(void);
@@ -102,11 +111,16 @@ private:
     int32_t imu_angle_beta_ = 0;
     int32_t imu_angle_gamma_ = 0;
 
+    /// US distance in cm.
     float us_left = 0;
     float us_right = 0;
 
+    /// Wheel current position in -+ radians.
     float wheel_pos_left = 0;
     float wheel_pos_right = 0;
+
+    float wheel_speed_left = 0;
+    float wheel_speed_right = 0;
 
     uint8_t command_buffer_[COMMAND_BUFFER_SIZE];
     std::size_t command_size_ = 0;

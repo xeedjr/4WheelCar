@@ -3,6 +3,9 @@
  <framework name="qpcpp"/>
  <package name="business_logic" stereotype="0x00" namespace="business_logic">
   <class name="BusinessLogicBase" superclass="qpcpp::QActive">
+   <attribute name="heartBeat_timeEvt" type="QP::QTimeEvt" visibility="0x02" properties="0x00">
+    <code>= {this, BL_HART_BEAT_SIG, 0U};</code>
+   </attribute>
    <operation name="setImuHandler" type="void" visibility="0x01" properties="0x04">
     <specifiers>= 0</specifiers>
     <documentation>Sets IMU data</documentation>
@@ -28,6 +31,15 @@
     <documentation>Sets WheelsPos data</documentation>
     <parameter name="e" type="QP::QEvt const *"/>
    </operation>
+   <operation name="setWheelsSpeedHandler" type="void" visibility="0x01" properties="0x04">
+    <specifiers>= 0</specifiers>
+    <documentation>Sets WheelsSpeed data</documentation>
+    <parameter name="e" type="QP::QEvt const *"/>
+   </operation>
+   <operation name="heartBeat" type="void" visibility="0x01" properties="0x04">
+    <specifiers>= 0</specifiers>
+    <parameter name="e" type="QP::QEvt const *"/>
+   </operation>
    <statechart properties="0x00">
     <initial target="../1">
      <initial_glyph conn="7,3,5,0,13,6">
@@ -35,7 +47,7 @@
      </initial_glyph>
     </initial>
     <state name="idle">
-     <entry brief="init_orion"/>
+     <entry brief="init_orion">heartBeat_timeEvt.armX(TICKS_TIMEOUT_SEC*5, TICKS_TIMEOUT_SEC*5);</entry>
      <tran trig="BL_SET_IMU">
       <action>this-&gt;setImuHandler(e);</action>
       <tran_glyph conn="31,15,1,-1,29">
@@ -66,6 +78,18 @@
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
+     <tran trig="BL_SET_WHEEL_SPEED">
+      <action>setWheelsSpeedHandler(e);</action>
+      <tran_glyph conn="31,37,1,-1,25">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <tran trig="BL_HART_BEAT">
+      <action>heartBeat(e);</action>
+      <tran_glyph conn="31,40,1,-1,25">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
      <state_glyph node="14,9,17,34">
       <entry box="1,2,12,2"/>
      </state_glyph>
@@ -84,11 +108,13 @@ namespace business_logic {
 
 enum Signal
 {
-   BL_SET_IMU_SIG = QP::Q_USER_SIG,
+   BL_HART_BEAT_SIG = QP::Q_USER_SIG,
+   BL_SET_IMU_SIG,
    BL_SET_ENCODERS_SIG,
    BL_COMMAND_SIG,
    BL_SET_US_SIG,
-   BL_SET_WHEEL_POS_SIG
+   BL_SET_WHEEL_POS_SIG,
+   BL_SET_WHEEL_SPEED_SIG
 };
 
 };

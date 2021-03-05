@@ -24,11 +24,13 @@ namespace business_logic {
 
 enum Signal
 {
-   BL_SET_IMU_SIG = QP::Q_USER_SIG,
+   BL_HART_BEAT_SIG = QP::Q_USER_SIG,
+   BL_SET_IMU_SIG,
    BL_SET_ENCODERS_SIG,
    BL_COMMAND_SIG,
    BL_SET_US_SIG,
-   BL_SET_WHEEL_POS_SIG
+   BL_SET_WHEEL_POS_SIG,
+   BL_SET_WHEEL_SPEED_SIG
 };
 
 };
@@ -38,6 +40,9 @@ namespace business_logic {
 
 //.${business_logic::BusinessLogicBase} ......................................
 class BusinessLogicBase : public QP::QActive {
+private:
+    QP::QTimeEvt heartBeat_timeEvt= {this, BL_HART_BEAT_SIG, 0U};
+
 protected:
     virtual void setImuHandler(QP::QEvt const * e) = 0;
     virtual void setEncodersHandler(QP::QEvt const * e) = 0;
@@ -49,6 +54,8 @@ public:
 protected:
     virtual void setUSHandler(QP::QEvt const * e) = 0;
     virtual void setWheelsPosHandler(QP::QEvt const * e) = 0;
+    virtual void setWheelsSpeedHandler(QP::QEvt const * e) = 0;
+    virtual void heartBeat(QP::QEvt const * e) = 0;
 
 protected:
     Q_STATE_DECL(initial);

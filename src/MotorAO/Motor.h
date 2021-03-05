@@ -38,6 +38,7 @@ class Motor : public motor::MotorAO {
 	    float current_wheel_speed = 0;
 	    float current_wheel_pos = 0;
 	    double prev_curr_pos = 0;
+	    float pwm_total = 0;
 	    float pwm = 0;
 	    float pwm_based_on_targed = 0;
 

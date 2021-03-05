@@ -7,7 +7,7 @@
 
 #pragma once
 
-#define LOG_SERIAL
+//#define LOG_SERIAL
 
 #ifdef LOG_SERIAL
   #define LOG_DEBUG(x) printf(x);

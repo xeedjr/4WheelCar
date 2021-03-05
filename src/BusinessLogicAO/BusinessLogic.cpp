@@ -48,8 +48,11 @@ void BusinessLogic::wheel_position_cb(double* data, uint8_t num) {
     POST(event, this);
 }
 
-void BusinessLogic::wheel_curr_speed_cb(double*, uint8_t) {
-
+void BusinessLogic::wheel_curr_speed_cb(double* data, uint8_t num) {
+    auto event = Q_NEW(Event, BL_SET_WHEEL_SPEED_SIG);
+    event->data.wheel_speed_data.left = data[0];
+    event->data.wheel_speed_data.right = data[1];
+    POST(event, this);
 }
 
 void BusinessLogic::setEncoders(int32_t left, int32_t right)
@@ -124,6 +127,21 @@ void BusinessLogic::setWheelsPosHandler(QP::QEvt const * e)
 
 }
 
+void BusinessLogic::setWheelsSpeedHandler(QP::QEvt const * e)
+{
+    auto event = reinterpret_cast<Event const *>(e);
+    assert(nullptr != event);
+
+    wheel_speed_left = event->data.wheel_speed_data.left;
+    wheel_speed_right = event->data.wheel_speed_data.right;
+}
+
+void BusinessLogic::heartBeat(QP::QEvt const * e)
+{
+    auto event = reinterpret_cast<Event const *>(e);
+
+    LOG_DEBUG("BL Heart Beat 5sec.\n");
+}
 
 void BusinessLogic::process_set_commands_receive(void)
 {
@@ -139,17 +157,19 @@ void BusinessLogic::process_set_commands_receive(void)
 
     carmen_hardware::SetCommandsResult reply;
     reply.header.common.sequence_id = command->header.common.sequence_id;
-    reply.encoder_left = this->encoder_left_;
-    reply.encoder_right = this->encoder_right_;
+
     reply.imu_angle_alpha = this->imu_angle_alpha_;
     reply.imu_angle_beta = this->imu_angle_beta_;
     reply.imu_angle_gamma = this->imu_angle_gamma_;
 
-    reply.ultra_sonic_left = this->us_left*10;
-    reply.ultra_sonic_right = this->us_right*10;
+    reply.ultra_sonic_left = this->us_left * 1000;
+    reply.ultra_sonic_right = this->us_right * 1000;
 
-    reply.encoder_pos_left = this->wheel_pos_left*1000;
-    reply.encoder_pos_right = this->wheel_pos_right*1000;
+    reply.wheel_pos_left = this->wheel_pos_left * 1000;
+    reply.wheel_pos_right = this->wheel_pos_right * 1000;
+
+    reply.wheel_vel_left = this->wheel_speed_left * 1000;
+    reply.wheel_vel_right = this->wheel_speed_right * 1000;
 
     // TODO: Add code to validate that protocol versions coincide else send error code e.g. minor.validate method
     this->minor_->sendResult((uint8_t*)&reply, sizeof(reply));

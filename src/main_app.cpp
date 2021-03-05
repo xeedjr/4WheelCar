@@ -202,7 +202,7 @@ void main_cpp(void) {
 	if (sensorsp)
 	    sensorsp->startAO();
 
-//    motorp->SetSpeedL(20.0);
+//    motorp->SetSpeedL(2);
 //    motorp->SetSpeedR(20.0);
 
 	QF::run();

@@ -78,8 +78,10 @@ bool Sensors::imu_loop(const QP::QEvt *e) {
 
 bool Sensors::sonic_process(const QP::QEvt *e) {
 
-    sonars_data[0] = sonars->get_distance(0);
-    sonars_data[1] = sonars->get_distance(1);
+    sonars_data[0] = sonars->get_distance(0) / 100.0;
+    sonars_data[1] = sonars->get_distance(1) / 100.0;
+
+   // printf("%f %f\n", sonars_data[0], sonars_data[1]);
 
     interface->us_sensor_cb(sonars_data, 2);
 }

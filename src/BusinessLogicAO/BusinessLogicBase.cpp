@@ -45,6 +45,12 @@ Q_STATE_DEF(BusinessLogicBase, initial) {
 Q_STATE_DEF(BusinessLogicBase, idle) {
     QP::QState status_;
     switch (e->sig) {
+        //.${business_logic::BusinessLogicBas~::SM::idle}
+        case Q_ENTRY_SIG: {
+            heartBeat_timeEvt.armX(TICKS_TIMEOUT_SEC*5, TICKS_TIMEOUT_SEC*5);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
         //.${business_logic::BusinessLogicBas~::SM::idle::BL_SET_IMU}
         case BL_SET_IMU_SIG: {
             this->setImuHandler(e);
@@ -72,6 +78,18 @@ Q_STATE_DEF(BusinessLogicBase, idle) {
         //.${business_logic::BusinessLogicBas~::SM::idle::BL_SET_WHEEL_POS}
         case BL_SET_WHEEL_POS_SIG: {
             setWheelsPosHandler(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
+        //.${business_logic::BusinessLogicBas~::SM::idle::BL_SET_WHEEL_SPEED}
+        case BL_SET_WHEEL_SPEED_SIG: {
+            setWheelsSpeedHandler(e);
+            status_ = Q_RET_HANDLED;
+            break;
+        }
+        //.${business_logic::BusinessLogicBas~::SM::idle::BL_HART_BEAT}
+        case BL_HART_BEAT_SIG: {
+            heartBeat(e);
             status_ = Q_RET_HANDLED;
             break;
         }
