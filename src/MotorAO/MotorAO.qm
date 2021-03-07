@@ -22,7 +22,7 @@
     <state name="initialize">
      <entry>POST(Q_NEW(Event, INITIALIZE_SIG), this);</entry>
      <tran trig="INITIALIZE" target="../../2/2">
-      <tran_glyph conn="11,21,3,3,32,-1,2">
+      <tran_glyph conn="11,21,3,3,32,-2,2">
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
@@ -31,37 +31,37 @@
      </state_glyph>
     </state>
     <state name="PIDControl">
-     <entry>m_timeEvt.armX(TICKS_TIMEOUT_SEC/5, TICKS_TIMEOUT_SEC/5);
-encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);
+     <entry>m_timeEvt.armX(TICKS_TIMEOUT_SEC/30, TICKS_TIMEOUT_SEC/30);
+encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/50, TICKS_TIMEOUT_SEC/50);
 pid_init(e);</entry>
      <tran trig="TIMEOUT">
       <action>pid_timeout(e);</action>
-      <tran_glyph conn="40,48,3,-1,18">
+      <tran_glyph conn="40,47,3,-1,18">
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
      <tran trig="ENCODERS_SPEED">
       <action>get_wheel_speed(e);</action>
-      <tran_glyph conn="40,53,3,-1,18">
+      <tran_glyph conn="40,52,3,-1,18">
        <action box="0,-2,10,2"/>
       </tran_glyph>
      </tran>
      <state name="WaitAPI">
       <tran trig="SET_SPEED_L">
        <action>set_speed_left(e);</action>
-       <tran_glyph conn="45,29,3,-1,24">
+       <tran_glyph conn="45,28,3,-1,24">
         <action box="0,-2,10,2"/>
        </tran_glyph>
       </tran>
       <tran trig="SET_SPEED_R">
        <action>set_speed_right(e);</action>
-       <tran_glyph conn="45,36,3,-1,24">
+       <tran_glyph conn="45,35,3,-1,24">
         <action box="0,-2,10,2"/>
        </tran_glyph>
       </tran>
-      <state_glyph node="45,12,31,29"/>
+      <state_glyph node="45,11,31,29"/>
      </state>
-     <state_glyph node="40,5,40,70">
+     <state_glyph node="40,4,40,70">
       <entry box="1,2,6,2"/>
      </state_glyph>
     </state>

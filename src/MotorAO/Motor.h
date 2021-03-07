@@ -40,13 +40,13 @@ class Motor : public motor::MotorAO {
 	    double prev_curr_pos = 0;
 	    float pwm_total = 0;
 	    float pwm = 0;
-	    float pwm_based_on_targed = 0;
+	    //float pwm_based_on_targed = 0;
 
 
 	    void init_pid() {
 	    }
 	    void pid_update() {
-	        pwm_based_on_targed = (100.0 / 27.6) * std::abs(target_wheel_speed);
+	        //pwm_based_on_targed = (100.0 / 27.6) * std::abs(target_wheel_speed);
 	        pwm = pid->getOutput(std::abs(current_wheel_speed), std::abs(target_wheel_speed));
 
 	    }
@@ -55,7 +55,7 @@ class Motor : public motor::MotorAO {
             if (is_reverse)
                 current_wheel_pos *= -1.0;
             //printf("%f \n", curr_pos);
-            current_wheel_speed = std::abs((current_wheel_pos - prev_curr_pos) * 10.0);
+            current_wheel_speed = std::abs((current_wheel_pos - prev_curr_pos) * 50.0);
             prev_curr_pos = current_wheel_pos;
         }
 	} wheel[2];

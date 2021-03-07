@@ -70,8 +70,8 @@ Q_STATE_DEF(MotorAO, PIDControl) {
     switch (e->sig) {
         //.${motor::MotorAO::SM::PIDControl}
         case Q_ENTRY_SIG: {
-            m_timeEvt.armX(TICKS_TIMEOUT_SEC/5, TICKS_TIMEOUT_SEC/5);
-            encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/10, TICKS_TIMEOUT_SEC/10);
+            m_timeEvt.armX(TICKS_TIMEOUT_SEC/30, TICKS_TIMEOUT_SEC/30);
+            encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/50, TICKS_TIMEOUT_SEC/50);
             pid_init(e);
             status_ = Q_RET_HANDLED;
             break;
