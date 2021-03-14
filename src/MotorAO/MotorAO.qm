@@ -31,7 +31,7 @@
      </state_glyph>
     </state>
     <state name="PIDControl">
-     <entry>m_timeEvt.armX(TICKS_TIMEOUT_SEC/30, TICKS_TIMEOUT_SEC/30);
+     <entry>m_timeEvt.armX(TICKS_TIMEOUT_SEC/40, TICKS_TIMEOUT_SEC/40);
 encoders_timeEvt.armX(TICKS_TIMEOUT_SEC/50, TICKS_TIMEOUT_SEC/50);
 pid_init(e);</entry>
      <tran trig="TIMEOUT">
