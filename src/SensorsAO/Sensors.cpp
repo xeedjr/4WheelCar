@@ -62,7 +62,7 @@ bool Sensors::imu_loop(const QP::QEvt *e) {
     // read the sensor
     if(mpu9250->readSensor() == 1) {
         // update the filter, which computes orientation
-        filter.update(mpu9250->getGyroX_rads()/0.0174533f, mpu9250->getGyroY_rads()/0.0174533f, mpu9250->getGyroZ_rads()/0.0174533f,
+/*        filter.update(mpu9250->getGyroX_rads()/0.0174533f, mpu9250->getGyroY_rads()/0.0174533f, mpu9250->getGyroZ_rads()/0.0174533f,
                       mpu9250->getAccelX_mss(), mpu9250->getAccelY_mss(), mpu9250->getAccelZ_mss(),
                       mpu9250->getMagX_uT(), mpu9250->getMagY_uT(), mpu9250->getMagZ_uT());
 
@@ -70,8 +70,17 @@ bool Sensors::imu_loop(const QP::QEvt *e) {
         roll = filter.getRoll();
         pitch = filter.getPitch();
         yaw = filter.getYaw();
-
-        interface->update_Sensors_cb(roll, pitch, yaw);
+*/
+        interface->update_Sensors_cb(
+                mpu9250->getMagX_uT(),
+                mpu9250->getMagY_uT(),
+                mpu9250->getMagZ_uT(),
+                mpu9250->getAccelX_mss(),
+                mpu9250->getAccelY_mss(),
+                mpu9250->getAccelZ_mss(),
+                mpu9250->getGyroX_rads(),
+                mpu9250->getGyroY_rads(),
+                mpu9250->getGyroZ_rads());
         //          printf("Orient: %f\t %f\t %f \n\r", roll, pitch, yaw);
     }
 }

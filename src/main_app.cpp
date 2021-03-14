@@ -178,7 +178,7 @@ void main_cpp(void) {
 	/// Start QP
 
 	auto t = xTimerCreate("QPRoootTimer",
-	                     (10 / portTICK_PERIOD_MS), ///< 10ms tick
+	                     pdMS_TO_TICKS(1000 / TICKS_TIMEOUT_SEC),
 	                     pdTRUE,
 	                     ( void * ) 0,
 	                     [](TimerHandle_t xTimer){
@@ -201,9 +201,6 @@ void main_cpp(void) {
 #endif
 	if (sensorsp)
 	    sensorsp->startAO();
-
-//    motorp->SetSpeedL(2);
-//    motorp->SetSpeedR(20.0);
 
 	QF::run();
 }

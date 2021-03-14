@@ -21,12 +21,26 @@ void BusinessLogic::startAO() {
 #endif
 }
 
-void BusinessLogic::update_Sensors_cb(float y, float p, float r)
+void BusinessLogic::update_Sensors_cb(float imu_angle_alpha,
+                                        float imu_angle_beta,
+                                        float imu_angle_gamma,
+                                        float imu_vel_alpha,
+                                        float imu_vel_beta,
+                                        float imu_vel_gamma,
+                                        float imu_acc_x,
+                                        float imu_acc_y,
+                                        float imu_acc_z)
 {
     auto event = Q_NEW(Event, BL_SET_IMU_SIG);
-    event->data.imu.alpha = (int32_t)(y * 1000);
-    event->data.imu.beta = (int32_t)(p * 1000);
-    event->data.imu.gamma = (int32_t)(r * 1000);
+    event->data.imu.imu_acc_x = (int32_t)(imu_acc_x * 1000);
+    event->data.imu.imu_acc_y = (int32_t)(imu_acc_y * 1000);
+    event->data.imu.imu_acc_z = (int32_t)(imu_acc_z * 1000);
+    event->data.imu.imu_angle_alpha = (int32_t)(imu_angle_alpha * 1000);
+    event->data.imu.imu_angle_beta = (int32_t)(imu_angle_beta * 1000);
+    event->data.imu.imu_angle_gamma = (int32_t)(imu_angle_gamma * 1000);
+    event->data.imu.imu_vel_alpha = (int32_t)(imu_vel_alpha * 1000);
+    event->data.imu.imu_vel_beta = (int32_t)(imu_vel_beta * 1000);
+    event->data.imu.imu_vel_gamma = (int32_t)(imu_vel_gamma * 1000);
     POST(event, this);
 }
 
@@ -94,9 +108,7 @@ void BusinessLogic::setImuHandler(QP::QEvt const * e)
     auto event = reinterpret_cast<Event const *>(e);
 
     assert(nullptr != event);
-    this->imu_angle_alpha_ = event->data.imu.alpha; 
-    this->imu_angle_beta_ = event->data.imu.beta; 
-    this->imu_angle_gamma_ = event->data.imu.gamma; 
+    this->imu_ = event->data.imu;
 }
 
 void BusinessLogic::setEncodersHandler(QP::QEvt const * e)
@@ -158,9 +170,15 @@ void BusinessLogic::process_set_commands_receive(void)
     carmen_hardware::SetCommandsResult reply;
     reply.header.common.sequence_id = command->header.common.sequence_id;
 
-    reply.imu_angle_alpha = this->imu_angle_alpha_;
-    reply.imu_angle_beta = this->imu_angle_beta_;
-    reply.imu_angle_gamma = this->imu_angle_gamma_;
+    reply.imu_angle_alpha = this->imu_.imu_angle_alpha;
+    reply.imu_angle_beta = this->imu_.imu_angle_beta;
+    reply.imu_angle_gamma = this->imu_.imu_angle_gamma;
+    reply.imu_acc_x = this->imu_.imu_acc_x;
+    reply.imu_acc_y = this->imu_.imu_acc_y;
+    reply.imu_acc_z = this->imu_.imu_acc_z;
+    reply.imu_vel_alpha = this->imu_.imu_vel_alpha;
+    reply.imu_vel_beta = this->imu_.imu_vel_beta;
+    reply.imu_vel_gamma = this->imu_.imu_vel_gamma;
 
     reply.ultra_sonic_left = this->us_left * 1000;
     reply.ultra_sonic_right = this->us_right * 1000;

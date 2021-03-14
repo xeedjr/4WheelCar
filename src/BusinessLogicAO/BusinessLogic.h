@@ -18,9 +18,17 @@ namespace business_logic
 
 typedef struct
 {
-    int32_t alpha;
-    int32_t beta;
-    int32_t gamma;
+    int32_t imu_angle_alpha; // multiplied by 1000 and rounded
+    int32_t imu_angle_beta; // multiplied by 1000 and rounded
+    int32_t imu_angle_gamma; // multiplied by 1000 and rounded
+
+    int32_t imu_vel_alpha; // multiplied by 1000 and rounded
+    int32_t imu_vel_beta; // multiplied by 1000 and rounded
+    int32_t imu_vel_gamma; // multiplied by 1000 and rounded
+
+    int32_t imu_acc_x; // multiplied by 1000 and rounded
+    int32_t imu_acc_y; // multiplied by 1000 and rounded
+    int32_t imu_acc_z;
 } ImuData;
 
 typedef struct
@@ -70,7 +78,15 @@ public:
 
     void startAO();
 
-    virtual void update_Sensors_cb(float, float, float);
+    virtual void update_Sensors_cb(float imu_angle_alpha,
+            float imu_angle_beta,
+            float imu_angle_gamma,
+            float imu_vel_alpha,
+            float imu_vel_beta,
+            float imu_vel_gamma,
+            float imu_acc_x,
+            float imu_acc_y,
+            float imu_acc_z);
     virtual void us_sensor_cb(float*, uint8_t);
     virtual void tof_sensors_cb(float*, uint8_t);
 
@@ -107,9 +123,7 @@ private:
     int32_t encoder_left_ = 0;
     int32_t encoder_right_ = 0;
 
-    int32_t imu_angle_alpha_ = 0;
-    int32_t imu_angle_beta_ = 0;
-    int32_t imu_angle_gamma_ = 0;
+    ImuData imu_ = {0};
 
     /// US distance in cm.
     float us_left = 0;
