@@ -12,11 +12,10 @@
 #include "usb_device.h"
 
 #include "BusinessLogicAO/BusinessLogic.h"
-#include "BusinessLogicAO/VirtualComPort.h"
-#include "orion_protocol/orion_frame_transport.h"
-#include "orion_protocol/orion_cobs_framer.h"
-#include "orion_protocol/orion_header.h"
-#include "orion_protocol/orion_minor.h"
+#include "orion_protocol/orion_communication.hpp"
+#include "orion_protocol/orion_transport.hpp"
+#include "orion_protocol/orion_header.hpp"
+#include "orion_protocol/orion_minor.hpp"
 
 #include <Motor.h>
 #include "TB6612FNG.h"
@@ -40,10 +39,10 @@
 using namespace std;
 using namespace QP;
 
-carmen_hardware::VirtualComPort *p_com_port;
-orion::COBSFramer *p_cobs_framer;
-orion::FrameTransport *p_frame_transport;
-orion::Minor *p_minor;
+orion::Communication com_port;
+orion::Transport frame_transport(&com_port);
+orion::Minor minor(&frame_transport);
+
 TB6612FNG *driver;
 RPMEncoderOptical *enc1;
 RPMEncoderOptical *enc2;
@@ -144,11 +143,6 @@ void main_cpp(void) {
     mpuHal = new MPU9250HALSTM32HALI2C(&hi2c1, 0x68);
     mpu = new (mmm) MPU9250FIFO(mpuHal);
 
-    p_com_port = new carmen_hardware::VirtualComPort();
-    p_cobs_framer = new orion::COBSFramer();
-    p_frame_transport = new orion::FrameTransport(p_com_port, p_cobs_framer);
-    p_minor = new orion::Minor(p_frame_transport);
-
     /// AO
 #ifdef USE_ROSSERIAL
     rosserialp = new ros_serial::Rosserial(&htim16);
@@ -156,7 +150,7 @@ void main_cpp(void) {
         rosserialp->receive_data(Buf, Len);
     };
 #else
-    p_business_logic = new business_logic::BusinessLogic(p_minor);
+    p_business_logic = new business_logic::BusinessLogic(&minor);
 #endif
 
 #ifdef USE_ROSSERIAL
