@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 #include "Sensors.h"
-#include "mpu9250.h"
+#include "MPU9250.h"
 
 namespace sensors {
 

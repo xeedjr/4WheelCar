@@ -2,7 +2,7 @@
 #define BUSINESS_LOGIC_H_
 
 #include "BusinessLogicBase.h"
-#include "orion_protocol/orion_minor.h"
+#include "orion_protocol/orion_minor.hpp"
 #include <stdint.h>
 #include <stdbool.h>
 #include <cstddef>

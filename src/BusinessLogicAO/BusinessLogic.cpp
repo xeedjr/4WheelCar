@@ -216,8 +216,11 @@ void BusinessLogic::commandHandler()
 {
     LOG_DEBUG("BusinessLogic::commandHandler Insider command handler\n");
 
-    if (this->minor_->receiveCommand(this->command_buffer_, COMMAND_BUFFER_SIZE, this->command_size_))
+	ssize_t command_result = this->minor_->receiveCommand(this->command_buffer_, COMMAND_BUFFER_SIZE);
+
+    if (command_result > 0)
     {
+    	this->command_size_ = command_result;
         LOG_DEBUG("BusinessLogic::commandHandler Command received\n");
         assert(nullptr != this->command_buffer_);
         assert(this->command_size_ >= sizeof(orion::CommandHeader));
